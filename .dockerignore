@@ -1,0 +1,14 @@
+**/.dockerignore
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.vs
+**/.vscode
+**/bin
+**/charts
+**/docker-compose*
+**/compose*
+**/Dockerfile*
+LICENSE
+README.md
