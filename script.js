@@ -36,7 +36,17 @@ function calculateExperience() {
     }
 }
 
+// Update the footer year dynamically
+function updateFooterYear() {
+    const currentYear = new Date().getFullYear();
+    const footerYearElement = document.querySelector('.footer-year'); // Assuming you have a span with this class in your footer
+    if (footerYearElement) {
+        footerYearElement.textContent = currentYear;
+    }
+}
+
 // Call the function when the page loads
 document.addEventListener('DOMContentLoaded', function() {
     calculateExperience();
+    updateFooterYear(); // Call the function to update the year
 });
