@@ -49,4 +49,21 @@ function updateFooterYear() {
 document.addEventListener('DOMContentLoaded', function() {
     calculateExperience();
     updateFooterYear(); // Call the function to update the year
+    
+    // Initialize skill levels with dots
+    document.querySelectorAll('.skill-level[data-level]').forEach(skill => {
+        const level = parseInt(skill.dataset.level);
+        const total = parseInt(skill.dataset.total);
+        const dotsContainer = skill.querySelector('.level-dots');
+        
+        // Clear existing dots
+        dotsContainer.innerHTML = '';
+        
+        // Create all dots
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement('span');
+            dot.className = `level-dot ${i < level ? 'filled' : 'empty'}`;
+            dotsContainer.appendChild(dot);
+        }
+    });
 });

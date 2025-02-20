@@ -398,53 +398,146 @@ body {
     font-size: 0.875rem;
 }
 
-/* Skills section */
+/* Skills section improvements */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
     margin-top: 2rem;
 }
 
 .skill-category-wrapper {
     background-color: #f8fafc;
-    padding: 1.5rem;
-    border-radius: 0.75rem;
+    padding: 1.75rem;
+    border-radius: 1rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
-.skill-category-wrapper:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .skill-category-wrapper h4 {
     color: var(--primary-color);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
     border-bottom: 2px solid var(--accent-color);
 }
 
 .skill-items {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.skill-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
 }
 
 .skill-item {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.skill-subtext {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.skill-level {
+    display: flex;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.level-bar {
+    flex-grow: 1;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.level-fill {
+    height: 100%;
     background-color: var(--primary-color);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.level-score {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+    min-width: 45px;
+    text-align: right;
+}
+
+/* Cloud services styling */
+.cloud-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.service-tag {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
     font-size: 0.875rem;
     transition: all 0.3s ease;
 }
 
-.skill-item:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.05);
+.service-tag:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Hover effects */
+.skill-item-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Initialize skill levels with JavaScript */
+.skill-level[data-level] .level-fill {
+    width: calc(var(--level-percent) * 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .skill-item-wrapper {
+        padding: 1rem;
+    }
+
+    .skill-item {
+        font-size: 1rem;
+    }
+
+    .skill-level {
+        width: 100%;
+    }
 }
 
 /* Navigation improvements */
@@ -1274,5 +1367,117 @@ footer {
 
     .profile {
         margin-bottom: 3rem;
+    }
+}
+
+/* Update the Skills section styles */
+.skill-item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.skill-level {
+    display: flex;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.level-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.level-dot.filled {
+    background-color: var(--primary-color);
+}
+
+.level-dot.empty {
+    background-color: #e2e8f0;
+}
+
+.skill-item {
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .skill-item-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .skill-level {
+        align-self: flex-start;
+    }
+}
+
+/* Add these styles for the skill level dots */
+.level-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+/* Remove these conflicting styles if they still exist */
+.level-dots::before,
+.level-dots::after {
+    content: none;
+}
+
+/* Remove these as they're redundant */
+.skill-level .level-bar,
+.skill-level .level-score {
+    display: none;
+}
+
+/* Add these styles for individual dots */
+.level-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.level-dot.filled {
+    background-color: var(--primary-color);
+}
+
+.level-dot.empty {
+    background-color: #e2e8f0;
+}
+
+/* Update the skill-item-wrapper styles */
+.skill-item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Add responsive styles for dots */
+@media (max-width: 480px) {
+    .level-dot {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .level-dots {
+        gap: 3px;
     }
 } 
