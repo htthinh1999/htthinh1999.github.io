@@ -414,6 +414,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    margin-bottom: 0;
 }
 
 .skill-category-wrapper {
@@ -571,12 +572,13 @@ nav a:hover::after {
 section {
     position: relative;
     padding: 5rem 0;
+    margin-bottom: 2.5rem;
 }
 
 section:not(:last-child)::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2.5rem;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -627,6 +629,7 @@ section h2::after {
 #experience {
     background-color: #f8fafc;
     padding: 5rem 0;
+    margin-top: 3rem;
 }
 
 .experience-item {
