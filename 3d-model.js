@@ -289,7 +289,7 @@ class CoderScene {
         console.log('Adding PC case');
         // Create PC Case
         const pcCase = this.createPCCase();
-        pcCase.position.set(0.5, 0.825, 0.2); // Position on desk
+        pcCase.position.set(0.5, 0.99, 0.2); // Position on desk with higher Y value to stay on top
         pcCase.scale.set(0.8, 0.8, 0.8); // Scale PC
         this.computerSetup.add(pcCase);
         this.pcCase = pcCase;
@@ -1508,7 +1508,7 @@ class CoderScene {
         switch (type) {
             case 'pc':
                 // Highlight the PC
-                gsap.to(object.position, { y: 1.12, duration: 0.3 });
+                gsap.to(object.position, { y: 1.02, duration: 0.3 });
                 if (this.pcLightFront) {
                     gsap.to(this.pcLightFront, { intensity: 1.5, duration: 0.3 });
                 }
@@ -1546,7 +1546,7 @@ class CoderScene {
     resetHoverEffect(object) {
         // Reset based on what object it is
         if (object === this.pcCase) {
-            gsap.to(object.position, { y: 1.1, duration: 0.3 });
+            gsap.to(object.position, { y: 0.99, duration: 0.3 });
             if (this.pcLightFront) {
                 gsap.to(this.pcLightFront, { intensity: 0.8, duration: 0.3 });
             }
@@ -1572,7 +1572,9 @@ class CoderScene {
         this.monitorOn = !this.monitorOn;
 
         if (this.monitorOn) {
-            // Turn monitor on
+            // Turn monitor on - explicitly create a new texture each time for freshness
+            this.screenOnMaterial.map = this.createCodeTexture();
+            this.screenOnMaterial.needsUpdate = true;
             this.screen.material = this.screenOnMaterial;
 
             // Animation for turning on
