@@ -20,15 +20,15 @@ document.querySelectorAll('nav a').forEach(anchor => {
 function calculateExperience() {
     const startDate = new Date('2021-01-01'); // Career start date
     const today = new Date();
-    
+
     let years = today.getFullYear() - startDate.getFullYear();
     const monthDiff = today.getMonth() - startDate.getMonth();
-    
+
     // Adjust years if we haven't reached the anniversary month
     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < startDate.getDate())) {
         years--;
     }
-    
+
     // Update the experience display
     const experienceElement = document.querySelector('.stat-value');
     if (experienceElement) {
@@ -46,19 +46,19 @@ function updateFooterYear() {
 }
 
 // Call the function when the page loads
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     calculateExperience();
     updateFooterYear(); // Call the function to update the year
-    
+
     // Initialize skill levels with dots
     document.querySelectorAll('.skill-level[data-level]').forEach(skill => {
         const level = parseInt(skill.dataset.level);
         const total = parseInt(skill.dataset.total);
         const dotsContainer = skill.querySelector('.level-dots');
-        
+
         // Clear existing dots
         dotsContainer.innerHTML = '';
-        
+
         // Create all dots
         for (let i = 0; i < total; i++) {
             const dot = document.createElement('span');

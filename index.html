@@ -4,42 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Primary Meta Tags -->
     <title>Huynh Tan Thinh - Software Engineer</title>
     <meta name="title" content="Huynh Tan Thinh - Software Engineer">
-    <meta name="description" content="Software Engineer specializing in backend development, DevOps practices, and cloud technologies. Experienced in microservices architecture and cloud-native solutions.">
+    <meta name="description"
+        content="Software Engineer specializing in backend development, DevOps practices, and cloud technologies. Experienced in microservices architecture and cloud-native solutions.">
     <meta name="author" content="Huynh Tan Thinh">
-    <meta name="keywords" content="Software Engineer, Backend Developer, DevOps Engineer, Cloud Architecture, .NET, Kubernetes, Docker">
+    <meta name="keywords"
+        content="Software Engineer, Backend Developer, DevOps Engineer, Cloud Architecture, .NET, Kubernetes, Docker">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://htthinh1999.github.io/">
     <meta property="og:title" content="Huynh Tan Thinh - Software Engineer">
-    <meta property="og:description" content="Software Engineer specializing in backend development, DevOps practices, and cloud technologies. Experienced in microservices architecture and cloud-native solutions.">
+    <meta property="og:description"
+        content="Software Engineer specializing in backend development, DevOps practices, and cloud technologies. Experienced in microservices architecture and cloud-native solutions.">
     <meta property="og:image" content="https://htthinh1999.github.io/profile-photo.jpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://htthinh1999.github.io/">
     <meta property="twitter:title" content="Huynh Tan Thinh - Software Engineer">
-    <meta property="twitter:description" content="Software Engineer specializing in backend development, DevOps practices, and cloud technologies. Experienced in microservices architecture and cloud-native solutions.">
+    <meta property="twitter:description"
+        content="Software Engineer specializing in backend development, DevOps practices, and cloud technologies. Experienced in microservices architecture and cloud-native solutions.">
     <meta property="twitter:image" content="https://htthinh1999.github.io/profile-photo.jpeg">
 
     <!-- Theme Color for browsers -->
     <meta name="theme-color" content="#2563eb">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    
+
     <!-- Existing CSS and Font links -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Three.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
     <!-- JSON-LD for rich results -->
     <script type="application/ld+json">
@@ -71,6 +83,9 @@
     <header>
         <div class="container">
             <div class="profile">
+                <!-- 3D Scene Container -->
+                <div id="three-d-container"></div>
+
                 <div class="profile-content">
                     <div class="profile-image-wrapper">
                         <img src="profile-photo.jpeg" alt="Huynh Tan Thinh" class="profile-photo">
@@ -89,7 +104,8 @@
                                 </div>
                             </div>
                             <p class="tagline">Software Engineer</p>
-                            <p class="bio">Passionate about building scalable backend systems and cloud infrastructure. Experienced in microservices architecture and cloud-native solutions.</p>
+                            <p class="bio">Passionate about building scalable backend systems and cloud infrastructure.
+                                Experienced in microservices architecture and cloud-native solutions.</p>
                             <div class="profile-actions">
                                 <a href="SoftwareEngineer_HuynhTanThinh.pdf" class="primary-btn" download>
                                     <i class="fas fa-download"></i> Download CV
@@ -120,15 +136,18 @@
                 </div>
                 <div class="social-bar">
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/htthinh1999" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <a href="https://linkedin.com/in/htthinh1999" target="_blank" rel="noopener noreferrer"
+                            title="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="https://github.com/htthinh1999" target="_blank" rel="noopener noreferrer" title="GitHub">
+                        <a href="https://github.com/htthinh1999" target="_blank" rel="noopener noreferrer"
+                            title="GitHub">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="https://facebook.com/htthinh1999" target="_blank" rel="noopener noreferrer" title="Facebook">
+                        <a href="https://facebook.com/htthinh1999" target="_blank" rel="noopener noreferrer"
+                            title="Facebook">
                             <i class="fab fa-facebook"></i>
                             <span>Facebook</span>
                         </a>
@@ -208,7 +227,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="skill-category-wrapper">
                     <h4>Message Queues</h4>
                     <div class="skill-items">
@@ -271,7 +290,8 @@
                         <div class="skill-item-wrapper">
                             <div class="skill-info">
                                 <span class="skill-item">Google Cloud Platform</span>
-                                <span class="skill-subtext">GKE, Cloud Run, Cloud Functions, Pub/Sub, Cloud Storage</span>
+                                <span class="skill-subtext">GKE, Cloud Run, Cloud Functions, Pub/Sub, Cloud
+                                    Storage</span>
                             </div>
                             <div class="skill-level" data-level="8" data-total="10">
                                 <div class="level-dots"></div>
@@ -302,7 +322,8 @@
                     </p>
                     <ul>
                         <li>Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
-                        <li>Designed and maintained the database schema, implementing necessary optimizations for swift data
+                        <li>Designed and maintained the database schema, implementing necessary optimizations for swift
+                            data
                             retrieval.</li>
                         <li>Set up continuous integration and continuous deployment (CI/CD) pipelines for automatic code
                             integrations and efficient deployments.</li>
@@ -311,8 +332,10 @@
                         <li>Fixed critical and minor bugs in existing projects.</li>
                         <li>Refactored and optimized legacy code.</li>
                         <li>Reviewed colleagues' code to maintain coding standards.</li>
-                        <li>Managed the verification and deployment of systems, ensuring timely updates and roll-outs.</li>
-                        <li>Configured and maintained a Kubernetes cluster to optimize application scaling and resilience.
+                        <li>Managed the verification and deployment of systems, ensuring timely updates and roll-outs.
+                        </li>
+                        <li>Configured and maintained a Kubernetes cluster to optimize application scaling and
+                            resilience.
                         </li>
                         <li>Implemented Terraform setups to automate and standardize infrastructure provisioning.</li>
                     </ul>
@@ -324,14 +347,16 @@
                         <span class="date">Aug 2024 - Oct 2024 (3 months)</span>
                     </p>
                     <ul>
-                        <li>Facilitated effective communication and collaboration between the Vietnam and Netherlands teams.
+                        <li>Facilitated effective communication and collaboration between the Vietnam and Netherlands
+                            teams.
                         </li>
-                        <li>Investigated and resolved technical issues, identifying root causes and implementing appropriate
+                        <li>Investigated and resolved technical issues, identifying root causes and implementing
+                            appropriate
                             solutions.</li>
                         <li>Provided guidance and support to clients throughout the issue resolution process.</li>
                     </ul>
                 </div>
-                
+
                 <div class="technologies">
                     <strong>Technologies:</strong>
                     <div class="tech-stack">
@@ -393,7 +418,8 @@
                     </div>
                     <div class="project-body">
                         <div class="project-description">
-                            <p>Developed for the Netherlands-based Kikker Company, this comprehensive platform streamlines the selling and management of Electrics & Gas services.</p>
+                            <p>Developed for the Netherlands-based Kikker Company, this comprehensive platform
+                                streamlines the selling and management of Electrics & Gas services.</p>
                             <div class="project-highlights">
                                 <h4>Key Features</h4>
                                 <ul>
@@ -445,7 +471,9 @@
                     </div>
                     <div class="project-body">
                         <div class="project-description">
-                            <p>An improved version of DTOLink with enhanced features for artists and creators. The platform integrates with multiple third-party services and provides comprehensive analytics.</p>
+                            <p>An improved version of DTOLink with enhanced features for artists and creators. The
+                                platform integrates with multiple third-party services and provides comprehensive
+                                analytics.</p>
                             <div class="project-highlights">
                                 <h4>Key Features</h4>
                                 <ul>
@@ -488,7 +516,8 @@
                     </div>
                     <div class="project-body">
                         <div class="project-description">
-                            <p>A platform for artists to create customized music release and bio pages, featuring real-time analytics and third-party integrations.</p>
+                            <p>A platform for artists to create customized music release and bio pages, featuring
+                                real-time analytics and third-party integrations.</p>
                             <div class="project-highlights">
                                 <h4>Key Features</h4>
                                 <ul>
@@ -524,10 +553,12 @@
                             <a href="https://dtolink.com" class="button" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> dtolink.com
                             </a>
-                            <a href="https://dbio.to/daoentertainment" class="button" target="_blank" rel="noopener noreferrer">
+                            <a href="https://dbio.to/daoentertainment" class="button" target="_blank"
+                                rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> Example Bio
                             </a>
-                            <a href="https://mra.dfan.to/mua-cu-roi" class="button" target="_blank" rel="noopener noreferrer">
+                            <a href="https://mra.dfan.to/mua-cu-roi" class="button" target="_blank"
+                                rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> Example Release
                             </a>
                         </div>
@@ -628,15 +659,18 @@
                     <div class="contact-social">
                         <h3>Connect with me</h3>
                         <div class="social-grid">
-                            <a href="https://linkedin.com/in/htthinh1999" target="_blank" rel="noopener noreferrer" class="social-button linkedin">
+                            <a href="https://linkedin.com/in/htthinh1999" target="_blank" rel="noopener noreferrer"
+                                class="social-button linkedin">
                                 <i class="fab fa-linkedin"></i>
                                 <span>LinkedIn</span>
                             </a>
-                            <a href="https://github.com/htthinh1999" target="_blank" rel="noopener noreferrer" class="social-button github">
+                            <a href="https://github.com/htthinh1999" target="_blank" rel="noopener noreferrer"
+                                class="social-button github">
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
                             </a>
-                            <a href="https://facebook.com/htthinh1999" target="_blank" rel="noopener noreferrer" class="social-button facebook">
+                            <a href="https://facebook.com/htthinh1999" target="_blank" rel="noopener noreferrer"
+                                class="social-button facebook">
                                 <i class="fab fa-facebook"></i>
                                 <span>Facebook</span>
                             </a>
@@ -654,6 +688,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="3d-model.js"></script>
 </body>
 
 </html>
