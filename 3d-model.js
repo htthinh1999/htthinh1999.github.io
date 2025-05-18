@@ -61,8 +61,8 @@ class CoderScene {
         );
 
         // Position camera closer to the scene
-        this.camera.position.set(0, 1.0, 1.6);
-        this.camera.lookAt(0, 0.6, 0);
+        this.camera.position.set(0, 0.6, 0.8);
+        this.camera.lookAt(0, 0.3, 0);
 
         // Create renderer with transparency enabled
         this.renderer = new THREE.WebGLRenderer({
@@ -95,8 +95,8 @@ class CoderScene {
         this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
         this.controls.enableDamping = true;
         this.controls.dampingFactor = 0.1;
-        this.controls.minDistance = 0.5; // Allow closer zoom
-        this.controls.maxDistance = 5.0; // Allow farther zoom
+        this.controls.minDistance = 0.3; // Allow even closer zoom
+        this.controls.maxDistance = 3.0; // Reduce max zoom out distance
         this.controls.maxPolarAngle = Math.PI / 1.5; // Allow more overhead view
         this.controls.minAzimuthAngle = -Math.PI;
         this.controls.maxAzimuthAngle = Math.PI;
@@ -124,23 +124,23 @@ class CoderScene {
         // Adjust camera and controls based on container size
         if (width < 480) {
             // Mobile phone
-            this.camera.position.set(0, 1.2, 2.2);
-            this.camera.lookAt(0, 0.6, 0);
-            this.controls.minDistance = 1.2;
-            this.controls.maxDistance = 4.0;
+            this.camera.position.set(0, 0.7, 1.2);
+            this.camera.lookAt(0, 0.3, 0);
+            this.controls.minDistance = 0.8;
+            this.controls.maxDistance = 2.5;
         } else if (width < 768) {
             // Tablet
-            this.camera.position.set(0, 1.2, 2.0);
-            this.camera.lookAt(0, 0.6, 0);
-            this.controls.minDistance = 1.0;
-            this.controls.maxDistance = 4.0;
+            this.camera.position.set(0, 0.6, 1.0);
+            this.camera.lookAt(0, 0.3, 0);
+            this.controls.minDistance = 0.6;
+            this.controls.maxDistance = 2.5;
         } else {
             // Desktop
-            this.camera.position.set(0, 1.2, 2.0);
-            this.camera.lookAt(0, 0.6, 0);
-            this.controls.minDistance = 1.0;
-            this.controls.maxDistance = 4.0;
-        }
+            this.camera.position.set(0, 0.6, 0.8);
+            this.camera.lookAt(0, 0.3, 0);
+            this.controls.minDistance = 0.2;
+            this.controls.maxDistance = 2.5;
+        }                                                                                                                                                           
     }
 
     createBoundaryPlane() {
@@ -2436,12 +2436,6 @@ class CoderScene {
             wheel.position.y = -0.08;
             wheel.rotation.z = Math.PI / 2;
             wheelGroup.add(wheel);
-
-            // Wheel tread details
-            const treadGeometry = new THREE.TorusGeometry(0.024, 0.004, 8, 16);
-            const tread = new THREE.Mesh(treadGeometry, wheelMaterial);
-            tread.position.y = -0.08;
-            wheel.add(tread);
 
             // Add hub cap on outside of wheel
             const hubCapGeometry = new THREE.CircleGeometry(0.015, 16);
