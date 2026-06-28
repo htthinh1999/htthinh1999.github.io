@@ -305,3 +305,26 @@ a.contact-row:hover { color: var(--accent); }
   color: var(--text-secondary);
   line-height: 1.4;
 }
+
+/* ── Skills ─────────────────────────────────────────────── */
+.skills-list { display: flex; flex-direction: column; gap: 1rem; }
+.skill-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.skill-group-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+.tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition);
+}
+.tag:hover { background: var(--accent); color: #fff; }
