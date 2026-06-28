@@ -76,7 +76,7 @@
     <div class="mobile-topbar-profile">
       <img src="profile-photo.jpeg" alt="Huynh Tan Thinh" class="mobile-avatar">
       <div class="mobile-topbar-text">
-        <span class="mobile-name">Huynh Tan Thinh</span>
+        <span class="mobile-name" data-i18n="mobile.name">Huynh Tan Thinh</span>
         <span class="mobile-role" data-i18n="mobile.role">Software Engineer</span>
       </div>
     </div>
@@ -105,10 +105,13 @@
       <div class="sidebar-photo-wrap">
         <img src="profile-photo.jpeg" alt="Huynh Tan Thinh" class="sidebar-photo">
       </div>
-      <h1 class="sidebar-name">Huynh Tan Thinh</h1>
+      <h1 class="sidebar-name" data-i18n="sidebar.name">Huynh Tan Thinh</h1>
       <p class="sidebar-role" data-i18n="sidebar.role">Software Engineer</p>
       <span class="open-badge"><i class="fas fa-circle"></i> <span data-i18n="sidebar.openToWork">Open to Work</span></span>
     </div>
+
+    <!-- Scrollable middle -->
+    <div class="sidebar-scroll">
 
     <!-- Contact info -->
     <div class="sidebar-contact">
@@ -146,20 +149,22 @@
       <a href="#contact"    class="nav-link" data-section="contact"    title="Contact">    <i class="fas fa-envelope"></i>        <span data-i18n="nav.contact">Contact</span></a>
     </nav>
 
-    <!-- Download CV -->
-    <a href="SoftwareEngineer_HuynhTanThinh.pdf" class="download-cv-btn" download>
-      <i class="fas fa-download"></i><span data-i18n="sidebar.downloadCV">Download CV</span>
-    </a>
+    </div><!-- /.sidebar-scroll -->
 
-    <!-- Theme & Language controls -->
-    <div class="sidebar-controls">
-      <button class="control-btn" data-theme-toggle aria-label="Toggle theme">
-        <i class="fas fa-moon theme-icon"></i><span class="control-label">Theme</span>
-      </button>
-      <button class="control-btn" data-lang-toggle aria-label="Switch language">
-        <span class="lang-label">VI</span>
-      </button>
-    </div>
+    <!-- Pinned bottom -->
+    <div class="sidebar-footer">
+      <a href="SoftwareEngineer_HuynhTanThinh.pdf" class="download-cv-btn" download>
+        <i class="fas fa-download"></i><span data-i18n="sidebar.downloadCV">Download CV</span>
+      </a>
+      <div class="sidebar-controls">
+        <button class="control-btn" data-theme-toggle aria-label="Toggle theme">
+          <i class="fas fa-moon theme-icon"></i><span class="control-label">Theme</span>
+        </button>
+        <button class="control-btn" data-lang-toggle aria-label="Switch language">
+          <span class="lang-label">VI</span>
+        </button>
+      </div>
+    </div><!-- /.sidebar-footer -->
 
   </div>
 </aside>
@@ -364,11 +369,11 @@
             <span class="role-period">Aug 2025 – Now</span>
           </div>
           <ul class="duty-list">
-            <li>Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
-            <li>Set up CI/CD pipelines for automatic code integrations and efficient deployments.</li>
-            <li>Managed and monitored cloud infrastructure to ensure 99% uptime.</li>
-            <li>Implemented IaC setups using CloudFormation and AWS CDK to automate infrastructure provisioning.</li>
-            <li>Designed AWS Step Functions state machines and AWS Glue jobs for complex ETL workflows.</li>
+            <li data-i18n="exp.fpt.duty1">Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
+            <li data-i18n="exp.fpt.duty2">Set up CI/CD pipelines for automatic code integrations and efficient deployments.</li>
+            <li data-i18n="exp.fpt.duty3">Managed and monitored cloud infrastructure to ensure 99% uptime.</li>
+            <li data-i18n="exp.fpt.duty4">Implemented IaC setups using CloudFormation and AWS CDK to automate infrastructure provisioning.</li>
+            <li data-i18n="exp.fpt.duty5">Designed AWS Step Functions state machines and AWS Glue jobs for complex ETL workflows.</li>
           </ul>
           <div class="tech-row">
             <span class="tag">Golang</span><span class="tag">Python</span><span class="tag">Docker</span>
@@ -398,11 +403,11 @@
             <span class="role-period">May 2021 – Jun 2025</span>
           </div>
           <ul class="duty-list">
-            <li>Designed scalable, maintainable technical solutions and led technical decision-making for feature implementation.</li>
-            <li>Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
-            <li>Configured and maintained Kubernetes clusters to optimize application scaling and resilience.</li>
-            <li>Implemented Terraform setups to automate and standardize infrastructure provisioning.</li>
-            <li>Set up CI/CD pipelines and managed cloud infrastructure to ensure 99% uptime.</li>
+            <li data-i18n="exp.info.duty1">Designed scalable, maintainable technical solutions and led technical decision-making for feature implementation.</li>
+            <li data-i18n="exp.info.duty2">Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
+            <li data-i18n="exp.info.duty3">Configured and maintained Kubernetes clusters to optimize application scaling and resilience.</li>
+            <li data-i18n="exp.info.duty4">Implemented Terraform setups to automate and standardize infrastructure provisioning.</li>
+            <li data-i18n="exp.info.duty5">Set up CI/CD pipelines and managed cloud infrastructure to ensure 99% uptime.</li>
           </ul>
         </div>
 
@@ -412,9 +417,9 @@
             <span class="role-period">May 2024 – Aug 2024 · 3 months</span>
           </div>
           <ul class="duty-list">
-            <li>Facilitated communication and collaboration between Vietnam and Netherlands teams.</li>
-            <li>Investigated and resolved technical issues, identifying root causes and implementing solutions.</li>
-            <li>Provided guidance and support to clients throughout the issue resolution process.</li>
+            <li data-i18n="exp.info.nl.duty1">Facilitated communication and collaboration between Vietnam and Netherlands teams.</li>
+            <li data-i18n="exp.info.nl.duty2">Investigated and resolved technical issues, identifying root causes and implementing solutions.</li>
+            <li data-i18n="exp.info.nl.duty3">Provided guidance and support to clients throughout the issue resolution process.</li>
           </ul>
         </div>
 
@@ -444,11 +449,11 @@
             <span class="role-period">Nov 2021 – Now</span>
           </div>
           <ul class="duty-list">
-            <li>Collaborated with developers to design system architectures supporting business requirements.</li>
-            <li>Developed APIs for web portals and integrated third-party APIs to extend service offerings.</li>
-            <li>Configured and maintained Kubernetes clusters for optimized deployment, scaling, and management.</li>
-            <li>Implemented Terraform setups to automate and standardize infrastructure provisioning.</li>
-            <li>Managed verification and deployment processes, ensuring reliable system updates and releases.</li>
+            <li data-i18n="exp.dao.duty1">Collaborated with developers to design system architectures supporting business requirements.</li>
+            <li data-i18n="exp.dao.duty2">Developed APIs for web portals and integrated third-party APIs to extend service offerings.</li>
+            <li data-i18n="exp.dao.duty3">Configured and maintained Kubernetes clusters for optimized deployment, scaling, and management.</li>
+            <li data-i18n="exp.dao.duty4">Implemented Terraform setups to automate and standardize infrastructure provisioning.</li>
+            <li data-i18n="exp.dao.duty5">Managed verification and deployment processes, ensuring reliable system updates and releases.</li>
           </ul>
           <div class="tech-row">
             <span class="tag">.NET 6</span><span class="tag">Node.js</span><span class="tag">Strapi</span>
@@ -481,15 +486,15 @@
         <span class="project-meta-item"><i class="fas fa-building"></i> Latitude Financial Services</span>
         <span class="project-meta-item"><i class="fas fa-users"></i> Team: 15</span>
       </div>
-      <p class="project-desc">
+      <p class="project-desc" data-i18n="proj.lfs.desc">
         Spearheaded the development and integration of third-party payment processing using Westpac QuickStream,
         enhancing the platform's real-time financial transaction handling.
       </p>
       <ul class="project-duties">
-        <li>Integrated Westpac QuickStream 3rd-party payment API.</li>
-        <li>Implemented AWS CloudFormation setups to automate infrastructure provisioning.</li>
-        <li>Set up CI/CD pipelines via Buildkite for automated deployments.</li>
-        <li>Managed and monitored AWS infrastructure to ensure 99% uptime.</li>
+        <li data-i18n="proj.lfs.duty1">Integrated Westpac QuickStream 3rd-party payment API.</li>
+        <li data-i18n="proj.lfs.duty2">Implemented AWS CloudFormation setups to automate infrastructure provisioning.</li>
+        <li data-i18n="proj.lfs.duty3">Set up CI/CD pipelines via Buildkite for automated deployments.</li>
+        <li data-i18n="proj.lfs.duty4">Managed and monitored AWS infrastructure to ensure 99% uptime.</li>
       </ul>
       <div class="tag-row">
         <span class="tag">Golang</span><span class="tag">Docker</span><span class="tag">AWS DynamoDB</span>
@@ -514,15 +519,15 @@
         <span class="project-meta-item"><i class="fas fa-building"></i> Konica Minolta</span>
         <span class="project-meta-item"><i class="fas fa-users"></i> Team: 5</span>
       </div>
-      <p class="project-desc">
+      <p class="project-desc" data-i18n="proj.pdm.desc">
         Re-architected a legacy predictive maintenance system into a fully AWS-native serverless and containerized solution,
         using two ML models for batch printer lifespan prediction and real-time image diagnostics.
       </p>
       <ul class="project-duties">
-        <li>Architected and provisioned entire AWS infrastructure from scratch using CloudFormation.</li>
-        <li>Designed AWS Step Functions state machines to orchestrate ETL workflows and Glue jobs.</li>
-        <li>Deployed real-time image diagnostics model on Amazon ECS (Fargate) for low-latency inference.</li>
-        <li>Built CI/CD pipeline using AWS Code Series (CodeCommit, CodeBuild, CodeDeploy, CodePipeline).</li>
+        <li data-i18n="proj.pdm.duty1">Architected and provisioned entire AWS infrastructure from scratch using CloudFormation.</li>
+        <li data-i18n="proj.pdm.duty2">Designed AWS Step Functions state machines to orchestrate ETL workflows and Glue jobs.</li>
+        <li data-i18n="proj.pdm.duty3">Deployed real-time image diagnostics model on Amazon ECS (Fargate) for low-latency inference.</li>
+        <li data-i18n="proj.pdm.duty4">Built CI/CD pipeline using AWS Code Series (CodeCommit, CodeBuild, CodeDeploy, CodePipeline).</li>
       </ul>
       <div class="tag-row">
         <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">AWS ECS</span>
@@ -548,15 +553,15 @@
         <span class="project-meta-item"><i class="fas fa-building"></i> VPBank</span>
         <span class="project-meta-item"><i class="fas fa-users"></i> Team: 10</span>
       </div>
-      <p class="project-desc">
+      <p class="project-desc" data-i18n="proj.t24.desc">
         Joined the Digital Banking team to operate and expand a mature AWS EKS infrastructure, provisioning new microservices
         and ensuring reliability of critical banking data pipelines.
       </p>
       <ul class="project-duties">
-        <li>Managed and expanded Terragrunt codebase to provision resources for new banking features.</li>
-        <li>Administered production Amazon EKS clusters and tuned Karpenter autoscaling profiles.</li>
-        <li>Optimized the Temenos T24 data ingestion pipeline for accurate parsing into DynamoDB and S3.</li>
-        <li>Maintained CI/CD pipelines to ensure smooth deployment of new versions and infrastructure patches.</li>
+        <li data-i18n="proj.t24.duty1">Managed and expanded Terragrunt codebase to provision resources for new banking features.</li>
+        <li data-i18n="proj.t24.duty2">Administered production Amazon EKS clusters and tuned Karpenter autoscaling profiles.</li>
+        <li data-i18n="proj.t24.duty3">Optimized the Temenos T24 data ingestion pipeline for accurate parsing into DynamoDB and S3.</li>
+        <li data-i18n="proj.t24.duty4">Maintained CI/CD pipelines to ensure smooth deployment of new versions and infrastructure patches.</li>
       </ul>
       <div class="tag-row">
         <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">AWS EKS</span>
@@ -581,15 +586,15 @@
         <span class="project-meta-item"><i class="fas fa-building"></i> DAO Entertainment</span>
         <span class="project-meta-item"><i class="fas fa-users"></i> Team: 3</span>
       </div>
-      <p class="project-desc">
+      <p class="project-desc" data-i18n="proj.fanvibe.desc">
         Enhanced evolution of DTOLink with richer third-party integrations, analytics, and a migration from plain Docker
         containers to AWS EKS/ECS and GCP Cloud Run.
       </p>
       <ul class="project-duties">
-        <li>Migrated old environment from Docker containers to AWS EKS and AWS ECS.</li>
-        <li>Set up environment on Google Cloud Run and Google Cloud Task.</li>
-        <li>Implemented Terraform setups to automate infrastructure provisioning.</li>
-        <li>Configured CI/CD for automated deployments across environments.</li>
+        <li data-i18n="proj.fanvibe.duty1">Migrated old environment from Docker containers to AWS EKS and AWS ECS.</li>
+        <li data-i18n="proj.fanvibe.duty2">Set up environment on Google Cloud Run and Google Cloud Task.</li>
+        <li data-i18n="proj.fanvibe.duty3">Implemented Terraform setups to automate infrastructure provisioning.</li>
+        <li data-i18n="proj.fanvibe.duty4">Configured CI/CD for automated deployments across environments.</li>
       </ul>
       <div class="tag-row">
         <span class="tag">MongoDB</span><span class="tag">Microservices</span><span class="tag">Docker</span>
@@ -612,15 +617,15 @@
         <span class="project-meta-item"><i class="fas fa-building"></i> Kikker Energie B.V.</span>
         <span class="project-meta-item"><i class="fas fa-users"></i> Team: 25</span>
       </div>
-      <p class="project-desc">
+      <p class="project-desc" data-i18n="proj.kikker.desc">
         Netherlands-based platform streamlining the selling and management of Electrics &amp; Gas services, including
         meter reading, automated billing, commission calculation, and payment processing.
       </p>
       <ul class="project-duties">
-        <li>Designed scalable technical solutions and led feature implementation decision-making.</li>
-        <li>Developed APIs and maintained database schema with performance optimizations.</li>
-        <li>Configured and maintained Kubernetes cluster and implemented Terraform IaC.</li>
-        <li>Set up CI/CD pipelines and managed cloud infrastructure for 99% uptime.</li>
+        <li data-i18n="proj.kikker.duty1">Designed scalable technical solutions and led feature implementation decision-making.</li>
+        <li data-i18n="proj.kikker.duty2">Developed APIs and maintained database schema with performance optimizations.</li>
+        <li data-i18n="proj.kikker.duty3">Configured and maintained Kubernetes cluster and implemented Terraform IaC.</li>
+        <li data-i18n="proj.kikker.duty4">Set up CI/CD pipelines and managed cloud infrastructure for 99% uptime.</li>
       </ul>
       <div class="tag-row">
         <span class="tag">.NET 6</span><span class="tag">.NET Core 3.1</span><span class="tag">MySQL</span>
@@ -645,15 +650,15 @@
         <span class="project-meta-item"><i class="fas fa-building"></i> DAO Entertainment</span>
         <span class="project-meta-item"><i class="fas fa-users"></i> Team: 3</span>
       </div>
-      <p class="project-desc">
+      <p class="project-desc" data-i18n="proj.dto.desc">
         Platform for artists and creators to craft music release and bio pages with real-time analytics.
         Integrates with Spotify, Apple Music, Deezer, and Songstats for rich audience insights.
       </p>
       <ul class="project-duties">
-        <li>Designed system architecture supporting business requirements and user needs.</li>
-        <li>Developed APIs for web portals and integrated third-party music service APIs.</li>
-        <li>Set up environment for service deployment and CI/CD for automated deploys.</li>
-        <li>Reviewed colleagues' code to maintain coding standards.</li>
+        <li data-i18n="proj.dto.duty1">Designed system architecture supporting business requirements and user needs.</li>
+        <li data-i18n="proj.dto.duty2">Developed APIs for web portals and integrated third-party music service APIs.</li>
+        <li data-i18n="proj.dto.duty3">Set up environment for service deployment and CI/CD for automated deploys.</li>
+        <li data-i18n="proj.dto.duty4">Reviewed colleagues' code to maintain coding standards.</li>
       </ul>
       <div class="tag-row">
         <span class="tag">Node.js</span><span class="tag">Strapi</span><span class="tag">MongoDB</span>
@@ -765,7 +770,7 @@
   </div><!-- /.layout -->
 
   <footer class="site-footer">
-    <p>© <span class="footer-year">2026</span> <span data-i18n="footer.copy">Huynh Tan Thinh. All rights reserved.</span></p>
+    <p>© <span class="footer-year">2026</span> Huynh Tan Thinh. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>

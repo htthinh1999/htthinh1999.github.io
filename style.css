@@ -53,18 +53,39 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 100vh;
   background: var(--surface);
   border-right: 1px solid var(--border);
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   z-index: 200;
   transition: width var(--transition);
 }
 .sidebar-inner {
   width: var(--sidebar-width);
-  padding: 1.5rem 1rem 2rem;
+  padding: 1.5rem 1rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  min-height: 100vh;
+  height: 100%;
+  gap: 0;
+}
+/* Scrollable middle section — nav, contact, social */
+.sidebar-scroll {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1rem 0;
+}
+.sidebar-scroll::-webkit-scrollbar { width: 3px; }
+.sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+.sidebar-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+/* Pinned bottom — download CV + controls */
+.sidebar-footer {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
 }
 
 .main-content {
@@ -290,7 +311,6 @@ a.contact-row:hover { color: var(--accent); }
   font-size: 0.88rem;
   font-weight: 600;
   transition: background var(--transition), transform var(--transition);
-  margin-top: auto;
 }
 .download-cv-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
 .download-cv-btn i { font-size: 0.85rem; }
@@ -637,6 +657,8 @@ a.contact-card:hover { border-color: var(--accent); box-shadow: 0 0 0 3px var(--
     padding: 1rem 0.5rem;
     align-items: center;
   }
+  .sidebar-scroll { width: 100%; padding: 0.75rem 0; }
+  .sidebar-footer { width: 100%; align-items: center; }
   .sidebar-name, .sidebar-role, .open-badge,
   .contact-row span, .social-link span,
   .nav-link span, .download-cv-btn span {
@@ -678,7 +700,7 @@ a.contact-card:hover { border-color: var(--accent); box-shadow: 0 0 0 3px var(--
   }
   .sidebar-inner {
     width: var(--sidebar-width);
-    padding: 1.5rem 1rem 2rem;
+    padding: 1.5rem 1rem 1.25rem;
     align-items: unset;
   }
   /* Show all text again in open mobile drawer */
@@ -780,8 +802,6 @@ a:focus-visible, button:focus-visible {
 .sidebar-controls {
   display: flex;
   gap: 0.5rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border);
 }
 .control-btn {
   flex: 1;
@@ -816,6 +836,6 @@ a:focus-visible, button:focus-visible {
 
 /* Tablet: icon-only control buttons */
 @media (max-width: 1023px) {
-  .sidebar-controls { flex-direction: column; gap: 0.35rem; }
+  .sidebar-controls { flex-direction: column; gap: 0.35rem; width: 100%; }
   .control-label { display: none; }
 }
