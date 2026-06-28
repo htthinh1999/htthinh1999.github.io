@@ -18,23 +18,47 @@
   "@type": "Person",
   "name": "Huynh Tan Thinh",
   "jobTitle": "Software Engineer",
+  "description": "Software Engineer & Cloud Engineer with 5+ years experience in backend development, DevOps, and cloud-native infrastructure on GCP and AWS.",
   "url": "https://htthinh1999.github.io/",
   "image": "https://htthinh1999.github.io/profile-photo.jpeg",
   "email": "htthinh1999@gmail.com",
   "telephone": "+84977393641",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Nha Trang",
+    "addressCountry": "VN"
+  },
   "sameAs": [
     "https://linkedin.com/in/htthinh1999",
     "https://github.com/htthinh1999",
     "https://facebook.com/htthinh1999"
   ],
+  "knowsLanguage": ["en", "vi"],
+  "knowsAbout": ["DevOps", "Cloud Computing", "AWS", "GCP", "Kubernetes", "Docker", "Terraform", "CI/CD", "Backend Development", "Microservices", "Software Engineering"],
   "worksFor": {
     "@type": "Organization",
-    "name": "FPT Software"
+    "name": "FPT Software",
+    "url": "https://www.fpt-software.com"
   },
   "alumniOf": {
     "@type": "EducationalOrganization",
-    "name": "Telecommunication University"
-  }
+    "name": "Telecommunication University",
+    "address": { "@type": "PostalAddress", "addressLocality": "Nha Trang", "addressCountry": "VN" }
+  },
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Certified DevOps Generalist™ (DevOps-GEN™)",
+      "credentialCategory": "certificate",
+      "dateCreated": "2025"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Infodation Scrum Master",
+      "credentialCategory": "certificate",
+      "dateCreated": "2023"
+    }
+  ]
 }
 </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -53,12 +77,20 @@
       <img src="profile-photo.jpeg" alt="Huynh Tan Thinh" class="mobile-avatar">
       <div class="mobile-topbar-text">
         <span class="mobile-name">Huynh Tan Thinh</span>
-        <span class="mobile-role">Software Engineer</span>
+        <span class="mobile-role" data-i18n="mobile.role">Software Engineer</span>
       </div>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
-      <i class="fas fa-bars"></i>
-    </button>
+    <div class="topbar-actions">
+      <button class="topbar-icon-btn" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <button class="topbar-icon-btn" data-lang-toggle aria-label="Switch language" title="Switch language">
+        <span class="lang-label">VI</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
   </div>
 
   <!-- Drawer backdrop -->
@@ -74,8 +106,8 @@
         <img src="profile-photo.jpeg" alt="Huynh Tan Thinh" class="sidebar-photo">
       </div>
       <h1 class="sidebar-name">Huynh Tan Thinh</h1>
-      <p class="sidebar-role">Software Engineer</p>
-      <span class="open-badge"><i class="fas fa-circle"></i> Open to Work</span>
+      <p class="sidebar-role" data-i18n="sidebar.role">Software Engineer</p>
+      <span class="open-badge"><i class="fas fa-circle"></i> <span data-i18n="sidebar.openToWork">Open to Work</span></span>
     </div>
 
     <!-- Contact info -->
@@ -106,27 +138,37 @@
 
     <!-- Navigation -->
     <nav class="sidebar-nav" aria-label="Page sections">
-      <a href="#summary"    class="nav-link" data-section="summary"    title="Summary">    <i class="fas fa-user"></i>           <span>Summary</span></a>
-      <a href="#skills"     class="nav-link" data-section="skills"     title="Skills">     <i class="fas fa-code"></i>            <span>Skills</span></a>
-      <a href="#experience" class="nav-link" data-section="experience" title="Experience"> <i class="fas fa-briefcase"></i>       <span>Experience</span></a>
-      <a href="#projects"   class="nav-link" data-section="projects"   title="Projects">   <i class="fas fa-layer-group"></i>     <span>Projects</span></a>
-      <a href="#education"  class="nav-link" data-section="education"  title="Education">  <i class="fas fa-graduation-cap"></i>  <span>Education</span></a>
-      <a href="#contact"    class="nav-link" data-section="contact"    title="Contact">    <i class="fas fa-envelope"></i>        <span>Contact</span></a>
+      <a href="#summary"    class="nav-link" data-section="summary"    title="Summary">    <i class="fas fa-user"></i>           <span data-i18n="nav.summary">Summary</span></a>
+      <a href="#skills"     class="nav-link" data-section="skills"     title="Skills">     <i class="fas fa-code"></i>            <span data-i18n="nav.skills">Skills</span></a>
+      <a href="#experience" class="nav-link" data-section="experience" title="Experience"> <i class="fas fa-briefcase"></i>       <span data-i18n="nav.experience">Experience</span></a>
+      <a href="#projects"   class="nav-link" data-section="projects"   title="Projects">   <i class="fas fa-layer-group"></i>     <span data-i18n="nav.projects">Projects</span></a>
+      <a href="#education"  class="nav-link" data-section="education"  title="Education">  <i class="fas fa-graduation-cap"></i>  <span data-i18n="nav.education">Education</span></a>
+      <a href="#contact"    class="nav-link" data-section="contact"    title="Contact">    <i class="fas fa-envelope"></i>        <span data-i18n="nav.contact">Contact</span></a>
     </nav>
 
     <!-- Download CV -->
     <a href="SoftwareEngineer_HuynhTanThinh.pdf" class="download-cv-btn" download>
-      <i class="fas fa-download"></i><span>Download CV</span>
+      <i class="fas fa-download"></i><span data-i18n="sidebar.downloadCV">Download CV</span>
     </a>
+
+    <!-- Theme & Language controls -->
+    <div class="sidebar-controls">
+      <button class="control-btn" data-theme-toggle aria-label="Toggle theme">
+        <i class="fas fa-moon theme-icon"></i><span class="control-label">Theme</span>
+      </button>
+      <button class="control-btn" data-lang-toggle aria-label="Switch language">
+        <span class="lang-label">VI</span>
+      </button>
+    </div>
 
   </div>
 </aside>
 
   <!-- Main scrollable content -->
   <main class="main-content">
-    <section id="summary" class="section-card">
-  <h2 class="section-title">Summary</h2>
-  <p class="summary-intro">
+    <section id="summary" class="section-card" aria-label="Summary">
+  <h2 class="section-title" data-i18n="section.summary">Summary</h2>
+  <p class="summary-intro" data-i18n="summary.intro">
     More than 5 years of working experience in Software Engineering — designing, developing, and managing
     robust and scalable infrastructure. Proficient in a wide range of DevOps tools and cloud platforms.
     Experienced in both Google Cloud Platform (GCP) and Amazon Web Service (AWS) environments.
@@ -134,66 +176,66 @@
   </p>
   <div class="specialties-grid">
     <div class="specialty-item">
-      <i class="fas fa-server"></i>
+      <i class="fas fa-server" aria-hidden="true"></i>
       <div>
-        <strong>Infrastructure as Code</strong>
-        <p>Terraform, AWS CloudFormation, AWS CDK</p>
+        <strong data-i18n="specialty.iac">Infrastructure as Code</strong>
+        <p data-i18n="specialty.iac.desc">Terraform, AWS CloudFormation, AWS CDK</p>
       </div>
     </div>
     <div class="specialty-item">
-      <i class="fas fa-cubes"></i>
+      <i class="fas fa-cubes" aria-hidden="true"></i>
       <div>
-        <strong>Containerization & Orchestration</strong>
-        <p>Docker, Kubernetes, Helm</p>
+        <strong data-i18n="specialty.container">Containerization &amp; Orchestration</strong>
+        <p data-i18n="specialty.container.desc">Docker, Kubernetes, Helm</p>
       </div>
     </div>
     <div class="specialty-item">
-      <i class="fas fa-infinity"></i>
+      <i class="fas fa-infinity" aria-hidden="true"></i>
       <div>
-        <strong>CI/CD Pipelines</strong>
-        <p>GitHub Actions, Buildkite, FluxCD, ArgoCD</p>
+        <strong data-i18n="specialty.cicd">CI/CD Pipelines</strong>
+        <p data-i18n="specialty.cicd.desc">GitHub Actions, Buildkite, FluxCD, ArgoCD</p>
       </div>
     </div>
     <div class="specialty-item">
-      <i class="fas fa-cloud"></i>
+      <i class="fas fa-cloud" aria-hidden="true"></i>
       <div>
-        <strong>Cloud Platforms</strong>
-        <p>GCP (GKE, Cloud Run, Pub/Sub) · AWS (EKS, ECS, Lambda)</p>
+        <strong data-i18n="specialty.cloud">Cloud Platforms</strong>
+        <p data-i18n="specialty.cloud.desc">GCP (GKE, Cloud Run, Pub/Sub) · AWS (EKS, ECS, Lambda)</p>
       </div>
     </div>
     <div class="specialty-item">
-      <i class="fas fa-code"></i>
+      <i class="fas fa-code" aria-hidden="true"></i>
       <div>
-        <strong>Backend Development</strong>
-        <p>C#, .NET 6/8, Node.js, Golang, Python, Microservices</p>
+        <strong data-i18n="specialty.backend">Backend Development</strong>
+        <p data-i18n="specialty.backend.desc">C#, .NET 6/8, Node.js, Golang, Python, Microservices</p>
       </div>
     </div>
     <div class="specialty-item">
-      <i class="fas fa-database"></i>
+      <i class="fas fa-database" aria-hidden="true"></i>
       <div>
-        <strong>Database Management</strong>
-        <p>MySQL, MongoDB, AWS DynamoDB</p>
+        <strong data-i18n="specialty.database">Database Management</strong>
+        <p data-i18n="specialty.database.desc">MySQL, MongoDB, AWS DynamoDB</p>
       </div>
     </div>
     <div class="specialty-item">
-      <i class="fas fa-users"></i>
+      <i class="fas fa-users" aria-hidden="true"></i>
       <div>
-        <strong>Agile Methodologies</strong>
-        <p>Cross-functional team collaboration, Scrum</p>
+        <strong data-i18n="specialty.agile">Agile Methodologies</strong>
+        <p data-i18n="specialty.agile.desc">Cross-functional team collaboration, Scrum</p>
       </div>
     </div>
     <div class="specialty-item">
-      <i class="fas fa-search"></i>
+      <i class="fas fa-search" aria-hidden="true"></i>
       <div>
-        <strong>Problem-Solving</strong>
-        <p>Root cause analysis, analytical troubleshooting</p>
+        <strong data-i18n="specialty.problem">Problem-Solving</strong>
+        <p data-i18n="specialty.problem.desc">Root cause analysis, analytical troubleshooting</p>
       </div>
     </div>
   </div>
 </section>
 
-    <section id="skills" class="section-card">
-  <h2 class="section-title">Technical Skills</h2>
+    <section id="skills" class="section-card" aria-label="Technical Skills">
+  <h2 class="section-title" data-i18n="section.skills">Technical Skills</h2>
   <div class="skills-grid">
 
     <div class="skill-card">
@@ -301,8 +343,8 @@
   </div>
 </section>
 
-    <section id="experience" class="section-card">
-  <h2 class="section-title">Experience</h2>
+    <section id="experience" class="section-card" aria-label="Experience">
+  <h2 class="section-title" data-i18n="section.experience">Experience</h2>
   <div class="timeline">
 
     <!-- FPT Software -->
@@ -422,8 +464,8 @@
   </div>
 </section>
 
-    <section id="projects" class="section-card">
-  <h2 class="section-title">Projects</h2>
+    <section id="projects" class="section-card" aria-label="Projects">
+  <h2 class="section-title" data-i18n="section.projects">Projects</h2>
   <div class="projects-grid">
 
     <!-- LFS – Realtime Payments -->
@@ -630,8 +672,8 @@
   </div>
 </section>
 
-    <section id="education" class="section-card">
-  <h2 class="section-title">Education & Certifications</h2>
+    <section id="education" class="section-card" aria-label="Education and Certifications">
+  <h2 class="section-title" data-i18n="section.education">Education &amp; Certifications</h2>
 
   <!-- Education -->
   <div class="edu-block">
@@ -644,7 +686,7 @@
   </div>
 
   <!-- Certifications -->
-  <h3 class="subsection-title">Certifications</h3>
+  <h3 class="subsection-title" data-i18n="edu.certs">Certifications</h3>
   <div class="cert-list">
     <div class="cert-item">
       <div class="cert-icon"><i class="fas fa-certificate"></i></div>
@@ -663,7 +705,7 @@
   </div>
 
   <!-- Honors -->
-  <h3 class="subsection-title">Honors & Awards</h3>
+  <h3 class="subsection-title" data-i18n="edu.honors">Honors &amp; Awards</h3>
   <div class="cert-list">
     <div class="cert-item">
       <div class="cert-icon cert-icon--gold"><i class="fas fa-trophy"></i></div>
@@ -676,35 +718,35 @@
 
 </section>
 
-    <section id="contact" class="section-card">
-  <h2 class="section-title">Contact</h2>
-  <div class="contact-grid">
+    <section id="contact" class="section-card" aria-label="Contact">
+  <h2 class="section-title" data-i18n="section.contact">Contact</h2>
+  <address class="contact-grid">
 
     <a href="mailto:htthinh1999@gmail.com" class="contact-card">
-      <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+      <div class="contact-card-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
       <div class="contact-card-body">
-        <span class="contact-card-label">Email</span>
+        <span class="contact-card-label" data-i18n="contact.email">Email</span>
         <span class="contact-card-value">htthinh1999@gmail.com</span>
       </div>
     </a>
 
     <a href="tel:+84977393641" class="contact-card">
-      <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
+      <div class="contact-card-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
       <div class="contact-card-body">
-        <span class="contact-card-label">Phone</span>
+        <span class="contact-card-label" data-i18n="contact.phone">Phone</span>
         <span class="contact-card-value">(+84) 977 393 641</span>
       </div>
     </a>
 
     <div class="contact-card contact-card--no-link">
-      <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+      <div class="contact-card-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
       <div class="contact-card-body">
-        <span class="contact-card-label">Location</span>
-        <span class="contact-card-value">Nha Trang, Vietnam</span>
+        <span class="contact-card-label" data-i18n="contact.location">Location</span>
+        <span class="contact-card-value" data-i18n="contact.location.value">Nha Trang, Vietnam</span>
       </div>
     </div>
 
-  </div>
+  </address>
 
   <div class="social-buttons">
     <a href="https://linkedin.com/in/htthinh1999" target="_blank" rel="noopener noreferrer" class="social-btn social-btn--linkedin">
@@ -723,7 +765,7 @@
   </div><!-- /.layout -->
 
   <footer class="site-footer">
-    <p>© <span class="footer-year">2026</span> Huynh Tan Thinh. All rights reserved.</p>
+    <p>© <span class="footer-year">2026</span> <span data-i18n="footer.copy">Huynh Tan Thinh. All rights reserved.</span></p>
   </footer>
 
   <script src="script.js"></script>

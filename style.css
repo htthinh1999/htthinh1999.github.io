@@ -743,3 +743,79 @@ a:focus-visible, button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .section-card { animation: none; }
 }
+
+/* ── Dark theme ──────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+  --tag-bg: #1e3a5f;
+  --tag-text: #93c5fd;
+  --timeline-line: #334155;
+  --accent-light: #172554;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.35);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.45);
+}
+[data-theme="dark"] .open-badge { background: #052e16; border-color: #166534; color: #4ade80; }
+[data-theme="dark"] .skill-card         { background: #1e293b; }
+[data-theme="dark"] .skill-card-icon         { background: #172554; color: #60a5fa; }
+[data-theme="dark"] .skill-card-icon--green  { background: #052e16; color: #4ade80; }
+[data-theme="dark"] .skill-card-icon--orange { background: #431407; color: #fb923c; }
+[data-theme="dark"] .skill-card-icon--purple { background: #2e1065; color: #c084fc; }
+[data-theme="dark"] .skill-card-icon--cyan   { background: #083344; color: #22d3ee; }
+[data-theme="dark"] .skill-card-icon--pink   { background: #4a044e; color: #e879f9; }
+[data-theme="dark"] .skill-card-icon--amber  { background: #1c1917; color: #fbbf24; }
+[data-theme="dark"] .skill-card-icon--rose   { background: #4c0519; color: #fb7185; }
+[data-theme="dark"] .skill-card-icon--slate  { background: #1e293b; color: #94a3b8; }
+[data-theme="dark"] .cert-icon--gold { background: #1c1917; color: #fbbf24; }
+[data-theme="dark"] .gpa-badge, [data-theme="dark"] .project-role-badge { background: #172554; color: #93c5fd; }
+[data-theme="dark"] .specialty-item, [data-theme="dark"] .edu-block,
+[data-theme="dark"] .project-card, [data-theme="dark"] .cert-item,
+[data-theme="dark"] .contact-card { background: #1e293b; }
+[data-theme="dark"] .contact-card-icon { background: #172554; }
+
+/* ── Controls (theme + language toggles) ─────────────────── */
+.sidebar-controls {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+.control-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.4rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.control-btn:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+.lang-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; }
+.control-label { font-size: 0.72rem; }
+
+/* Topbar action buttons */
+.topbar-actions { display: flex; align-items: center; gap: 0.1rem; }
+.topbar-icon-btn {
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  transition: background var(--transition), color var(--transition);
+}
+.topbar-icon-btn:hover { background: var(--bg); color: var(--accent); }
+
+/* Tablet: icon-only control buttons */
+@media (max-width: 1023px) {
+  .sidebar-controls { flex-direction: column; gap: 0.35rem; }
+  .control-label { display: none; }
+}
