@@ -680,3 +680,8 @@ a:focus-visible, button:focus-visible {
 
 /* ── Selection color ─────────────────────────────────────── */
 ::selection { background: var(--accent-light); color: var(--accent-dark); }
+
+/* ── Reduced motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .section-card { animation: none; }
+}
