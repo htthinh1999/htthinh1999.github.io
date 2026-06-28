@@ -116,6 +116,7 @@
       /* Contact */
       'contact.email': 'Email', 'contact.phone': 'Phone', 'contact.location': 'Location',
       'contact.location.value': 'Nha Trang, Vietnam',
+      'proj.visit': 'Visit Website',
     },
 
     vi: {
@@ -227,6 +228,7 @@
       /* Contact */
       'contact.email': 'Email', 'contact.phone': 'Điện thoại', 'contact.location': 'Địa chỉ',
       'contact.location.value': 'Nha Trang, Việt Nam',
+      'proj.visit': 'Truy cập trang web',
     }
   };
 
