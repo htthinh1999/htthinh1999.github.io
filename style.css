@@ -263,3 +263,45 @@ a.contact-row:hover { color: var(--accent); }
 }
 .download-cv-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
 .download-cv-btn i { font-size: 0.85rem; }
+
+/* ── Summary ────────────────────────────────────────────── */
+.summary-intro {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+.specialty-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.specialty-item i {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+}
+.specialty-item strong {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+.specialty-item p {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
