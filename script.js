@@ -1,69 +1,61 @@
-// script.js
+(function () {
+  'use strict';
 
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+  /* ── Footer year ─────────────────────────────────────── */
+  const yearEl = document.querySelector('.footer-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 50, // Adjust offset if needed
-                behavior: 'smooth'
-            });
-        }
+  /* ── Smooth scroll for nav links ─────────────────────── */
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      const offset = window.innerWidth < 768 ? 64 : 0;
+      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+      // Close mobile drawer on nav click
+      closeSidebar();
     });
-});
+  });
 
-// Calculate years of experience
-function calculateExperience() {
-    const startDate = new Date('2021-01-01'); // Career start date
-    const today = new Date();
-    
-    let years = today.getFullYear() - startDate.getFullYear();
-    const monthDiff = today.getMonth() - startDate.getMonth();
-    
-    // Adjust years if we haven't reached the anniversary month
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < startDate.getDate())) {
-        years--;
-    }
-    
-    // Update the experience display
-    const experienceElement = document.querySelector('.stat-value');
-    if (experienceElement) {
-        experienceElement.textContent = `${years}+`;
-    }
-}
+  /* ── Scroll-spy via IntersectionObserver ─────────────── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link[data-section]');
 
-// Update the footer year dynamically
-function updateFooterYear() {
-    const currentYear = new Date().getFullYear();
-    const footerYearElement = document.querySelector('.footer-year'); // Assuming you have a span with this class in your footer
-    if (footerYearElement) {
-        footerYearElement.textContent = currentYear;
-    }
-}
-
-// Call the function when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    calculateExperience();
-    updateFooterYear(); // Call the function to update the year
-    
-    // Initialize skill levels with dots
-    document.querySelectorAll('.skill-level[data-level]').forEach(skill => {
-        const level = parseInt(skill.dataset.level);
-        const total = parseInt(skill.dataset.total);
-        const dotsContainer = skill.querySelector('.level-dots');
-        
-        // Clear existing dots
-        dotsContainer.innerHTML = '';
-        
-        // Create all dots
-        for (let i = 0; i < total; i++) {
-            const dot = document.createElement('span');
-            dot.className = `level-dot ${i < level ? 'filled' : 'empty'}`;
-            dotsContainer.appendChild(dot);
-        }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
     });
-});
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+
+  /* ── Mobile drawer ───────────────────────────────────── */
+  const sidebar      = document.getElementById('sidebar');
+  const hamburger    = document.getElementById('hamburger');
+  const backdrop     = document.getElementById('drawerBackdrop');
+
+  function openSidebar() {
+    sidebar.classList.add('sidebar--open');
+    backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('sidebar--open');
+    backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger) hamburger.addEventListener('click', openSidebar);
+  if (backdrop)  backdrop.addEventListener('click', closeSidebar);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeSidebar();
+  });
+})();
