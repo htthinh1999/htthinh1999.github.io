@@ -69,8 +69,8 @@
       'exp.dao.duty5': 'Managed verification and deployment processes, ensuring reliable system updates and releases.',
 
       /* Projects — LFS */
-      'proj.lfs.desc': 'Spearheaded the development and integration of third-party payment processing using Westpac QuickStream, enhancing the platform\'s real-time financial transaction handling.',
-      'proj.lfs.duty1': 'Integrated Westpac QuickStream 3rd-party payment API.',
+      'proj.lfs.desc': 'Spearheaded the development and integration of third-party payment processing using Westpac QuickStream and VisionNext, enhancing the platform\'s real-time financial transaction handling.',
+      'proj.lfs.duty1': 'Integrated Westpac QuickStream and VisionNext 3rd-party payment APIs.',
       'proj.lfs.duty2': 'Implemented AWS CloudFormation setups to automate infrastructure provisioning.',
       'proj.lfs.duty3': 'Set up CI/CD pipelines via Buildkite for automated deployments.',
       'proj.lfs.duty4': 'Managed and monitored AWS infrastructure to ensure 99% uptime.',
@@ -180,8 +180,8 @@
       'exp.dao.duty5': 'Quản lý quy trình xác minh và triển khai, đảm bảo cập nhật hệ thống đáng tin cậy.',
 
       /* Projects — LFS */
-      'proj.lfs.desc': 'Dẫn dắt phát triển và tích hợp xử lý thanh toán bên thứ ba bằng Westpac QuickStream, nâng cao khả năng xử lý giao dịch tài chính theo thời gian thực của nền tảng.',
-      'proj.lfs.duty1': 'Tích hợp API thanh toán Westpac QuickStream từ bên thứ ba.',
+      'proj.lfs.desc': 'Dẫn dắt phát triển và tích hợp xử lý thanh toán bên thứ ba bằng Westpac QuickStream và VisionNext, nâng cao khả năng xử lý giao dịch tài chính theo thời gian thực của nền tảng.',
+      'proj.lfs.duty1': 'Tích hợp API thanh toán Westpac QuickStream và VisionNext từ bên thứ ba.',
       'proj.lfs.duty2': 'Triển khai AWS CloudFormation để tự động hóa cung cấp hạ tầng.',
       'proj.lfs.duty3': 'Thiết lập pipeline CI/CD qua Buildkite cho triển khai tự động.',
       'proj.lfs.duty4': 'Quản lý và giám sát hạ tầng AWS để đảm bảo uptime 99%.',
