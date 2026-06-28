@@ -569,3 +569,83 @@ a.contact-card:hover { border-color: var(--accent); box-shadow: 0 0 0 3px var(--
 .social-btn--linkedin { background: #0a66c2; }
 .social-btn--github   { background: #24292e; }
 .social-btn--facebook { background: #1877f2; }
+
+/* ── Responsive: tablet (768px – 1023px) ────────────────── */
+@media (max-width: 1023px) {
+  .sidebar { width: var(--sidebar-narrow); }
+  .sidebar-inner {
+    width: var(--sidebar-narrow);
+    padding: 1rem 0.5rem;
+    align-items: center;
+  }
+  .sidebar-name, .sidebar-role, .open-badge,
+  .contact-row span, .social-link span,
+  .nav-link span, .download-cv-btn span {
+    display: none;
+  }
+  .sidebar-profile { padding-bottom: 0.75rem; }
+  .sidebar-photo-wrap { width: 38px; height: 38px; }
+  .contact-row, .social-link {
+    justify-content: center;
+    padding: 0.4rem 0;
+  }
+  .contact-row i, .social-link i { width: auto; }
+  .nav-link { justify-content: center; padding: 0.6rem 0; }
+  .nav-link i { width: auto; font-size: 1rem; }
+  .download-cv-btn { padding: 0.6rem 0; justify-content: center; }
+  .download-cv-btn i { font-size: 1rem; }
+
+  .main-content { margin-left: var(--sidebar-narrow); padding: 1.5rem; }
+  .site-footer { margin-left: var(--sidebar-narrow); }
+
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .specialties-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Responsive: mobile (<768px) ────────────────────────── */
+@media (max-width: 767px) {
+  .mobile-topbar { display: flex; }
+
+  .sidebar {
+    width: var(--sidebar-width);
+    top: 56px;
+    height: calc(100vh - 56px);
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: none;
+  }
+  .sidebar.sidebar--open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-md);
+  }
+  .sidebar-inner {
+    width: var(--sidebar-width);
+    padding: 1.5rem 1rem 2rem;
+    align-items: unset;
+  }
+  /* Show all text again in open mobile drawer */
+  .sidebar-name, .sidebar-role, .open-badge,
+  .contact-row span, .social-link span,
+  .nav-link span, .download-cv-btn span {
+    display: unset;
+  }
+  .sidebar-photo-wrap { width: 88px; height: 88px; }
+  .sidebar-profile { align-items: center; }
+
+  .drawer-backdrop { display: block; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+  .drawer-backdrop.active { opacity: 1; pointer-events: auto; }
+
+  .main-content { margin-left: 0; padding: 1rem; padding-top: calc(56px + 1rem); }
+  .site-footer { margin-left: 0; }
+
+  .projects-grid { grid-template-columns: 1fr; }
+  .specialties-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .role-header { flex-direction: column; gap: 0.1rem; }
+}
+
+/* ── Responsive: large desktop (≥1280px) ────────────────── */
+@media (min-width: 1280px) {
+  .main-content { padding: 2.5rem 3rem; }
+}
