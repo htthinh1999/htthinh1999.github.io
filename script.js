@@ -117,6 +117,12 @@
       'contact.email': 'Email', 'contact.phone': 'Phone', 'contact.location': 'Location',
       'contact.location.value': 'Nha Trang, Vietnam',
       'proj.visit': 'Visit Website',
+      /* Roles */
+      'role.cloud':       'Cloud Engineer',
+      'role.software':    'Software Engineer',
+      'role.software.vn': 'Software Engineer — Vietnam',
+      'role.support.nl':  'Technical Support Engineer — onsite Netherlands',
+      'role.devops':      'DevOps Engineer',
       /* Education */
       'edu.org': 'Telecommunication University',
       'edu.major': 'Major: Software Engineering',
@@ -244,6 +250,12 @@
       'contact.email': 'Email', 'contact.phone': 'Điện thoại', 'contact.location': 'Địa chỉ',
       'contact.location.value': 'Nha Trang, Việt Nam',
       'proj.visit': 'Truy cập trang web',
+      /* Roles */
+      'role.cloud':       'Kỹ sư đám mây (Cloud Engineer)',
+      'role.software':    'Kỹ sư phần mềm (Software Engineer)',
+      'role.software.vn': 'Kỹ sư phần mềm — Việt Nam (Software Engineer)',
+      'role.support.nl':  'Kỹ sư hỗ trợ kỹ thuật — onsite Hà Lan (Technical Support Engineer)',
+      'role.devops':      'Kỹ sư DevOps (DevOps Engineer)',
       /* Education */
       'edu.org': 'Trường Đại học Thông tin liên lạc',
       'edu.major': 'Chuyên ngành: Kỹ thuật phần mềm',
