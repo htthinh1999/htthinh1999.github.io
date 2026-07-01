@@ -306,7 +306,7 @@
       title:       'Huỳnh Tấn Thịnh — Kỹ sư phần mềm',
       description: 'Kỹ sư phần mềm & Kỹ sư đám mây với hơn 5 năm kinh nghiệm về phát triển backend, DevOps và hạ tầng đám mây trên GCP và AWS.',
       locale:      'vi_VN',
-      url:         'https://info.keycodemon.org/?lang=vi',
+      url:         'https://info.keycodemon.org/vi/',
       imageAlt:    'Huỳnh Tấn Thịnh — Kỹ sư phần mềm',
     },
   };
