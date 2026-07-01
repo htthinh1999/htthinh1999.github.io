@@ -12,6 +12,7 @@ COPY profile-photo.png /usr/share/nginx/html/
 COPY SoftwareEngineer_HuynhTanThinh.pdf /usr/share/nginx/html/
 COPY site.webmanifest /usr/share/nginx/html/
 COPY favicon.svg /usr/share/nginx/html/
+COPY vi/ /usr/share/nginx/html/vi/
 # Expose port 80
 EXPOSE 80
 
