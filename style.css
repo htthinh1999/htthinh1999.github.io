@@ -552,6 +552,8 @@ a.contact-row:hover { color: var(--accent); }
   margin-bottom: 1.25rem;
 }
 .edu-org { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+.edu-org a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--border); transition: color var(--transition), border-color var(--transition); }
+.edu-org a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .edu-detail-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.25rem; }
 .edu-detail { font-size: 0.82rem; color: var(--text-secondary); }
 .edu-period { font-size: 0.78rem; color: var(--text-secondary); }

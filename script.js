@@ -117,6 +117,21 @@
       'contact.email': 'Email', 'contact.phone': 'Phone', 'contact.location': 'Location',
       'contact.location.value': 'Nha Trang, Vietnam',
       'proj.visit': 'Visit Website',
+      /* Education */
+      'edu.org': 'Telecommunication University',
+      'edu.major': 'Major: Software Engineering',
+      /* Periods */
+      'period.fpt':      'Aug 2025 – Now',
+      'period.info':     'May 2021 – Jun 2025',
+      'period.info.nl':  'May 2024 – Aug 2024 · 3 months',
+      'period.dao':      'Nov 2021 – Now',
+      'period.lfs':      'Aug 2025 – Now',
+      'period.pdm':      'Dec 2025 – Now',
+      'period.t24':      'Aug 2025 – Nov 2025',
+      'period.fanvibe':  'Nov 2022 – Now',
+      'period.kikker':   'May 2021 – Jun 2025',
+      'period.dto':      'Nov 2020 – Nov 2022',
+      'period.edu':      'Oct 2017 – May 2021',
     },
 
     vi: {
@@ -229,6 +244,21 @@
       'contact.email': 'Email', 'contact.phone': 'Điện thoại', 'contact.location': 'Địa chỉ',
       'contact.location.value': 'Nha Trang, Việt Nam',
       'proj.visit': 'Truy cập trang web',
+      /* Education */
+      'edu.org': 'Trường Đại học Thông tin liên lạc',
+      'edu.major': 'Chuyên ngành: Kỹ thuật phần mềm',
+      /* Periods */
+      'period.fpt':      'Tháng 8, 2025 – Nay',
+      'period.info':     'Tháng 5, 2021 – Tháng 6, 2025',
+      'period.info.nl':  'Tháng 5, 2024 – Tháng 8, 2024 · 3 tháng',
+      'period.dao':      'Tháng 11, 2021 – Nay',
+      'period.lfs':      'Tháng 8, 2025 – Nay',
+      'period.pdm':      'Tháng 12, 2025 – Nay',
+      'period.t24':      'Tháng 8, 2025 – Tháng 11, 2025',
+      'period.fanvibe':  'Tháng 11, 2022 – Nay',
+      'period.kikker':   'Tháng 5, 2021 – Tháng 6, 2025',
+      'period.dto':      'Tháng 11, 2020 – Tháng 11, 2022',
+      'period.edu':      'Tháng 10, 2017 – Tháng 5, 2021',
     }
   };
 
