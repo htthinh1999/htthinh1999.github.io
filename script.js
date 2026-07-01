@@ -299,14 +299,14 @@
       title:       'Huynh Tan Thinh — Software Engineer',
       description: 'Software Engineer & Cloud Engineer with 5+ years experience in backend development, DevOps, and cloud-native infrastructure on GCP and AWS.',
       locale:      'en_US',
-      url:         'https://htthinh1999.github.io/',
+      url:         'https://info.keycodemon.org/',
       imageAlt:    'Huynh Tan Thinh — Software Engineer',
     },
     vi: {
       title:       'Huỳnh Tấn Thịnh — Kỹ sư phần mềm',
       description: 'Kỹ sư phần mềm & Kỹ sư đám mây với hơn 5 năm kinh nghiệm về phát triển backend, DevOps và hạ tầng đám mây trên GCP và AWS.',
       locale:      'vi_VN',
-      url:         'https://htthinh1999.github.io/?lang=vi',
+      url:         'https://info.keycodemon.org/?lang=vi',
       imageAlt:    'Huỳnh Tấn Thịnh — Kỹ sư phần mềm',
     },
   };
