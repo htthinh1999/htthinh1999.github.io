@@ -281,8 +281,41 @@
     }
   });
 
+  /* ── OG / Twitter meta update (for JS-rendering scrapers + browser title) ── */
+  const OG_META = {
+    en: {
+      title:       'Huynh Tan Thinh — Software Engineer',
+      description: 'Software Engineer & Cloud Engineer with 5+ years experience in backend development, DevOps, and cloud-native infrastructure on GCP and AWS.',
+      locale:      'en_US',
+      url:         'https://htthinh1999.github.io/',
+      imageAlt:    'Huynh Tan Thinh — Software Engineer',
+    },
+    vi: {
+      title:       'Huỳnh Tấn Thịnh — Kỹ sư phần mềm',
+      description: 'Kỹ sư phần mềm & Kỹ sư đám mây với hơn 5 năm kinh nghiệm về phát triển backend, DevOps và hạ tầng đám mây trên GCP và AWS.',
+      locale:      'vi_VN',
+      url:         'https://htthinh1999.github.io/?lang=vi',
+      imageAlt:    'Huỳnh Tấn Thịnh — Kỹ sư phần mềm',
+    },
+  };
+
+  function updateOGMeta(lang) {
+    const t = OG_META[lang] || OG_META.en;
+    const set = (sel, val) => document.querySelector(sel)?.setAttribute('content', val);
+    document.title = t.title;
+    set('meta[property="og:title"]',       t.title);
+    set('meta[property="og:description"]', t.description);
+    set('meta[property="og:locale"]',      t.locale);
+    set('meta[property="og:url"]',         t.url);
+    set('meta[property="og:image:alt"]',   t.imageAlt);
+    set('meta[name="twitter:title"]',      t.title);
+    set('meta[name="twitter:description"]',t.description);
+    set('meta[name="twitter:image:alt"]',  t.imageAlt);
+    set('meta[name="description"]',        t.description);
+  }
+
   /* ── Language toggle ─────────────────────────────────── */
-  function applyLang(lang) {
+  function applyLang(lang, pushUrl = true) {
     document.documentElement.lang = lang === 'vi' ? 'vi' : 'en';
     localStorage.setItem('lang', lang);
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -293,9 +326,16 @@
     document.querySelectorAll('.lang-label').forEach(el => {
       el.textContent = lang === 'en' ? 'VI' : 'EN';
     });
+    updateOGMeta(lang);
+    if (pushUrl) {
+      const url = lang === 'vi' ? '?lang=vi' : location.pathname;
+      history.replaceState(null, '', url);
+    }
   }
 
-  applyLang(localStorage.getItem('lang') || 'en');
+  /* URL param takes priority over localStorage */
+  const _urlLang = new URLSearchParams(location.search).get('lang');
+  applyLang((_urlLang === 'vi' || _urlLang === 'en') ? _urlLang : (localStorage.getItem('lang') || 'en'), false);
 
   document.addEventListener('click', e => {
     if (e.target.closest('[data-lang-toggle]')) {
