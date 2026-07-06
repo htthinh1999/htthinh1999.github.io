@@ -8,306 +8,125 @@
   /* ── Translations ────────────────────────────────────── */
   const translations = {
     en: {
-      /* Sidebar / nav */
-      'sidebar.name': 'Huynh Tan Thinh',
-      'mobile.name': 'Huynh Tan Thinh',
-      'sidebar.role': 'Software Engineer',
-      'sidebar.openToWork': 'Open to Work',
-      'sidebar.downloadCV': 'Download CV',
-      'mobile.role': 'Software Engineer',
-      'nav.summary': 'Summary', 'nav.skills': 'Skills', 'nav.experience': 'Experience',
-      'nav.projects': 'Projects', 'nav.education': 'Education', 'nav.contact': 'Contact',
-
-      /* Section titles */
-      'section.summary': 'Summary', 'section.skills': 'Technical Skills',
-      'section.experience': 'Experience', 'section.projects': 'Projects',
-      'section.education': 'Education & Certifications', 'section.contact': 'Contact',
-
-      /* Summary */
-      'summary.intro': 'More than 5 years of working experience in Software Engineering — designing, developing, and managing robust and scalable infrastructure. Proficient in a wide range of DevOps tools and cloud platforms. Experienced in both Google Cloud Platform (GCP) and Amazon Web Service (AWS) environments. Proficient in English.',
-      'specialty.iac': 'Infrastructure as Code',
-      'specialty.iac.desc': 'Terraform, AWS CloudFormation, AWS CDK',
-      'specialty.container': 'Containerization & Orchestration',
-      'specialty.container.desc': 'Docker, Kubernetes, Helm',
-      'specialty.cicd': 'CI/CD Pipelines',
-      'specialty.cicd.desc': 'GitHub Actions, Buildkite, FluxCD, ArgoCD',
-      'specialty.cloud': 'Cloud Platforms',
-      'specialty.cloud.desc': 'GCP (GKE, Cloud Run, Pub/Sub) · AWS (EKS, ECS, Lambda)',
-      'specialty.backend': 'Backend Development',
-      'specialty.backend.desc': 'C#, .NET 6/8, Node.js, Golang, Python, Microservices',
-      'specialty.database': 'Database Management',
-      'specialty.database.desc': 'MySQL, MongoDB, AWS DynamoDB',
-      'specialty.agile': 'Agile Methodologies',
-      'specialty.agile.desc': 'Cross-functional team collaboration, Scrum',
-      'specialty.problem': 'Problem-Solving',
-      'specialty.problem.desc': 'Root cause analysis, analytical troubleshooting',
-
-      /* Experience — FPT Software */
-      'exp.fpt.duty1': 'Developed APIs for frontend-backend communication, ensuring security and efficiency.',
-      'exp.fpt.duty2': 'Set up CI/CD pipelines for automatic code integrations and efficient deployments.',
-      'exp.fpt.duty3': 'Managed and monitored cloud infrastructure to ensure 99% uptime.',
-      'exp.fpt.duty4': 'Implemented IaC setups using CloudFormation and AWS CDK to automate infrastructure provisioning.',
-      'exp.fpt.duty5': 'Designed AWS Step Functions state machines and AWS Glue jobs for complex ETL workflows.',
-
-      /* Experience — Infodation Vietnam */
-      'exp.info.duty1': 'Designed scalable, maintainable technical solutions and led technical decision-making for feature implementation.',
-      'exp.info.duty2': 'Developed APIs for frontend-backend communication, ensuring security and efficiency.',
-      'exp.info.duty3': 'Configured and maintained Kubernetes clusters to optimize application scaling and resilience.',
-      'exp.info.duty4': 'Implemented Terraform setups to automate and standardize infrastructure provisioning.',
-      'exp.info.duty5': 'Set up CI/CD pipelines and managed cloud infrastructure to ensure 99% uptime.',
-
-      /* Experience — Infodation Netherlands */
-      'exp.info.nl.duty1': 'Facilitated communication and collaboration between Vietnam and Netherlands teams.',
-      'exp.info.nl.duty2': 'Investigated and resolved technical issues, identifying root causes and implementing solutions.',
-      'exp.info.nl.duty3': 'Provided guidance and support to clients throughout the issue resolution process.',
-
-      /* Experience — DAO Entertainment */
-      'exp.dao.duty1': 'Collaborated with developers to design system architectures supporting business requirements.',
-      'exp.dao.duty2': 'Developed APIs for web portals and integrated third-party APIs to extend service offerings.',
-      'exp.dao.duty3': 'Configured and maintained Kubernetes clusters for optimized deployment, scaling, and management.',
-      'exp.dao.duty4': 'Implemented Terraform setups to automate and standardize infrastructure provisioning.',
-      'exp.dao.duty5': 'Managed verification and deployment processes, ensuring reliable system updates and releases.',
-
-      /* Projects — LFS */
-      'proj.lfs.desc': 'Spearheaded the development and integration of third-party payment processing using Westpac QuickStream and VisionNext, enhancing the platform\'s real-time financial transaction handling.',
-      'proj.lfs.duty1': 'Integrated Westpac QuickStream and VisionNext 3rd-party payment APIs.',
-      'proj.lfs.duty2': 'Implemented AWS CloudFormation setups to automate infrastructure provisioning.',
-      'proj.lfs.duty3': 'Set up CI/CD pipelines via Buildkite for automated deployments.',
-      'proj.lfs.duty4': 'Managed and monitored AWS infrastructure to ensure 99% uptime.',
-
-      /* Projects — PdM Cloud */
-      'proj.pdm.desc': 'Re-architected a legacy predictive maintenance system into a fully AWS-native serverless and containerized solution, using two ML models for batch printer lifespan prediction and real-time image diagnostics.',
-      'proj.pdm.duty1': 'Architected and provisioned entire AWS infrastructure from scratch using CloudFormation.',
-      'proj.pdm.duty2': 'Designed AWS Step Functions state machines to orchestrate ETL workflows and Glue jobs.',
-      'proj.pdm.duty3': 'Deployed real-time image diagnostics model on Amazon ECS (Fargate) for low-latency inference.',
-      'proj.pdm.duty4': 'Built CI/CD pipeline using AWS Code Series (CodeCommit, CodeBuild, CodeDeploy, CodePipeline).',
-
-      /* Projects — T24Parsing */
-      'proj.t24.desc': 'Joined the Digital Banking team to operate and expand a mature AWS EKS infrastructure, provisioning new microservices and ensuring reliability of critical banking data pipelines.',
-      'proj.t24.duty1': 'Managed and expanded Terragrunt codebase to provision resources for new banking features.',
-      'proj.t24.duty2': 'Administered production Amazon EKS clusters and tuned Karpenter autoscaling profiles.',
-      'proj.t24.duty3': 'Optimized the Temenos T24 data ingestion pipeline for accurate parsing into DynamoDB and S3.',
-      'proj.t24.duty4': 'Maintained CI/CD pipelines to ensure smooth deployment of new versions and infrastructure patches.',
-
-      /* Projects — Fanvibe */
-      'proj.fanvibe.desc': 'Enhanced evolution of DTOLink with richer third-party integrations, analytics, and a migration from plain Docker containers to AWS EKS/ECS and GCP Cloud Run.',
-      'proj.fanvibe.duty1': 'Migrated old environment from Docker containers to AWS EKS and AWS ECS.',
-      'proj.fanvibe.duty2': 'Set up environment on Google Cloud Run and Google Cloud Task.',
-      'proj.fanvibe.duty3': 'Implemented Terraform setups to automate infrastructure provisioning.',
-      'proj.fanvibe.duty4': 'Configured CI/CD for automated deployments across environments.',
-
-      /* Projects — Kikker */
-      'proj.kikker.desc': 'Netherlands-based platform streamlining the selling and management of Electrics & Gas services, including meter reading, automated billing, commission calculation, and payment processing.',
-      'proj.kikker.duty1': 'Designed scalable technical solutions and led feature implementation decision-making.',
-      'proj.kikker.duty2': 'Developed APIs and maintained database schema with performance optimizations.',
-      'proj.kikker.duty3': 'Configured and maintained Kubernetes cluster and implemented Terraform IaC.',
-      'proj.kikker.duty4': 'Set up CI/CD pipelines and managed cloud infrastructure for 99% uptime.',
-
-      /* Projects — DTOLink */
-      'proj.dto.desc': 'Platform for artists and creators to craft music release and bio pages with real-time analytics. Integrates with Spotify, Apple Music, Deezer, and Songstats for rich audience insights.',
-      'proj.dto.duty1': 'Designed system architecture supporting business requirements and user needs.',
-      'proj.dto.duty2': 'Developed APIs for web portals and integrated third-party music service APIs.',
-      'proj.dto.duty3': 'Set up environment for service deployment and CI/CD for automated deploys.',
-      'proj.dto.duty4': 'Reviewed colleagues\' code to maintain coding standards.',
-
-      /* Education */
-      'edu.certs': 'Certifications', 'edu.honors': 'Honors & Awards',
-
-      /* Contact */
-      'contact.email': 'Email', 'contact.phone': 'Phone', 'contact.location': 'Location',
-      'contact.location.value': 'Nha Trang, Vietnam',
-      'proj.visit': 'Visit Website',
-      /* Roles */
-      'role.cloud':       'Cloud Engineer',
-      'role.software':    'Software Engineer',
-      'role.software.vn': 'Software Engineer — Vietnam',
-      'role.support.nl':  'Technical Support Engineer — onsite Netherlands',
-      'role.devops':      'DevOps Engineer',
-      /* Education */
-      'edu.org': 'Telecommunication University',
-      'edu.major': 'Major: Software Engineering',
-      /* Periods */
-      'period.fpt':      'Aug 2025 – Now',
-      'period.info':     'May 2021 – Jun 2025',
-      'period.info.nl':  'May 2024 – Aug 2024 · 3 months',
-      'period.dao':      'Nov 2021 – Now',
-      'period.lfs':      'Aug 2025 – Now',
-      'period.pdm':      'Dec 2025 – Now',
-      'period.t24':      'Aug 2025 – Nov 2025',
-      'period.fanvibe':  'Nov 2022 – Now',
-      'period.kikker':   'May 2021 – Jun 2025',
-      'period.dto':      'Nov 2020 – Nov 2022',
-      'period.edu':      'Oct 2017 – May 2021',
+      navSummary: 'Summary', navSkills: 'Skills', navExperience: 'Experience', navProjects: 'Projects', navEducation: 'Education', navContact: 'Contact', downloadCv: 'Download CV',
+      openToWork: 'Open to Work',
+      heroName: 'Huynh Tan Thinh', heroTitle: 'Cloud Engineer & Software Engineer',
+      heroKicker: 'CLOUD · INFRASTRUCTURE · AUTOMATION',
+      heroT1: 'From code to cluster,', heroT2: 'I own the whole path',
+      heroSub: 'Huynh Tan Thinh — Software Engineer with more than 5 years designing, developing, and managing robust, scalable infrastructure on Google Cloud Platform and Amazon Web Services.',
+      viewProjects: 'View Projects', contactMe: 'Contact Me', tapLayer: 'tap a layer to explore',
+      summaryKicker: 'SUMMARY', summaryTitle: '5+ years of engineering, end to end',
+      summaryBody: 'More than 5 years of working experience in Software Engineering — designing, developing, and managing robust and scalable infrastructure. Proficient in a wide range of DevOps tools and cloud platforms, experienced in both GCP and AWS environments. Proficient in English.',
+      c1: 'Infrastructure as Code', c2: 'Containerization & Orchestration', c3: 'CI/CD Pipelines', c4: 'Cloud Platforms', c5: 'Backend Development', c6: 'Database Management', c7: 'Agile Methodologies', c7d: 'Cross-functional team collaboration, Scrum', c8: 'Problem-Solving', c8d: 'Root cause analysis, analytical troubleshooting',
+      skillsKicker: 'TECHNICAL SKILLS', skillsTitle: 'The toolbox', dataMsg: 'Data & Messaging',
+      expKicker: 'EXPERIENCE', expTitle: "Where I've worked", now: 'Now',
+      fpt1: 'Developed APIs for frontend-backend communication, ensuring security and efficiency.',
+      fpt2: 'Set up CI/CD pipelines for automatic code integrations and efficient deployments.',
+      fpt3: 'Managed and monitored cloud infrastructure to ensure 99% uptime.',
+      fpt4: 'Implemented IaC setups using CloudFormation and AWS CDK to automate infrastructure provisioning.',
+      fpt5: 'Designed AWS Step Functions state machines and AWS Glue jobs for complex ETL workflows.',
+      inf1: 'Designed scalable, maintainable technical solutions and led technical decision-making for feature implementation.',
+      inf2: 'Developed APIs for frontend-backend communication, ensuring security and efficiency.',
+      inf3: 'Configured and maintained Kubernetes clusters to optimize application scaling and resilience.',
+      inf4: 'Implemented Terraform setups to automate and standardize infrastructure provisioning.',
+      inf5: 'Set up CI/CD pipelines and managed cloud infrastructure to ensure 99% uptime.',
+      nlRole: 'Technical Support Engineer — onsite Netherlands', nlDur: '3 months',
+      nlDesc: 'Facilitated collaboration between Vietnam and Netherlands teams; investigated and resolved technical issues to root cause; guided clients through resolution.',
+      dao1: 'Collaborated with developers to design system architectures supporting business requirements.',
+      dao2: 'Developed APIs for web portals and integrated third-party APIs to extend service offerings.',
+      dao3: 'Configured and maintained Kubernetes clusters for optimized deployment, scaling, and management.',
+      dao4: 'Implemented Terraform setups to automate and standardize infrastructure provisioning.',
+      dao5: 'Managed verification and deployment processes, ensuring reliable system updates and releases.',
+      projKicker: 'PROJECTS', projTitle: 'Selected work', team: 'Team', visit: 'Visit website →',
+      pLfs: "Spearheaded development and integration of third-party payment processing using Westpac QuickStream and VisionNext, enhancing real-time financial transaction handling.",
+      pPdm: 'Re-architected a legacy predictive maintenance system into a fully AWS-native serverless and containerized solution — two ML models for batch printer lifespan prediction and real-time image diagnostics.',
+      pT24: 'Operated and expanded a mature AWS EKS infrastructure for Digital Banking — provisioning new microservices and ensuring reliability of critical banking data pipelines.',
+      pFan: 'Enhanced evolution of DTOLink with richer third-party integrations, analytics, and a migration from plain Docker containers to AWS EKS/ECS and GCP Cloud Run.',
+      pKik: 'Netherlands-based platform streamlining selling and management of Electrics & Gas services — meter reading, automated billing, commission calculation, and payment processing.',
+      pDto: 'Platform for artists and creators to craft music release and bio pages with real-time analytics — integrates Spotify, Apple Music, Deezer, and Songstats.',
+      eduKicker: 'EDUCATION & CERTIFICATIONS', eduTitle: 'Credentials', eduLabel: 'EDUCATION', certLabel: 'CERTIFICATIONS', awardLabel: 'HONORS & AWARDS',
+      uni: 'Telecommunication University', major: 'Major: Software Engineering', award: 'Star of the Year',
+      contactKicker: 'CONTACT', contactT1: "Let's build your next", contactT2: 'cloud solution',
+      layers: [
+        { name: 'Apps & APIs', short: 'Apps & APIs', desc: 'Backend services and APIs powering web and mobile products — secure, efficient frontend-backend communication.' },
+        { name: 'CI/CD & Delivery', short: 'CI/CD', desc: 'Automated pipelines for integration and deployment, keeping releases fast, repeatable and reliable.' },
+        { name: 'Orchestration', short: 'Orchestration', desc: 'Cluster configuration, scaling and resilience tuning for production workloads.' },
+        { name: 'Cloud Platforms', short: 'Cloud', desc: 'Production workloads across both major clouds, managed and monitored for 99% uptime.' },
+        { name: 'Infrastructure as Code', short: 'IaC', desc: 'Every environment provisioned from code — reviewable, standardized, automated from scratch.' }
+      ]
     },
-
     vi: {
-      /* Sidebar / nav */
-      'sidebar.name': 'Huỳnh Tấn Thịnh',
-      'mobile.name': 'Huỳnh Tấn Thịnh',
-      'sidebar.role': 'Kỹ sư phần mềm',
-      'sidebar.openToWork': 'Sẵn sàng làm việc',
-      'sidebar.downloadCV': 'Tải CV',
-      'mobile.role': 'Kỹ sư phần mềm',
-      'nav.summary': 'Giới thiệu', 'nav.skills': 'Kỹ năng', 'nav.experience': 'Kinh nghiệm',
-      'nav.projects': 'Dự án', 'nav.education': 'Học vấn', 'nav.contact': 'Liên hệ',
-
-      /* Section titles */
-      'section.summary': 'Giới thiệu', 'section.skills': 'Kỹ năng kỹ thuật',
-      'section.experience': 'Kinh nghiệm làm việc', 'section.projects': 'Dự án',
-      'section.education': 'Học vấn & Chứng chỉ', 'section.contact': 'Liên hệ',
-
-      /* Summary */
-      'summary.intro': 'Hơn 5 năm kinh nghiệm trong lĩnh vực Kỹ thuật phần mềm — thiết kế, phát triển và quản lý hạ tầng bền vững và có khả năng mở rộng. Thành thạo nhiều công cụ DevOps và nền tảng đám mây. Có kinh nghiệm làm việc với cả Google Cloud Platform (GCP) và Amazon Web Service (AWS). Thành thạo tiếng Anh.',
-      'specialty.iac': 'Hạ tầng dưới dạng mã (IaC)',
-      'specialty.iac.desc': 'Terraform, AWS CloudFormation, AWS CDK',
-      'specialty.container': 'Container hóa & Điều phối',
-      'specialty.container.desc': 'Docker, Kubernetes, Helm',
-      'specialty.cicd': 'Quy trình CI/CD',
-      'specialty.cicd.desc': 'GitHub Actions, Buildkite, FluxCD, ArgoCD',
-      'specialty.cloud': 'Nền tảng đám mây',
-      'specialty.cloud.desc': 'GCP (GKE, Cloud Run, Pub/Sub) · AWS (EKS, ECS, Lambda)',
-      'specialty.backend': 'Phát triển Backend',
-      'specialty.backend.desc': 'C#, .NET 6/8, Node.js, Golang, Python, Microservices',
-      'specialty.database': 'Quản lý cơ sở dữ liệu',
-      'specialty.database.desc': 'MySQL, MongoDB, AWS DynamoDB',
-      'specialty.agile': 'Phương pháp Agile',
-      'specialty.agile.desc': 'Làm việc nhóm liên chức năng, Scrum',
-      'specialty.problem': 'Giải quyết vấn đề',
-      'specialty.problem.desc': 'Phân tích nguyên nhân gốc, xử lý sự cố',
-
-      /* Experience — FPT Software */
-      'exp.fpt.duty1': 'Phát triển API cho giao tiếp frontend-backend, đảm bảo bảo mật và hiệu quả.',
-      'exp.fpt.duty2': 'Thiết lập pipeline CI/CD để tự động hóa tích hợp mã nguồn và triển khai hiệu quả.',
-      'exp.fpt.duty3': 'Quản lý và giám sát hạ tầng đám mây để đảm bảo uptime 99%.',
-      'exp.fpt.duty4': 'Triển khai IaC bằng CloudFormation và AWS CDK để tự động hóa cung cấp hạ tầng.',
-      'exp.fpt.duty5': 'Thiết kế state machine AWS Step Functions và Glue jobs cho các luồng ETL phức tạp.',
-
-      /* Experience — Infodation Vietnam */
-      'exp.info.duty1': 'Thiết kế giải pháp kỹ thuật có khả năng mở rộng và dẫn dắt quyết định kỹ thuật khi triển khai tính năng.',
-      'exp.info.duty2': 'Phát triển API cho giao tiếp frontend-backend, đảm bảo bảo mật và hiệu quả.',
-      'exp.info.duty3': 'Cấu hình và duy trì Kubernetes cluster để tối ưu hóa khả năng mở rộng và độ phục hồi.',
-      'exp.info.duty4': 'Triển khai Terraform để tự động hóa và chuẩn hóa việc cung cấp hạ tầng.',
-      'exp.info.duty5': 'Thiết lập pipeline CI/CD và quản lý hạ tầng đám mây để đảm bảo uptime 99%.',
-
-      /* Experience — Infodation Netherlands */
-      'exp.info.nl.duty1': 'Hỗ trợ giao tiếp và cộng tác giữa đội Việt Nam và Hà Lan.',
-      'exp.info.nl.duty2': 'Điều tra và giải quyết các vấn đề kỹ thuật, xác định nguyên nhân và triển khai giải pháp.',
-      'exp.info.nl.duty3': 'Hướng dẫn và hỗ trợ khách hàng trong suốt quá trình giải quyết sự cố.',
-
-      /* Experience — DAO Entertainment */
-      'exp.dao.duty1': 'Phối hợp với nhà phát triển để thiết kế kiến trúc hệ thống đáp ứng yêu cầu kinh doanh.',
-      'exp.dao.duty2': 'Phát triển API cho cổng web và tích hợp API bên thứ ba để mở rộng dịch vụ.',
-      'exp.dao.duty3': 'Cấu hình và duy trì Kubernetes cluster để tối ưu hóa triển khai, mở rộng và quản lý.',
-      'exp.dao.duty4': 'Triển khai Terraform để tự động hóa và chuẩn hóa việc cung cấp hạ tầng.',
-      'exp.dao.duty5': 'Quản lý quy trình xác minh và triển khai, đảm bảo cập nhật hệ thống đáng tin cậy.',
-
-      /* Projects — LFS */
-      'proj.lfs.desc': 'Dẫn dắt phát triển và tích hợp xử lý thanh toán bên thứ ba bằng Westpac QuickStream và VisionNext, nâng cao khả năng xử lý giao dịch tài chính theo thời gian thực của nền tảng.',
-      'proj.lfs.duty1': 'Tích hợp API thanh toán Westpac QuickStream và VisionNext từ bên thứ ba.',
-      'proj.lfs.duty2': 'Triển khai AWS CloudFormation để tự động hóa cung cấp hạ tầng.',
-      'proj.lfs.duty3': 'Thiết lập pipeline CI/CD qua Buildkite cho triển khai tự động.',
-      'proj.lfs.duty4': 'Quản lý và giám sát hạ tầng AWS để đảm bảo uptime 99%.',
-
-      /* Projects — PdM Cloud */
-      'proj.pdm.desc': 'Tái kiến trúc hệ thống bảo trì dự đoán cũ thành giải pháp AWS serverless và container hóa hoàn toàn, sử dụng hai mô hình ML cho dự đoán tuổi thọ máy in theo lô và chẩn đoán hình ảnh thời gian thực.',
-      'proj.pdm.duty1': 'Thiết kế và cung cấp toàn bộ hạ tầng AWS từ đầu bằng CloudFormation.',
-      'proj.pdm.duty2': 'Thiết kế state machine AWS Step Functions để điều phối luồng ETL và Glue jobs.',
-      'proj.pdm.duty3': 'Triển khai mô hình chẩn đoán hình ảnh thời gian thực trên Amazon ECS (Fargate) với độ trễ thấp.',
-      'proj.pdm.duty4': 'Xây dựng pipeline CI/CD bằng AWS Code Series (CodeCommit, CodeBuild, CodeDeploy, CodePipeline).',
-
-      /* Projects — T24Parsing */
-      'proj.t24.desc': 'Tham gia nhóm Ngân hàng Số để vận hành và mở rộng hạ tầng AWS EKS trưởng thành, cung cấp microservice mới và đảm bảo độ tin cậy của pipeline dữ liệu ngân hàng quan trọng.',
-      'proj.t24.duty1': 'Quản lý và mở rộng codebase Terragrunt để cung cấp tài nguyên cho tính năng ngân hàng mới.',
-      'proj.t24.duty2': 'Quản trị cluster Amazon EKS production và tinh chỉnh profile autoscaling Karpenter.',
-      'proj.t24.duty3': 'Tối ưu hóa pipeline nhập dữ liệu Temenos T24 để phân tích chính xác vào DynamoDB và S3.',
-      'proj.t24.duty4': 'Duy trì pipeline CI/CD để đảm bảo triển khai phiên bản mới và bản vá hạ tầng suôn sẻ.',
-
-      /* Projects — Fanvibe */
-      'proj.fanvibe.desc': 'Phát triển DTOLink với tích hợp bên thứ ba phong phú hơn, analytics và di chuyển từ Docker thuần sang AWS EKS/ECS và GCP Cloud Run.',
-      'proj.fanvibe.duty1': 'Di chuyển môi trường cũ từ Docker containers sang AWS EKS và AWS ECS.',
-      'proj.fanvibe.duty2': 'Thiết lập môi trường trên Google Cloud Run và Google Cloud Task.',
-      'proj.fanvibe.duty3': 'Triển khai Terraform để tự động hóa cung cấp hạ tầng.',
-      'proj.fanvibe.duty4': 'Cấu hình CI/CD cho triển khai tự động qua các môi trường.',
-
-      /* Projects — Kikker */
-      'proj.kikker.desc': 'Nền tảng tại Hà Lan hỗ trợ bán và quản lý dịch vụ Điện & Gas, bao gồm đọc đồng hồ, lập hóa đơn tự động, tính hoa hồng và xử lý thanh toán.',
-      'proj.kikker.duty1': 'Thiết kế giải pháp kỹ thuật có khả năng mở rộng và dẫn dắt quyết định triển khai tính năng.',
-      'proj.kikker.duty2': 'Phát triển API và duy trì schema cơ sở dữ liệu với tối ưu hóa hiệu suất.',
-      'proj.kikker.duty3': 'Cấu hình và duy trì Kubernetes cluster và triển khai Terraform IaC.',
-      'proj.kikker.duty4': 'Thiết lập pipeline CI/CD và quản lý hạ tầng đám mây đảm bảo uptime 99%.',
-
-      /* Projects — DTOLink */
-      'proj.dto.desc': 'Nền tảng cho nghệ sĩ và nhà sáng tạo để tạo trang phát hành nhạc và trang bio với analytics thời gian thực. Tích hợp với Spotify, Apple Music, Deezer và Songstats.',
-      'proj.dto.duty1': 'Thiết kế kiến trúc hệ thống đáp ứng yêu cầu kinh doanh và người dùng.',
-      'proj.dto.duty2': 'Phát triển API cho cổng web và tích hợp API dịch vụ nhạc bên thứ ba.',
-      'proj.dto.duty3': 'Thiết lập môi trường triển khai dịch vụ và CI/CD cho triển khai tự động.',
-      'proj.dto.duty4': 'Review code của đồng nghiệp để duy trì chuẩn mực lập trình.',
-
-      /* Education */
-      'edu.certs': 'Chứng chỉ', 'edu.honors': 'Thành tích & Giải thưởng',
-
-      /* Contact */
-      'contact.email': 'Email', 'contact.phone': 'Điện thoại', 'contact.location': 'Địa chỉ',
-      'contact.location.value': 'Nha Trang, Việt Nam',
-      'proj.visit': 'Truy cập trang web',
-      /* Roles */
-      'role.cloud':       'Kỹ sư đám mây (Cloud Engineer)',
-      'role.software':    'Kỹ sư phần mềm (Software Engineer)',
-      'role.software.vn': 'Kỹ sư phần mềm — Việt Nam (Software Engineer)',
-      'role.support.nl':  'Kỹ sư hỗ trợ kỹ thuật — onsite Hà Lan (Technical Support Engineer)',
-      'role.devops':      'Kỹ sư DevOps (DevOps Engineer)',
-      /* Education */
-      'edu.org': 'Trường Đại học Thông tin liên lạc',
-      'edu.major': 'Chuyên ngành: Kỹ thuật phần mềm',
-      /* Periods */
-      'period.fpt':      'Tháng 8, 2025 – Nay',
-      'period.info':     'Tháng 5, 2021 – Tháng 6, 2025',
-      'period.info.nl':  'Tháng 5, 2024 – Tháng 8, 2024 · 3 tháng',
-      'period.dao':      'Tháng 11, 2021 – Nay',
-      'period.lfs':      'Tháng 8, 2025 – Nay',
-      'period.pdm':      'Tháng 12, 2025 – Nay',
-      'period.t24':      'Tháng 8, 2025 – Tháng 11, 2025',
-      'period.fanvibe':  'Tháng 11, 2022 – Nay',
-      'period.kikker':   'Tháng 5, 2021 – Tháng 6, 2025',
-      'period.dto':      'Tháng 11, 2020 – Tháng 11, 2022',
-      'period.edu':      'Tháng 10, 2017 – Tháng 5, 2021',
+      navSummary: 'Tóm tắt', navSkills: 'Kỹ năng', navExperience: 'Kinh nghiệm', navProjects: 'Dự án', navEducation: 'Học vấn', navContact: 'Liên hệ', downloadCv: 'Tải CV',
+      openToWork: 'Sẵn sàng làm việc',
+      heroName: 'Huỳnh Tấn Thịnh', heroTitle: 'Kỹ sư Cloud & Kỹ sư phần mềm',
+      heroKicker: 'CLOUD · HẠ TẦNG · TỰ ĐỘNG HÓA',
+      heroT1: 'Từ code đến cluster,', heroT2: 'tôi làm chủ toàn bộ hành trình',
+      heroSub: 'Huỳnh Tấn Thịnh — Kỹ sư phần mềm với hơn 5 năm kinh nghiệm thiết kế, phát triển và quản lý hạ tầng mạnh mẽ, có khả năng mở rộng trên Google Cloud Platform và Amazon Web Services.',
+      viewProjects: 'Xem dự án', contactMe: 'Liên hệ tôi', tapLayer: 'chạm vào một tầng để khám phá',
+      summaryKicker: 'TÓM TẮT', summaryTitle: '5+ năm kỹ thuật, từ đầu đến cuối',
+      summaryBody: 'Hơn 5 năm kinh nghiệm làm việc trong lĩnh vực Kỹ thuật phần mềm — thiết kế, phát triển và quản lý hạ tầng mạnh mẽ, có khả năng mở rộng. Thành thạo nhiều công cụ DevOps và nền tảng cloud, có kinh nghiệm với cả GCP và AWS. Thành thạo tiếng Anh.',
+      c1: 'Hạ tầng dạng mã (IaC)', c2: 'Container hóa & Điều phối', c3: 'CI/CD Pipelines', c4: 'Nền tảng Cloud', c5: 'Phát triển Backend', c6: 'Quản lý cơ sở dữ liệu', c7: 'Phương pháp Agile', c7d: 'Cộng tác nhóm đa chức năng, Scrum', c8: 'Giải quyết vấn đề', c8d: 'Phân tích nguyên nhân gốc, xử lý sự cố phân tích',
+      skillsKicker: 'KỸ NĂNG CHUYÊN MÔN', skillsTitle: 'Bộ công cụ', dataMsg: 'Dữ liệu & Messaging',
+      expKicker: 'KINH NGHIỆM', expTitle: 'Nơi tôi đã làm việc', now: 'Nay',
+      fpt1: 'Phát triển API cho giao tiếp frontend-backend, đảm bảo bảo mật và hiệu quả.',
+      fpt2: 'Thiết lập CI/CD pipeline cho tích hợp mã tự động và triển khai hiệu quả.',
+      fpt3: 'Quản lý và giám sát hạ tầng cloud, đảm bảo 99% uptime.',
+      fpt4: 'Triển khai IaC bằng CloudFormation và AWS CDK để tự động hóa cung cấp hạ tầng.',
+      fpt5: 'Thiết kế AWS Step Functions và AWS Glue jobs cho các luồng ETL phức tạp.',
+      inf1: 'Thiết kế giải pháp kỹ thuật có khả năng mở rộng, dễ bảo trì và dẫn dắt quyết định kỹ thuật cho việc triển khai tính năng.',
+      inf2: 'Phát triển API cho giao tiếp frontend-backend, đảm bảo bảo mật và hiệu quả.',
+      inf3: 'Cấu hình và duy trì Kubernetes cluster để tối ưu mở rộng và độ bền vững của ứng dụng.',
+      inf4: 'Triển khai Terraform để tự động hóa và chuẩn hóa cung cấp hạ tầng.',
+      inf5: 'Thiết lập CI/CD pipeline và quản lý hạ tầng cloud đảm bảo 99% uptime.',
+      nlRole: 'Technical Support Engineer — onsite Hà Lan', nlDur: '3 tháng',
+      nlDesc: 'Kết nối và điều phối giữa đội ngũ Việt Nam và Hà Lan; điều tra và xử lý sự cố kỹ thuật đến nguyên nhân gốc; hỗ trợ khách hàng trong suốt quá trình xử lý.',
+      dao1: 'Phối hợp với developer thiết kế kiến trúc hệ thống đáp ứng yêu cầu nghiệp vụ.',
+      dao2: 'Phát triển API cho web portal và tích hợp API bên thứ ba để mở rộng dịch vụ.',
+      dao3: 'Cấu hình và duy trì Kubernetes cluster cho triển khai, mở rộng và quản lý tối ưu.',
+      dao4: 'Triển khai Terraform để tự động hóa và chuẩn hóa cung cấp hạ tầng.',
+      dao5: 'Quản lý quy trình kiểm duyệt và triển khai, đảm bảo cập nhật hệ thống ổn định.',
+      projKicker: 'DỰ ÁN', projTitle: 'Dự án tiêu biểu', team: 'Nhóm', visit: 'Xem website →',
+      pLfs: 'Dẫn dắt phát triển và tích hợp xử lý thanh toán bên thứ ba với Westpac QuickStream và VisionNext, nâng cao khả năng xử lý giao dịch tài chính thời gian thực.',
+      pPdm: 'Tái kiến trúc hệ thống bảo trì dự đoán legacy thành giải pháp serverless và container hoàn toàn trên AWS — hai mô hình ML cho dự đoán tuổi thọ máy in theo lô và chẩn đoán hình ảnh thời gian thực.',
+      pT24: 'Vận hành và mở rộng hạ tầng AWS EKS cho Digital Banking — cung cấp microservice mới và đảm bảo độ tin cậy của các pipeline dữ liệu ngân hàng trọng yếu.',
+      pFan: 'Phát triển tiếp DTOLink với nhiều tích hợp bên thứ ba, analytics, và di chuyển từ Docker container thuần sang AWS EKS/ECS và GCP Cloud Run.',
+      pKik: 'Nền tảng Hà Lan tinh gọn việc bán và quản lý dịch vụ Điện & Gas — đọc công tơ, hóa đơn tự động, tính hoa hồng và xử lý thanh toán.',
+      pDto: 'Nền tảng cho nghệ sĩ và creator tạo trang phát hành nhạc và bio với analytics thời gian thực — tích hợp Spotify, Apple Music, Deezer và Songstats.',
+      eduKicker: 'HỌC VẤN & CHỨNG CHỈ', eduTitle: 'Bằng cấp', eduLabel: 'HỌC VẤN', certLabel: 'CHỨNG CHỈ', awardLabel: 'GIẢI THƯỞNG',
+      uni: 'Đại học Thông tin liên lạc', major: 'Chuyên ngành: Kỹ thuật phần mềm', award: 'Star of the Year',
+      contactKicker: 'LIÊN HỆ', contactT1: 'Cùng xây dựng giải pháp', contactT2: 'cloud tiếp theo của bạn',
+      layers: [
+        { name: 'Ứng dụng & API', short: 'Ứng dụng', desc: 'Dịch vụ backend và API cho các sản phẩm web và mobile — giao tiếp frontend-backend an toàn, hiệu quả.' },
+        { name: 'CI/CD & Triển khai', short: 'CI/CD', desc: 'Pipeline tự động cho tích hợp và triển khai, giúp phát hành nhanh, lặp lại được và đáng tin cậy.' },
+        { name: 'Điều phối container', short: 'Điều phối', desc: 'Cấu hình cluster, mở rộng và tối ưu độ bền vững cho workload production.' },
+        { name: 'Nền tảng Cloud', short: 'Cloud', desc: 'Workload production trên cả hai cloud lớn, được quản lý và giám sát với 99% uptime.' },
+        { name: 'Hạ tầng dạng mã (IaC)', short: 'IaC', desc: 'Mọi môi trường được cung cấp từ mã — dễ review, chuẩn hóa, tự động hóa từ đầu.' }
+      ]
     }
   };
 
-  /* ── Theme toggle ────────────────────────────────────── */
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    const isDark = theme === 'dark';
-    document.querySelectorAll('.theme-icon').forEach(el => {
-      el.className = isDark ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon';
-    });
-  }
+  const techs = [
+    '.NET 6/8 · Node.js · Golang · Python',
+    'GitHub Actions · Buildkite · ArgoCD · FluxCD',
+    'Kubernetes · Helm · Karpenter',
+    'AWS (EKS · ECS · Lambda) · GCP (GKE · Cloud Run)',
+    'Terraform · CloudFormation · AWS CDK'
+  ];
 
-  applyTheme(localStorage.getItem('theme') || 'light');
-
-  document.addEventListener('click', e => {
-    if (e.target.closest('[data-theme-toggle]')) {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
-      applyTheme(current === 'dark' ? 'light' : 'dark');
-    }
-  });
-
-  /* ── OG / Twitter meta update (for JS-rendering scrapers + browser title) ── */
   const OG_META = {
     en: {
-      title:       'Huynh Tan Thinh — Software Engineer',
+      title: 'Huynh Tan Thinh — Software Engineer',
       description: 'Software Engineer & Cloud Engineer with 5+ years experience in backend development, DevOps, and cloud-native infrastructure on GCP and AWS.',
-      locale:      'en_US',
-      url:         'https://info.keycodemon.org/',
-      imageAlt:    'Huynh Tan Thinh — Software Engineer',
+      locale: 'en_US',
+      url: 'https://info.keycodemon.org/',
+      imageAlt: 'Huynh Tan Thinh — Software Engineer',
     },
     vi: {
-      title:       'Huỳnh Tấn Thịnh — Kỹ sư phần mềm',
+      title: 'Huỳnh Tấn Thịnh — Kỹ sư phần mềm',
       description: 'Kỹ sư phần mềm & Kỹ sư đám mây với hơn 5 năm kinh nghiệm về phát triển backend, DevOps và hạ tầng đám mây trên GCP và AWS.',
-      locale:      'vi_VN',
-      url:         'https://info.keycodemon.org/vi/',
-      imageAlt:    'Huỳnh Tấn Thịnh — Kỹ sư phần mềm',
+      locale: 'vi_VN',
+      url: 'https://info.keycodemon.org/vi/',
+      imageAlt: 'Huỳnh Tấn Thịnh — Kỹ sư phần mềm',
     },
   };
 
@@ -315,97 +134,257 @@
     const t = OG_META[lang] || OG_META.en;
     const set = (sel, val) => document.querySelector(sel)?.setAttribute('content', val);
     document.title = t.title;
-    set('meta[property="og:title"]',       t.title);
+    set('meta[property="og:title"]', t.title);
     set('meta[property="og:description"]', t.description);
-    set('meta[property="og:locale"]',      t.locale);
-    set('meta[property="og:url"]',         t.url);
-    set('meta[property="og:image:alt"]',   t.imageAlt);
-    set('meta[name="twitter:title"]',      t.title);
-    set('meta[name="twitter:description"]',t.description);
-    set('meta[name="twitter:image:alt"]',  t.imageAlt);
-    set('meta[name="description"]',        t.description);
+    set('meta[property="og:locale"]', t.locale);
+    set('meta[property="og:url"]', t.url);
+    set('meta[property="og:image:alt"]', t.imageAlt);
+    set('meta[name="twitter:title"]', t.title);
+    set('meta[name="twitter:description"]', t.description);
+    set('meta[name="twitter:image:alt"]', t.imageAlt);
+    set('meta[name="description"]', t.description);
+  }
+
+  /* ── Theme toggle ──────────────────────────────────────── */
+  function applyTheme(theme) {
+    const t = theme === 'dark' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+    localStorage.setItem('theme', t);
+  }
+  applyTheme(localStorage.getItem('theme') || 'light');
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  /* ── Hero typewriter ──────────────────────────────────── */
+  let _typeTimer = null;
+  function startTyping() {
+    clearInterval(_typeTimer);
+    const t = translations[currentLang];
+    const total = (t.heroT1 + t.heroT2).length;
+    const line1El = document.getElementById('heroLine1');
+    const line2El = document.getElementById('heroLine2');
+    const cursor1El = document.getElementById('heroCursor1');
+    const cursor2El = document.getElementById('heroCursor2');
+    if (!line1El || !line2El) return;
+    let typedLen = 0;
+    const render = () => {
+      line1El.textContent = t.heroT1.slice(0, Math.min(typedLen, t.heroT1.length));
+      line2El.textContent = t.heroT2.slice(0, Math.max(0, typedLen - t.heroT1.length));
+      cursor1El.classList.toggle('is-visible', typedLen < t.heroT1.length);
+      cursor2El.classList.toggle('is-visible', typedLen >= t.heroT1.length && typedLen <= total);
+    };
+    render();
+    _typeTimer = setInterval(() => {
+      typedLen++;
+      if (typedLen >= total) clearInterval(_typeTimer);
+      render();
+    }, 32);
+  }
+
+  /* ── Isometric layer stack state ─────────────────────── */
+  let currentLang = 'en';
+  let selectedLayer = 3;
+
+  function renderIsoStack() {
+    const t = translations[currentLang];
+    const stackEl = document.getElementById('isoStack');
+    const legendEl = document.getElementById('isoLegend');
+    if (!stackEl || !legendEl) return;
+
+    stackEl.innerHTML = '';
+    legendEl.innerHTML = '';
+
+    t.layers.forEach((layer, i) => {
+      const active = i === selectedLayer;
+      const z = (t.layers.length - 1 - i) * 48 + (active ? 30 : 0);
+
+      const box = document.createElement('div');
+      box.className = 'iso-layer' + (active ? ' is-active' : '');
+      box.style.setProperty('--iso-z', z + 'px');
+      box.innerHTML =
+        '<div class="iso-layer-num">0' + (i + 1) + '</div>' +
+        '<div class="iso-layer-short">' + layer.short + '</div>';
+      box.addEventListener('click', () => selectLayer(i));
+      stackEl.appendChild(box);
+
+      const item = document.createElement('div');
+      item.className = 'iso-legend-item' + (active ? ' is-active' : '');
+      item.innerHTML =
+        '<span class="iso-legend-dot"></span>' +
+        '<span class="iso-legend-num">0' + (i + 1) + '</span>' +
+        '<span class="iso-legend-name">' + layer.name + '</span>';
+      item.addEventListener('click', () => selectLayer(i));
+      legendEl.appendChild(item);
+    });
+
+    const sel = Math.min(selectedLayer, t.layers.length - 1);
+    document.getElementById('isoDetailName').textContent = t.layers[sel].name;
+    document.getElementById('isoDetailDesc').textContent = t.layers[sel].desc;
+    document.getElementById('isoDetailTech').textContent = techs[sel];
+  }
+
+  function selectLayer(i) {
+    selectedLayer = i;
+    renderIsoStack();
   }
 
   /* ── Language toggle ─────────────────────────────────── */
-  function applyLang(lang, pushUrl = true) {
-    document.documentElement.lang = lang === 'vi' ? 'vi' : 'en';
-    localStorage.setItem('lang', lang);
+  function applyLang(lang, pushUrl) {
+    currentLang = (lang === 'vi') ? 'vi' : 'en';
+    document.documentElement.lang = currentLang;
+    localStorage.setItem('lang', currentLang);
+
+    const t = translations[currentLang];
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      const val = translations[lang] && translations[lang][key];
-      if (val !== undefined) el.textContent = val;
+      if (t[key] !== undefined) el.textContent = t[key];
     });
-    document.querySelectorAll('.lang-label').forEach(el => {
-      el.textContent = lang === 'en' ? 'VI' : 'EN';
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('is-active', btn.getAttribute('data-lang-btn') === currentLang);
     });
-    updateOGMeta(lang);
-    if (pushUrl) {
-      const url = lang === 'vi' ? '?lang=vi' : location.pathname;
+
+    renderIsoStack();
+    updateOGMeta(currentLang);
+    startTyping();
+
+    if (pushUrl !== false) {
+      const url = currentLang === 'vi' ? '?lang=vi' : location.pathname;
       history.replaceState(null, '', url);
     }
   }
 
-  /* URL param takes priority over localStorage */
   const _urlLang = new URLSearchParams(location.search).get('lang');
   applyLang((_urlLang === 'vi' || _urlLang === 'en') ? _urlLang : (localStorage.getItem('lang') || 'en'), false);
 
-  document.addEventListener('click', e => {
-    if (e.target.closest('[data-lang-toggle]')) {
-      const current = localStorage.getItem('lang') || 'en';
-      applyLang(current === 'en' ? 'vi' : 'en');
-    }
+  document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang-btn')));
   });
 
-  /* ── Smooth scroll for nav links ─────────────────────── */
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const id = link.getAttribute('href').slice(1);
-      const target = document.getElementById(id);
-      if (!target) return;
-      const offset = window.innerWidth < 768 ? 64 : 0;
-      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
-      closeSidebar();
+  /* ── Mobile nav menu ──────────────────────────────────── */
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('navMobileMenu');
+  if (hamburger && mobileMenu) {
+    const setMenuOpen = (open) => {
+      mobileMenu.classList.toggle('is-open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+    };
+    hamburger.addEventListener('click', () => setMenuOpen(!mobileMenu.classList.contains('is-open')));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenuOpen(false)));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 860) setMenuOpen(false);
     });
-  });
+  }
 
-  /* ── Scroll-spy via IntersectionObserver ─────────────── */
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link[data-section]');
-
-  const observer = new IntersectionObserver(entries => {
+  /* ── Scroll reveal (+ per-card stagger) ───────────────── */
+  const revealTargets = document.querySelectorAll('[data-reveal]');
+  const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        const active = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`);
-        if (active) active.classList.add('active');
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+        entry.target.querySelectorAll('.stagger-card').forEach((card, i) => {
+          setTimeout(() => card.classList.add('is-visible'), 100 + i * 90);
+        });
       }
     });
-  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+  }, { threshold: 0.1 });
+  revealTargets.forEach(el => revealObserver.observe(el));
 
-  sections.forEach(s => observer.observe(s));
+  /* ── Animated wireframe sphere background ────────────── */
+  const canvas = document.getElementById('heroCanvas');
+  if (canvas) {
+    const n = 90, ga = Math.PI * (3 - Math.sqrt(5));
+    const pts = [];
+    for (let i = 0; i < n; i++) {
+      const y = 1 - (i / (n - 1)) * 2;
+      const r = Math.sqrt(Math.max(0, 1 - y * y));
+      const th = ga * i;
+      const fr = Math.abs(Math.sin(i * 12.9898) * 43758.5453) % 1;
+      const s = 1 + (fr - 0.5) * 0.4;
+      pts.push([Math.cos(th) * r * s, y * s, Math.sin(th) * r * s]);
+    }
+    const edges = [];
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        const a = pts[i], b = pts[j];
+        if (Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]) < 0.5) edges.push([i, j]);
+      }
+    }
+    const particles = [];
+    for (let i = 0; i < 34; i++) {
+      particles.push({ x: Math.random(), y: Math.random(), r: 1 + Math.random() * 1.6, sp: 0.12 + Math.random() * 0.3, ph: Math.random() * Math.PI * 2 });
+    }
+    const CANVAS_RGB = {
+      light: { line: '220,38,38', dot: '28,30,33' },
+      dark: { line: '248,113,113', dot: '242,243,245' }
+    };
 
-  /* ── Mobile drawer ───────────────────────────────────── */
-  const sidebar   = document.getElementById('sidebar');
-  const hamburger = document.getElementById('hamburger');
-  const backdrop  = document.getElementById('drawerBackdrop');
+    let ry = 0.5, mx = 0, my = 0, cw = 0, ch = 0, ctx = null;
 
-  function openSidebar() {
-    sidebar.classList.add('sidebar--open');
-    backdrop.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    window.addEventListener('pointermove', (e) => {
+      const w = window.innerWidth || 1, h = window.innerHeight || 1;
+      mx = e.clientX / w - 0.5;
+      my = e.clientY / h - 0.5;
+    });
+
+    function tick() {
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      if (w >= 2 && h >= 2) {
+        if (cw !== w || ch !== h) {
+          const dpr = Math.min(2, window.devicePixelRatio || 1);
+          canvas.width = Math.round(w * dpr);
+          canvas.height = Math.round(h * dpr);
+          ctx = canvas.getContext('2d');
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          cw = w; ch = h;
+        }
+        ry += 0.0016;
+        const rx = -0.3 + my * 0.2;
+        const cy = Math.cos(ry), sy = Math.sin(ry);
+        const cx = Math.cos(rx), sx = Math.sin(rx);
+        const sc = Math.min(w, h) * 0.52;
+        ctx.clearRect(0, 0, w, h);
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const rgb = isDark ? CANVAS_RGB.dark : CANVAS_RGB.light;
+        const P = pts.map((p) => {
+          const x1 = p[0] * cy + p[2] * sy, z1 = -p[0] * sy + p[2] * cy;
+          const y1 = p[1] * cx - z1 * sx, z2 = p[1] * sx + z1 * cx;
+          const f = 2.7 / (2.7 - z2);
+          return [w / 2 + (x1 + mx * 0.1) * sc * f, h / 2 + y1 * sc * f, z2, f];
+        });
+        ctx.lineWidth = 1;
+        for (const [i, j] of edges) {
+          const a = P[i], b = P[j];
+          const dz = ((a[2] + b[2]) / 2 + 1) / 2;
+          ctx.strokeStyle = 'rgba(' + rgb.line + ',' + (0.03 + 0.07 * dz).toFixed(3) + ')';
+          ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+        }
+        for (const q of P) {
+          const dz = (q[2] + 1) / 2;
+          ctx.beginPath();
+          ctx.arc(q[0], q[1], 1.5 * q[3], 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + rgb.dot + ',' + (0.05 + 0.14 * dz).toFixed(3) + ')';
+          ctx.fill();
+        }
+        for (const p of particles) {
+          p.y -= p.sp / Math.max(h, 1) * 2.4;
+          if (p.y < -0.03) { p.y = 1.03; p.x = Math.random(); }
+          const px = p.x * w + Math.sin(p.y * 9 + p.ph) * 7;
+          const py = p.y * h;
+          const fade = Math.sin(Math.min(1, Math.max(0, p.y)) * Math.PI);
+          ctx.beginPath();
+          ctx.arc(px, py, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + rgb.line + ',' + (0.16 * fade).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   }
-
-  function closeSidebar() {
-    sidebar.classList.remove('sidebar--open');
-    backdrop.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  if (hamburger) hamburger.addEventListener('click', openSidebar);
-  if (backdrop)  backdrop.addEventListener('click', closeSidebar);
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeSidebar();
-  });
 })();

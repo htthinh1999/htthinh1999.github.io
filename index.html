@@ -22,7 +22,7 @@
   <meta name="twitter:description" content="Software Engineer &amp; Cloud Engineer with 5+ years experience in backend development, DevOps, and cloud-native infrastructure on GCP and AWS.">
   <meta name="twitter:image" content="https://info.keycodemon.org/profile-photo.png">
   <meta name="twitter:image:alt" content="Huynh Tan Thinh — Software Engineer">
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#dc2626">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,697 +75,329 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="layout">
-
-  <!-- Mobile top bar (hidden on desktop) -->
-  <div class="mobile-topbar">
-    <div class="mobile-topbar-profile">
-      <img src="profile-photo.png" alt="Huynh Tan Thinh" class="mobile-avatar">
-      <div class="mobile-topbar-text">
-        <span class="mobile-name" data-i18n="mobile.name">Huynh Tan Thinh</span>
-        <span class="mobile-role" data-i18n="mobile.role">Software Engineer</span>
-      </div>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-badge">HT</span>
+      <span class="brand-name">Huynh Tan Thinh</span>
+    </a>
+    <div class="nav-links">
+      <a href="#summary" class="nav-link" data-i18n="navSummary">Summary</a>
+      <a href="#skills" class="nav-link" data-i18n="navSkills">Skills</a>
+      <a href="#experience" class="nav-link" data-i18n="navExperience">Experience</a>
+      <a href="#projects" class="nav-link" data-i18n="navProjects">Projects</a>
+      <a href="#education" class="nav-link" data-i18n="navEducation">Education</a>
+      <a href="#contact" class="nav-link" data-i18n="navContact">Contact</a>
     </div>
-    <div class="topbar-actions">
-      <button class="topbar-icon-btn" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
-        <i class="fas fa-moon theme-icon"></i>
+    <div class="nav-actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="vi">VI</button>
+      </div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon"><span class="theme-sun"></span><span class="theme-moon"></span></span>
       </button>
-      <button class="topbar-icon-btn" data-lang-toggle aria-label="Switch language" title="Switch language">
-        <span class="lang-label">VI</span>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
-        <i class="fas fa-bars"></i>
+      <a href="SoftwareEngineer_HuynhTanThinh.pdf" class="cv-btn" data-i18n="downloadCv" download>Download CV</a>
+      <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </div>
-
-  <!-- Drawer backdrop -->
-  <div class="drawer-backdrop" id="drawerBackdrop"></div>
-
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-  <div class="sidebar-inner">
-
-    <!-- Profile -->
-    <div class="sidebar-profile">
-      <div class="sidebar-photo-wrap">
-        <img src="profile-photo.png" alt="Huynh Tan Thinh" class="sidebar-photo">
-      </div>
-      <h1 class="sidebar-name" data-i18n="sidebar.name">Huynh Tan Thinh</h1>
-      <p class="sidebar-role" data-i18n="sidebar.role">Software Engineer</p>
-      <span class="open-badge"><i class="fas fa-circle"></i> <span data-i18n="sidebar.openToWork">Open to Work</span></span>
-    </div>
-
-    <!-- Scrollable middle -->
-    <div class="sidebar-scroll">
-
-    <!-- Contact info -->
-    <div class="sidebar-contact">
-      <a href="tel:+84977393641" class="contact-row">
-        <i class="fas fa-phone"></i><span>(+84) 977 393 641</span>
-      </a>
-      <a href="mailto:htthinh1999@gmail.com" class="contact-row">
-        <i class="fas fa-envelope"></i><span>htthinh1999@gmail.com</span>
-      </a>
-      <div class="contact-row">
-        <i class="fas fa-map-marker-alt"></i><span>Nha Trang, Vietnam</span>
-      </div>
-    </div>
-
-<!-- Navigation -->
-    <nav class="sidebar-nav" aria-label="Page sections">
-      <a href="#summary"    class="nav-link" data-section="summary"    title="Summary">    <i class="fas fa-user"></i>           <span data-i18n="nav.summary">Summary</span></a>
-      <a href="#skills"     class="nav-link" data-section="skills"     title="Skills">     <i class="fas fa-code"></i>            <span data-i18n="nav.skills">Skills</span></a>
-      <a href="#experience" class="nav-link" data-section="experience" title="Experience"> <i class="fas fa-briefcase"></i>       <span data-i18n="nav.experience">Experience</span></a>
-      <a href="#projects"   class="nav-link" data-section="projects"   title="Projects">   <i class="fas fa-layer-group"></i>     <span data-i18n="nav.projects">Projects</span></a>
-      <a href="#education"  class="nav-link" data-section="education"  title="Education">  <i class="fas fa-graduation-cap"></i>  <span data-i18n="nav.education">Education</span></a>
-      <a href="#contact"    class="nav-link" data-section="contact"    title="Contact">    <i class="fas fa-envelope"></i>        <span data-i18n="nav.contact">Contact</span></a>
-    </nav>
-
-    </div><!-- /.sidebar-scroll -->
-
-    <!-- Pinned bottom -->
-    <div class="sidebar-footer">
-      <a href="SoftwareEngineer_HuynhTanThinh.pdf" class="download-cv-btn" download>
-        <i class="fas fa-download"></i><span data-i18n="sidebar.downloadCV">Download CV</span>
-      </a>
-      <div class="sidebar-controls">
-        <button class="control-btn" data-theme-toggle aria-label="Toggle theme">
-          <i class="fas fa-moon theme-icon"></i><span class="control-label">Theme</span>
-        </button>
-        <button class="control-btn" data-lang-toggle aria-label="Switch language">
-          <span class="lang-label">VI</span>
-        </button>
-      </div>
-    </div><!-- /.sidebar-footer -->
-
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <a href="#summary" class="nav-mobile-link" data-i18n="navSummary">Summary</a>
+    <a href="#skills" class="nav-mobile-link" data-i18n="navSkills">Skills</a>
+    <a href="#experience" class="nav-mobile-link" data-i18n="navExperience">Experience</a>
+    <a href="#projects" class="nav-mobile-link" data-i18n="navProjects">Projects</a>
+    <a href="#education" class="nav-mobile-link" data-i18n="navEducation">Education</a>
+    <a href="#contact" class="nav-mobile-link" data-i18n="navContact">Contact</a>
+    <a href="SoftwareEngineer_HuynhTanThinh.pdf" class="nav-mobile-cv" data-i18n="downloadCv" download>Download CV</a>
   </div>
-</aside>
+</nav>
 
-  <!-- Main scrollable content -->
-  <main class="main-content">
-    <section id="summary" class="section-card" aria-label="Summary">
-  <h2 class="section-title" data-i18n="section.summary">Summary</h2>
-  <p class="summary-intro" data-i18n="summary.intro">
-    More than 5 years of working experience in Software Engineering — designing, developing, and managing
-    robust and scalable infrastructure. Proficient in a wide range of DevOps tools and cloud platforms.
-    Experienced in both Google Cloud Platform (GCP) and Amazon Web Service (AWS) environments.
-    Proficient in English.
-  </p>
-  <div class="specialties-grid">
-    <div class="specialty-item">
-      <i class="fas fa-server" aria-hidden="true"></i>
-      <div>
-        <strong data-i18n="specialty.iac">Infrastructure as Code</strong>
-        <p data-i18n="specialty.iac.desc">Terraform, AWS CloudFormation, AWS CDK</p>
+<header id="top" class="hero">
+  <canvas class="hero-bg-canvas" id="heroCanvas"></canvas>
+  <div class="hero-content">
+    <img src="profile-photo.png" alt="Huynh Tan Thinh" class="hero-photo">
+    <div class="hero-name" data-i18n="heroName">Huynh Tan Thinh</div>
+    <div class="hero-role" data-i18n="heroTitle">Cloud Engineer &amp; Software Engineer</div>
+    <div class="badge-open"><span class="badge-open-dot"></span><span data-i18n="openToWork">Open to Work</span></div>
+    <div class="kicker hero-kicker" data-i18n="heroKicker">CLOUD · INFRASTRUCTURE · AUTOMATION</div>
+    <h1 class="hero-title"><span id="heroLine1"></span><span class="hero-cursor" id="heroCursor1"></span><br><span id="heroLine2"></span><span class="hero-cursor" id="heroCursor2"></span></h1>
+    <p class="hero-sub" data-i18n="heroSub">Huynh Tan Thinh — Software Engineer with more than 5 years designing, developing, and managing robust, scalable infrastructure on Google Cloud Platform and Amazon Web Services.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary" data-i18n="viewProjects">View Projects</a>
+      <a href="#contact" class="btn btn-secondary" data-i18n="contactMe">Contact Me</a>
+    </div>
+  </div>
+  <div class="hero-stack-row">
+    <div class="iso-stack-wrap">
+      <div class="iso-stack" id="isoStack"></div>
+      <div class="iso-hint" data-i18n="tapLayer">tap a layer to explore</div>
+    </div>
+    <div class="iso-side">
+      <div class="iso-legend" id="isoLegend"></div>
+      <div class="iso-detail">
+        <div class="iso-detail-name" id="isoDetailName"></div>
+        <div class="iso-detail-desc" id="isoDetailDesc"></div>
+        <div class="iso-detail-tech" id="isoDetailTech"></div>
       </div>
     </div>
-    <div class="specialty-item">
-      <i class="fas fa-cubes" aria-hidden="true"></i>
-      <div>
-        <strong data-i18n="specialty.container">Containerization &amp; Orchestration</strong>
-        <p data-i18n="specialty.container.desc">Docker, Kubernetes, Helm</p>
+  </div>
+</header>
+
+<section id="summary" class="section">
+  <div class="section-inner summary-grid" data-reveal>
+    <div class="summary-left">
+      <div class="kicker" data-i18n="summaryKicker">SUMMARY</div>
+      <h2 class="section-title" data-i18n="summaryTitle">5+ years of engineering, end to end</h2>
+      <p class="summary-body" data-i18n="summaryBody">More than 5 years of working experience in Software Engineering — designing, developing, and managing robust and scalable infrastructure. Proficient in a wide range of DevOps tools and cloud platforms, experienced in both GCP and AWS environments. Proficient in English.</p>
+      <div class="summary-meta">
+        <span>Nha Trang, Vietnam</span><span>htthinh1999@gmail.com</span>
       </div>
     </div>
-    <div class="specialty-item">
-      <i class="fas fa-infinity" aria-hidden="true"></i>
-      <div>
-        <strong data-i18n="specialty.cicd">CI/CD Pipelines</strong>
-        <p data-i18n="specialty.cicd.desc">GitHub Actions, Buildkite, FluxCD, ArgoCD</p>
-      </div>
-    </div>
-    <div class="specialty-item">
-      <i class="fas fa-cloud" aria-hidden="true"></i>
-      <div>
-        <strong data-i18n="specialty.cloud">Cloud Platforms</strong>
-        <p data-i18n="specialty.cloud.desc">GCP (GKE, Cloud Run, Pub/Sub) · AWS (EKS, ECS, Lambda)</p>
-      </div>
-    </div>
-    <div class="specialty-item">
-      <i class="fas fa-code" aria-hidden="true"></i>
-      <div>
-        <strong data-i18n="specialty.backend">Backend Development</strong>
-        <p data-i18n="specialty.backend.desc">C#, .NET 6/8, Node.js, Golang, Python, Microservices</p>
-      </div>
-    </div>
-    <div class="specialty-item">
-      <i class="fas fa-database" aria-hidden="true"></i>
-      <div>
-        <strong data-i18n="specialty.database">Database Management</strong>
-        <p data-i18n="specialty.database.desc">MySQL, MongoDB, AWS DynamoDB</p>
-      </div>
-    </div>
-    <div class="specialty-item">
-      <i class="fas fa-users" aria-hidden="true"></i>
-      <div>
-        <strong data-i18n="specialty.agile">Agile Methodologies</strong>
-        <p data-i18n="specialty.agile.desc">Cross-functional team collaboration, Scrum</p>
-      </div>
-    </div>
-    <div class="specialty-item">
-      <i class="fas fa-search" aria-hidden="true"></i>
-      <div>
-        <strong data-i18n="specialty.problem">Problem-Solving</strong>
-        <p data-i18n="specialty.problem.desc">Root cause analysis, analytical troubleshooting</p>
-      </div>
+    <div class="summary-cards">
+      <div class="summary-card stagger-card"><div class="summary-card-title" data-i18n="c1">Infrastructure as Code</div><div class="summary-card-desc">Terraform, AWS CloudFormation, AWS CDK</div></div>
+      <div class="summary-card stagger-card"><div class="summary-card-title" data-i18n="c2">Containerization &amp; Orchestration</div><div class="summary-card-desc">Docker, Kubernetes, Helm</div></div>
+      <div class="summary-card stagger-card"><div class="summary-card-title" data-i18n="c3">CI/CD Pipelines</div><div class="summary-card-desc">GitHub Actions, Buildkite, FluxCD, ArgoCD</div></div>
+      <div class="summary-card stagger-card"><div class="summary-card-title" data-i18n="c4">Cloud Platforms</div><div class="summary-card-desc">GCP (GKE, Cloud Run, Pub/Sub) · AWS (EKS, ECS, Lambda)</div></div>
+      <div class="summary-card stagger-card"><div class="summary-card-title" data-i18n="c5">Backend Development</div><div class="summary-card-desc">C#, .NET 6/8, Node.js, Golang, Python, Microservices</div></div>
+      <div class="summary-card stagger-card"><div class="summary-card-title" data-i18n="c6">Database Management</div><div class="summary-card-desc">MySQL, MongoDB, AWS DynamoDB</div></div>
+      <div class="summary-card stagger-card"><div class="summary-card-title" data-i18n="c7">Agile Methodologies</div><div class="summary-card-desc" data-i18n="c7d">Cross-functional team collaboration, Scrum</div></div>
+      <div class="summary-card stagger-card"><div class="summary-card-title" data-i18n="c8">Problem-Solving</div><div class="summary-card-desc" data-i18n="c8d">Root cause analysis, analytical troubleshooting</div></div>
     </div>
   </div>
 </section>
 
-    <section id="skills" class="section-card" aria-label="Technical Skills">
-  <h2 class="section-title" data-i18n="section.skills">Technical Skills</h2>
-  <div class="skills-grid">
-
-    <div class="skill-card">
-      <div class="skill-card-header">
-        <div class="skill-card-icon"><i class="fas fa-infinity"></i></div>
-        <h3 class="skill-card-label">DevOps</h3>
-      </div>
-      <div class="tag-row">
-        <span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">Kubernetes</span>
-        <span class="tag">Terraform</span><span class="tag">Terragrunt</span><span class="tag">CloudFormation</span>
-        <span class="tag">AWS CDK</span><span class="tag">CI/CD</span><span class="tag">FluxCD</span>
-        <span class="tag">ArgoCD</span><span class="tag">Buildkite</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-card-header">
-        <div class="skill-card-icon skill-card-icon--green"><i class="fab fa-google"></i></div>
-        <h3 class="skill-card-label">Cloud — GCP</h3>
-      </div>
-      <div class="tag-row">
-        <span class="tag">GKE</span><span class="tag">Cloud Run</span><span class="tag">Cloud Function</span>
-        <span class="tag">Pub/Sub</span><span class="tag">Cloud Storage</span><span class="tag">Cloud Scheduler</span>
-        <span class="tag">Cloud Task</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-card-header">
-        <div class="skill-card-icon skill-card-icon--orange"><i class="fab fa-aws"></i></div>
-        <h3 class="skill-card-label">Cloud — AWS</h3>
-      </div>
-      <div class="tag-row">
-        <span class="tag">EKS</span><span class="tag">ECS (Fargate)</span><span class="tag">Lambda</span>
-        <span class="tag">ECR</span><span class="tag">S3</span><span class="tag">DynamoDB</span>
-        <span class="tag">SQS</span><span class="tag">StepFunction</span><span class="tag">Glue</span>
-        <span class="tag">CloudFormation</span><span class="tag">CDK</span><span class="tag">Code Series</span>
-        <span class="tag">Karpenter</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-card-header">
-        <div class="skill-card-icon skill-card-icon--purple"><i class="fas fa-code"></i></div>
-        <h3 class="skill-card-label">Backend</h3>
-      </div>
-      <div class="tag-row">
-        <span class="tag">C#</span><span class="tag">.NET Core 3.1</span><span class="tag">.NET 6/8</span>
-        <span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">Strapi</span>
-        <span class="tag">Golang</span><span class="tag">Python</span><span class="tag">Microservices</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-card-header">
-        <div class="skill-card-icon skill-card-icon--cyan"><i class="fas fa-laptop-code"></i></div>
-        <h3 class="skill-card-label">Frontend</h3>
-      </div>
-      <div class="tag-row">
-        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-        <span class="tag">jQuery</span><span class="tag">Bootstrap</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-card-header">
-        <div class="skill-card-icon skill-card-icon--pink"><i class="fas fa-mobile-alt"></i></div>
-        <h3 class="skill-card-label">Mobile</h3>
-      </div>
-      <div class="tag-row">
-        <span class="tag">Flutter</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-card-header">
-        <div class="skill-card-icon skill-card-icon--amber"><i class="fas fa-database"></i></div>
-        <h3 class="skill-card-label">Databases</h3>
-      </div>
-      <div class="tag-row">
-        <span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">AWS DynamoDB</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-card-header">
-        <div class="skill-card-icon skill-card-icon--rose"><i class="fas fa-exchange-alt"></i></div>
-        <h3 class="skill-card-label">Messaging</h3>
-      </div>
-      <div class="tag-row">
-        <span class="tag">RabbitMQ</span><span class="tag">Google Pub/Sub</span><span class="tag">AWS SQS</span>
-      </div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-card-header">
-        <div class="skill-card-icon skill-card-icon--slate"><i class="fas fa-code-branch"></i></div>
-        <h3 class="skill-card-label">Version Control</h3>
-      </div>
-      <div class="tag-row">
-        <span class="tag">GitHub</span><span class="tag">GitLab</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-    <section id="experience" class="section-card" aria-label="Experience">
-  <h2 class="section-title" data-i18n="section.experience">Experience</h2>
-  <div class="timeline">
-
-    <!-- FPT Software -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-body">
-        <div class="timeline-header">
-          <div>
-            <h3 class="company-name">FPT Software</h3>
-            <span class="company-period" data-i18n="period.fpt">Aug 2025 – Now</span>
-          </div>
+<section id="skills" class="section section--alt">
+  <div class="section-inner" data-reveal>
+    <div class="kicker" data-i18n="skillsKicker">TECHNICAL SKILLS</div>
+    <h2 class="section-title" data-i18n="skillsTitle">The toolbox</h2>
+    <div class="skills-grid">
+      <div class="skill-group stagger-card">
+        <div class="skill-group-title">DevOps</div>
+        <div class="tag-row">
+          <span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">Kubernetes</span>
+          <span class="tag">Terraform</span><span class="tag">Terragrunt</span><span class="tag">CloudFormation</span>
+          <span class="tag">AWS CDK</span><span class="tag">CI/CD</span><span class="tag">FluxCD</span>
+          <span class="tag">ArgoCD</span><span class="tag">Buildkite</span>
         </div>
+      </div>
+      <div class="skill-group stagger-card">
+        <div class="skill-group-title">Cloud — GCP</div>
+        <div class="tag-row">
+          <span class="tag">GKE</span><span class="tag">Cloud Run</span><span class="tag">Cloud Function</span>
+          <span class="tag">Pub/Sub</span><span class="tag">Cloud Storage</span><span class="tag">Cloud Scheduler</span>
+          <span class="tag">Cloud Task</span>
+        </div>
+      </div>
+      <div class="skill-group stagger-card">
+        <div class="skill-group-title">Cloud — AWS</div>
+        <div class="tag-row">
+          <span class="tag">EKS</span><span class="tag">ECS (Fargate)</span><span class="tag">Lambda</span>
+          <span class="tag">ECR</span><span class="tag">S3</span><span class="tag">DynamoDB</span>
+          <span class="tag">SQS</span><span class="tag">StepFunction</span><span class="tag">Glue</span>
+          <span class="tag">Code Series</span><span class="tag">Karpenter</span>
+        </div>
+      </div>
+      <div class="skill-group stagger-card">
+        <div class="skill-group-title">Backend</div>
+        <div class="tag-row">
+          <span class="tag">C#</span><span class="tag">.NET Core 3.1</span><span class="tag">.NET 6/8</span>
+          <span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">Strapi</span>
+          <span class="tag">Golang</span><span class="tag">Python</span><span class="tag">Microservices</span>
+        </div>
+      </div>
+      <div class="skill-group stagger-card">
+        <div class="skill-group-title">Frontend &amp; Mobile</div>
+        <div class="tag-row">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+          <span class="tag">jQuery</span><span class="tag">Bootstrap</span><span class="tag">Flutter</span>
+        </div>
+      </div>
+      <div class="skill-group stagger-card">
+        <div class="skill-group-title" data-i18n="dataMsg">Data &amp; Messaging</div>
+        <div class="tag-row">
+          <span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">AWS DynamoDB</span>
+          <span class="tag">RabbitMQ</span><span class="tag">Google Pub/Sub</span><span class="tag">AWS SQS</span>
+          <span class="tag">GitHub</span><span class="tag">GitLab</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="role-block">
-          <div class="role-header">
-            <span class="role-title" data-i18n="role.cloud">Cloud Engineer</span>
-            <span class="role-period" data-i18n="period.fpt">Aug 2025 – Now</span>
-          </div>
-          <ul class="duty-list">
-            <li data-i18n="exp.fpt.duty1">Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
-            <li data-i18n="exp.fpt.duty2">Set up CI/CD pipelines for automatic code integrations and efficient deployments.</li>
-            <li data-i18n="exp.fpt.duty3">Managed and monitored cloud infrastructure to ensure 99% uptime.</li>
-            <li data-i18n="exp.fpt.duty4">Implemented IaC setups using CloudFormation and AWS CDK to automate infrastructure provisioning.</li>
-            <li data-i18n="exp.fpt.duty5">Designed AWS Step Functions state machines and AWS Glue jobs for complex ETL workflows.</li>
+<section id="experience" class="section">
+  <div class="section-inner" data-reveal>
+    <div class="kicker" data-i18n="expKicker">EXPERIENCE</div>
+    <h2 class="section-title" data-i18n="expTitle">Where I've worked</h2>
+    <div class="exp-list">
+
+      <div class="exp-row">
+        <div class="exp-period">Aug 2025 – <span data-i18n="now">Now</span></div>
+        <div class="exp-body">
+          <div class="exp-header"><span class="exp-company">FPT Software</span><span class="exp-role">Cloud Engineer</span></div>
+          <ul class="exp-duties">
+            <li data-i18n="fpt1">Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
+            <li data-i18n="fpt2">Set up CI/CD pipelines for automatic code integrations and efficient deployments.</li>
+            <li data-i18n="fpt3">Managed and monitored cloud infrastructure to ensure 99% uptime.</li>
+            <li data-i18n="fpt4">Implemented IaC setups using CloudFormation and AWS CDK to automate infrastructure provisioning.</li>
+            <li data-i18n="fpt5">Designed AWS Step Functions state machines and AWS Glue jobs for complex ETL workflows.</li>
           </ul>
-          <div class="tech-row">
-            <span class="tag">Golang</span><span class="tag">Python</span><span class="tag">Docker</span>
-            <span class="tag">AWS DynamoDB</span><span class="tag">Microservices</span><span class="tag">AWS Lambda</span>
-            <span class="tag">AWS CloudFormation</span><span class="tag">AWS StepFunction</span><span class="tag">AWS CDK</span>
-            <span class="tag">Buildkite</span><span class="tag">AWS EKS</span><span class="tag">ArgoCD</span>
-            <span class="tag">Helm</span><span class="tag">AWS Code Series</span>
+          <div class="tag-row tag-row--muted">
+            <span class="tag tag--muted">Golang</span><span class="tag tag--muted">Python</span><span class="tag tag--muted">AWS EKS</span>
+            <span class="tag tag--muted">CloudFormation</span><span class="tag tag--muted">StepFunction</span><span class="tag tag--muted">CDK</span>
+            <span class="tag tag--muted">Buildkite</span><span class="tag tag--muted">ArgoCD</span><span class="tag tag--muted">Helm</span>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Infodation Viet Nam -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-body">
-        <div class="timeline-header">
-          <div>
-            <h3 class="company-name">Infodation Viet Nam</h3>
-            <span class="company-period" data-i18n="period.info">May 2021 – Jun 2025</span>
-          </div>
-        </div>
-
-        <div class="role-block">
-          <div class="role-header">
-            <span class="role-title" data-i18n="role.software.vn">Software Engineer — Vietnam</span>
-            <span class="role-period" data-i18n="period.info">May 2021 – Jun 2025</span>
-          </div>
-          <ul class="duty-list">
-            <li data-i18n="exp.info.duty1">Designed scalable, maintainable technical solutions and led technical decision-making for feature implementation.</li>
-            <li data-i18n="exp.info.duty2">Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
-            <li data-i18n="exp.info.duty3">Configured and maintained Kubernetes clusters to optimize application scaling and resilience.</li>
-            <li data-i18n="exp.info.duty4">Implemented Terraform setups to automate and standardize infrastructure provisioning.</li>
-            <li data-i18n="exp.info.duty5">Set up CI/CD pipelines and managed cloud infrastructure to ensure 99% uptime.</li>
+      <div class="exp-row">
+        <div class="exp-period">May 2021 – Jun 2025</div>
+        <div class="exp-body">
+          <div class="exp-header"><span class="exp-company">Infodation Viet Nam</span><span class="exp-role">Software Engineer</span></div>
+          <ul class="exp-duties">
+            <li data-i18n="inf1">Designed scalable, maintainable technical solutions and led technical decision-making for feature implementation.</li>
+            <li data-i18n="inf2">Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
+            <li data-i18n="inf3">Configured and maintained Kubernetes clusters to optimize application scaling and resilience.</li>
+            <li data-i18n="inf4">Implemented Terraform setups to automate and standardize infrastructure provisioning.</li>
+            <li data-i18n="inf5">Set up CI/CD pipelines and managed cloud infrastructure to ensure 99% uptime.</li>
           </ul>
-        </div>
-
-        <div class="role-block role-block--secondary">
-          <div class="role-header">
-            <span class="role-title" data-i18n="role.support.nl">Technical Support Engineer — onsite Netherlands</span>
-            <span class="role-period" data-i18n="period.info.nl">May 2024 – Aug 2024 · 3 months</span>
+          <div class="exp-sub">
+            <div class="exp-sub-header"><span class="exp-sub-role" data-i18n="nlRole">Technical Support Engineer — onsite Netherlands</span><span class="exp-sub-period">May 2024 – Aug 2024 · <span data-i18n="nlDur">3 months</span></span></div>
+            <div class="exp-sub-desc" data-i18n="nlDesc">Facilitated collaboration between Vietnam and Netherlands teams; investigated and resolved technical issues to root cause; guided clients through resolution.</div>
           </div>
-          <ul class="duty-list">
-            <li data-i18n="exp.info.nl.duty1">Facilitated communication and collaboration between Vietnam and Netherlands teams.</li>
-            <li data-i18n="exp.info.nl.duty2">Investigated and resolved technical issues, identifying root causes and implementing solutions.</li>
-            <li data-i18n="exp.info.nl.duty3">Provided guidance and support to clients throughout the issue resolution process.</li>
+          <div class="tag-row tag-row--muted">
+            <span class="tag tag--muted">.NET 6</span><span class="tag tag--muted">.NET Core 3.1</span><span class="tag tag--muted">MySQL</span>
+            <span class="tag tag--muted">MongoDB</span><span class="tag tag--muted">Kubernetes</span><span class="tag tag--muted">Helm</span>
+            <span class="tag tag--muted">FluxCD</span><span class="tag tag--muted">Terraform</span><span class="tag tag--muted">GCP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-period">Nov 2021 – <span data-i18n="now">Now</span></div>
+        <div class="exp-body">
+          <div class="exp-header"><span class="exp-company">DAO Entertainment</span><span class="exp-role">Cloud Engineer</span></div>
+          <ul class="exp-duties">
+            <li data-i18n="dao1">Collaborated with developers to design system architectures supporting business requirements.</li>
+            <li data-i18n="dao2">Developed APIs for web portals and integrated third-party APIs to extend service offerings.</li>
+            <li data-i18n="dao3">Configured and maintained Kubernetes clusters for optimized deployment, scaling, and management.</li>
+            <li data-i18n="dao4">Implemented Terraform setups to automate and standardize infrastructure provisioning.</li>
+            <li data-i18n="dao5">Managed verification and deployment processes, ensuring reliable system updates and releases.</li>
           </ul>
-        </div>
-
-        <div class="tech-row">
-          <span class="tag">.NET 6</span><span class="tag">.NET Core 3.1</span><span class="tag">MySQL</span>
-          <span class="tag">MongoDB</span><span class="tag">Docker</span><span class="tag">Kubernetes</span>
-          <span class="tag">Helm</span><span class="tag">FluxCD</span><span class="tag">Microservices</span>
-          <span class="tag">Terraform</span><span class="tag">GCP</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- DAO Entertainment -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-body">
-        <div class="timeline-header">
-          <div>
-            <h3 class="company-name">DAO Entertainment</h3>
-            <span class="company-period" data-i18n="period.dao">Nov 2021 – Now</span>
-          </div>
-        </div>
-
-        <div class="role-block">
-          <div class="role-header">
-            <span class="role-title" data-i18n="role.cloud">Cloud Engineer</span>
-            <span class="role-period" data-i18n="period.dao">Nov 2021 – Now</span>
-          </div>
-          <ul class="duty-list">
-            <li data-i18n="exp.dao.duty1">Collaborated with developers to design system architectures supporting business requirements.</li>
-            <li data-i18n="exp.dao.duty2">Developed APIs for web portals and integrated third-party APIs to extend service offerings.</li>
-            <li data-i18n="exp.dao.duty3">Configured and maintained Kubernetes clusters for optimized deployment, scaling, and management.</li>
-            <li data-i18n="exp.dao.duty4">Implemented Terraform setups to automate and standardize infrastructure provisioning.</li>
-            <li data-i18n="exp.dao.duty5">Managed verification and deployment processes, ensuring reliable system updates and releases.</li>
-          </ul>
-          <div class="tech-row">
-            <span class="tag">.NET 6</span><span class="tag">Node.js</span><span class="tag">Strapi</span>
-            <span class="tag">NestJS</span><span class="tag">MongoDB</span><span class="tag">Microservices</span>
-            <span class="tag">Docker</span><span class="tag">AWS EKS</span><span class="tag">AWS ECS</span>
-            <span class="tag">Helm</span><span class="tag">FluxCD</span><span class="tag">Kubernetes</span>
-            <span class="tag">GCP Cloud Run</span><span class="tag">GCP Scheduler</span><span class="tag">GCP Pub/Sub</span>
+          <div class="tag-row tag-row--muted">
+            <span class="tag tag--muted">.NET 6</span><span class="tag tag--muted">Node.js</span><span class="tag tag--muted">Strapi</span>
+            <span class="tag tag--muted">NestJS</span><span class="tag tag--muted">MongoDB</span><span class="tag tag--muted">AWS EKS</span>
+            <span class="tag tag--muted">AWS ECS</span><span class="tag tag--muted">GCP Cloud Run</span><span class="tag tag--muted">Pub/Sub</span>
           </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
 
-    <section id="projects" class="section-card" aria-label="Projects">
-  <h2 class="section-title" data-i18n="section.projects">Projects</h2>
-  <div class="projects-grid">
+<section id="projects" class="section section--alt">
+  <div class="section-inner" data-reveal>
+    <div class="kicker" data-i18n="projKicker">PROJECTS</div>
+    <h2 class="section-title" data-i18n="projTitle">Selected work</h2>
+    <div class="projects-grid">
 
-    <!-- LFS – Realtime Payments -->
-    <div class="project-card">
-      <div class="project-card-header">
-        <div>
-          <h3 class="project-name">LFS – Realtime Payments</h3>
-          <span class="project-period" data-i18n="period.lfs">Aug 2025 – Now</span>
-        </div>
-        <span class="project-role-badge" data-i18n="role.cloud">Cloud Engineer</span>
+      <div class="project-card stagger-card">
+        <div class="project-top"><span class="project-name">LFS — Realtime Payments</span><span class="project-period">Aug 2025 – <span data-i18n="now">Now</span></span></div>
+        <div class="project-meta">Cloud Engineer · Latitude Financial Services · <span data-i18n="team">Team</span> 15</div>
+        <p class="project-desc" data-i18n="pLfs">Spearheaded development and integration of third-party payment processing using Westpac QuickStream and VisionNext, enhancing real-time financial transaction handling.</p>
+        <div class="tag-row tag-row--muted"><span class="tag tag--muted">Golang</span><span class="tag tag--muted">DynamoDB</span><span class="tag tag--muted">Lambda</span><span class="tag tag--muted">ECS</span><span class="tag tag--muted">Buildkite</span></div>
+        <a href="https://www.latitudefinancial.com.au" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="visit">Visit website →</a>
       </div>
-      <div class="project-meta-row">
-        <span class="project-meta-item"><i class="fas fa-building"></i> Latitude Financial Services</span>
-        <span class="project-meta-item"><i class="fas fa-users"></i> Team: 15</span>
+
+      <div class="project-card stagger-card">
+        <div class="project-top"><span class="project-name">PdM Cloud</span><span class="project-period">Dec 2025 – <span data-i18n="now">Now</span></span></div>
+        <div class="project-meta">Cloud Engineer · Konica Minolta · <span data-i18n="team">Team</span> 5</div>
+        <p class="project-desc" data-i18n="pPdm">Re-architected a legacy predictive maintenance system into a fully AWS-native serverless and containerized solution — two ML models for batch printer lifespan prediction and real-time image diagnostics.</p>
+        <div class="tag-row tag-row--muted"><span class="tag tag--muted">Python</span><span class="tag tag--muted">ECS Fargate</span><span class="tag tag--muted">StepFunction</span><span class="tag tag--muted">Glue</span><span class="tag tag--muted">Code Series</span></div>
+        <a href="https://www.konicaminolta.com" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="visit">Visit website →</a>
       </div>
-      <p class="project-desc" data-i18n="proj.lfs.desc">
-        Spearheaded the development and integration of third-party payment processing using Westpac QuickStream and VisionNext,
-        enhancing the platform's real-time financial transaction handling.
-      </p>
-      <ul class="project-duties">
-        <li data-i18n="proj.lfs.duty1">Integrated Westpac QuickStream and VisionNext 3rd-party payment APIs.</li>
-        <li data-i18n="proj.lfs.duty2">Implemented AWS CloudFormation setups to automate infrastructure provisioning.</li>
-        <li data-i18n="proj.lfs.duty3">Set up CI/CD pipelines via Buildkite for automated deployments.</li>
-        <li data-i18n="proj.lfs.duty4">Managed and monitored AWS infrastructure to ensure 99% uptime.</li>
-      </ul>
-      <div class="tag-row">
-        <span class="tag">Golang</span><span class="tag">Docker</span><span class="tag">AWS DynamoDB</span>
-        <span class="tag">AWS Lambda</span><span class="tag">AWS ECS</span><span class="tag">AWS SQS</span>
-        <span class="tag">AWS CloudFormation</span><span class="tag">AWS CDK</span><span class="tag">Buildkite</span>
+
+      <div class="project-card stagger-card">
+        <div class="project-top"><span class="project-name">T24Parsing</span><span class="project-period">Aug 2025 – Nov 2025</span></div>
+        <div class="project-meta">DevOps Engineer · VPBank · <span data-i18n="team">Team</span> 10</div>
+        <p class="project-desc" data-i18n="pT24">Operated and expanded a mature AWS EKS infrastructure for Digital Banking — provisioning new microservices and ensuring reliability of critical banking data pipelines.</p>
+        <div class="tag-row tag-row--muted"><span class="tag tag--muted">Python</span><span class="tag tag--muted">EKS</span><span class="tag tag--muted">Terragrunt</span><span class="tag tag--muted">Karpenter</span><span class="tag tag--muted">DynamoDB</span></div>
+        <a href="https://www.vpbank.com.vn" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="visit">Visit website →</a>
       </div>
-      <a href="https://www.latitudefinancial.com.au" target="_blank" rel="noopener noreferrer" class="project-link">
-        <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.visit">Visit Website</span>
-      </a>
+
+      <div class="project-card stagger-card">
+        <div class="project-top"><span class="project-name">Fanvibe</span><span class="project-period">Nov 2022 – <span data-i18n="now">Now</span></span></div>
+        <div class="project-meta">Cloud Engineer · DAO Entertainment · <span data-i18n="team">Team</span> 3</div>
+        <p class="project-desc" data-i18n="pFan">Enhanced evolution of DTOLink with richer third-party integrations, analytics, and a migration from plain Docker containers to AWS EKS/ECS and GCP Cloud Run.</p>
+        <div class="tag-row tag-row--muted"><span class="tag tag--muted">MongoDB</span><span class="tag tag--muted">Terraform</span><span class="tag tag--muted">EKS</span><span class="tag tag--muted">Cloud Run</span><span class="tag tag--muted">Cloud Task</span></div>
+        <a href="https://fanvibe.com/" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="visit">Visit website →</a>
+      </div>
+
+      <div class="project-card stagger-card">
+        <div class="project-top"><span class="project-name">Kikker</span><span class="project-period">May 2021 – Jun 2025</span></div>
+        <div class="project-meta">Software Engineer · Kikker Energie B.V. · <span data-i18n="team">Team</span> 25</div>
+        <p class="project-desc" data-i18n="pKik">Netherlands-based platform streamlining selling and management of Electrics &amp; Gas services — meter reading, automated billing, commission calculation, and payment processing.</p>
+        <div class="tag-row tag-row--muted"><span class="tag tag--muted">.NET 6</span><span class="tag tag--muted">MySQL</span><span class="tag tag--muted">Kubernetes</span><span class="tag tag--muted">FluxCD</span><span class="tag tag--muted">GCP</span></div>
+        <a href="https://kikker.nl" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="visit">Visit website →</a>
+      </div>
+
+      <div class="project-card stagger-card">
+        <div class="project-top"><span class="project-name">DTOLink</span><span class="project-period">Nov 2020 – Nov 2022</span></div>
+        <div class="project-meta">Cloud Engineer · DAO Entertainment · <span data-i18n="team">Team</span> 3</div>
+        <p class="project-desc" data-i18n="pDto">Platform for artists and creators to craft music release and bio pages with real-time analytics — integrates Spotify, Apple Music, Deezer, and Songstats.</p>
+        <div class="tag-row tag-row--muted"><span class="tag tag--muted">Node.js</span><span class="tag tag--muted">Strapi</span><span class="tag tag--muted">MongoDB</span><span class="tag tag--muted">RabbitMQ</span><span class="tag tag--muted">Docker</span></div>
+      </div>
+
     </div>
-
-    <!-- PdM Cloud -->
-    <div class="project-card">
-      <div class="project-card-header">
-        <div>
-          <h3 class="project-name">PdM Cloud</h3>
-          <span class="project-period" data-i18n="period.pdm">Dec 2025 – Now</span>
-        </div>
-        <span class="project-role-badge" data-i18n="role.cloud">Cloud Engineer</span>
-      </div>
-      <div class="project-meta-row">
-        <span class="project-meta-item"><i class="fas fa-building"></i> Konica Minolta</span>
-        <span class="project-meta-item"><i class="fas fa-users"></i> Team: 5</span>
-      </div>
-      <p class="project-desc" data-i18n="proj.pdm.desc">
-        Re-architected a legacy predictive maintenance system into a fully AWS-native serverless and containerized solution,
-        using two ML models for batch printer lifespan prediction and real-time image diagnostics.
-      </p>
-      <ul class="project-duties">
-        <li data-i18n="proj.pdm.duty1">Architected and provisioned entire AWS infrastructure from scratch using CloudFormation.</li>
-        <li data-i18n="proj.pdm.duty2">Designed AWS Step Functions state machines to orchestrate ETL workflows and Glue jobs.</li>
-        <li data-i18n="proj.pdm.duty3">Deployed real-time image diagnostics model on Amazon ECS (Fargate) for low-latency inference.</li>
-        <li data-i18n="proj.pdm.duty4">Built CI/CD pipeline using AWS Code Series (CodeCommit, CodeBuild, CodeDeploy, CodePipeline).</li>
-      </ul>
-      <div class="tag-row">
-        <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">AWS ECS</span>
-        <span class="tag">AWS Lambda</span><span class="tag">AWS SQS</span><span class="tag">AWS CloudFormation</span>
-        <span class="tag">AWS StepFunction</span><span class="tag">AWS Glue</span><span class="tag">AWS Code Series</span>
-        <span class="tag">AWS S3</span>
-      </div>
-      <a href="https://www.konicaminolta.com" target="_blank" rel="noopener noreferrer" class="project-link">
-        <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.visit">Visit Website</span>
-      </a>
-    </div>
-
-    <!-- T24Parsing -->
-    <div class="project-card">
-      <div class="project-card-header">
-        <div>
-          <h3 class="project-name">T24Parsing</h3>
-          <span class="project-period" data-i18n="period.t24">Aug 2025 – Nov 2025</span>
-        </div>
-        <span class="project-role-badge" data-i18n="role.devops">DevOps Engineer</span>
-      </div>
-      <div class="project-meta-row">
-        <span class="project-meta-item"><i class="fas fa-building"></i> VPBank</span>
-        <span class="project-meta-item"><i class="fas fa-users"></i> Team: 10</span>
-      </div>
-      <p class="project-desc" data-i18n="proj.t24.desc">
-        Joined the Digital Banking team to operate and expand a mature AWS EKS infrastructure, provisioning new microservices
-        and ensuring reliability of critical banking data pipelines.
-      </p>
-      <ul class="project-duties">
-        <li data-i18n="proj.t24.duty1">Managed and expanded Terragrunt codebase to provision resources for new banking features.</li>
-        <li data-i18n="proj.t24.duty2">Administered production Amazon EKS clusters and tuned Karpenter autoscaling profiles.</li>
-        <li data-i18n="proj.t24.duty3">Optimized the Temenos T24 data ingestion pipeline for accurate parsing into DynamoDB and S3.</li>
-        <li data-i18n="proj.t24.duty4">Maintained CI/CD pipelines to ensure smooth deployment of new versions and infrastructure patches.</li>
-      </ul>
-      <div class="tag-row">
-        <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">AWS EKS</span>
-        <span class="tag">AWS Lambda</span><span class="tag">AWS CloudFormation</span><span class="tag">AWS DynamoDB</span>
-        <span class="tag">AWS S3</span><span class="tag">Terragrunt</span><span class="tag">Karpenter</span>
-      </div>
-      <a href="https://www.vpbank.com.vn" target="_blank" rel="noopener noreferrer" class="project-link">
-        <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.visit">Visit Website</span>
-      </a>
-    </div>
-
-    <!-- Fanvibe -->
-    <div class="project-card">
-      <div class="project-card-header">
-        <div>
-          <h3 class="project-name">Fanvibe</h3>
-          <span class="project-period" data-i18n="period.fanvibe">Nov 2022 – Now</span>
-        </div>
-        <span class="project-role-badge" data-i18n="role.cloud">Cloud Engineer</span>
-      </div>
-      <div class="project-meta-row">
-        <span class="project-meta-item"><i class="fas fa-building"></i> DAO Entertainment</span>
-        <span class="project-meta-item"><i class="fas fa-users"></i> Team: 3</span>
-      </div>
-      <p class="project-desc" data-i18n="proj.fanvibe.desc">
-        Enhanced evolution of DTOLink with richer third-party integrations, analytics, and a migration from plain Docker
-        containers to AWS EKS/ECS and GCP Cloud Run.
-      </p>
-      <ul class="project-duties">
-        <li data-i18n="proj.fanvibe.duty1">Migrated old environment from Docker containers to AWS EKS and AWS ECS.</li>
-        <li data-i18n="proj.fanvibe.duty2">Set up environment on Google Cloud Run and Google Cloud Task.</li>
-        <li data-i18n="proj.fanvibe.duty3">Implemented Terraform setups to automate infrastructure provisioning.</li>
-        <li data-i18n="proj.fanvibe.duty4">Configured CI/CD for automated deployments across environments.</li>
-      </ul>
-      <div class="tag-row">
-        <span class="tag">MongoDB</span><span class="tag">Microservices</span><span class="tag">Docker</span>
-        <span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">AWS EKS</span>
-        <span class="tag">AWS ECS</span><span class="tag">AWS Lambda</span><span class="tag">GCP Cloud Run</span>
-        <span class="tag">GCP Cloud Task</span>
-      </div>
-      <a href="https://fanvibe.com/" target="_blank" rel="noopener noreferrer" class="project-link">
-        <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.visit">Visit Website</span>
-      </a>
-    </div>
-
-    <!-- Kikker -->
-    <div class="project-card">
-      <div class="project-card-header">
-        <div>
-          <h3 class="project-name">Kikker</h3>
-          <span class="project-period" data-i18n="period.kikker">May 2021 – Jun 2025</span>
-        </div>
-        <span class="project-role-badge" data-i18n="role.software">Software Engineer</span>
-      </div>
-      <div class="project-meta-row">
-        <span class="project-meta-item"><i class="fas fa-building"></i> Kikker Energie B.V.</span>
-        <span class="project-meta-item"><i class="fas fa-users"></i> Team: 25</span>
-      </div>
-      <p class="project-desc" data-i18n="proj.kikker.desc">
-        Netherlands-based platform streamlining the selling and management of Electrics &amp; Gas services, including
-        meter reading, automated billing, commission calculation, and payment processing.
-      </p>
-      <ul class="project-duties">
-        <li data-i18n="proj.kikker.duty1">Designed scalable technical solutions and led feature implementation decision-making.</li>
-        <li data-i18n="proj.kikker.duty2">Developed APIs and maintained database schema with performance optimizations.</li>
-        <li data-i18n="proj.kikker.duty3">Configured and maintained Kubernetes cluster and implemented Terraform IaC.</li>
-        <li data-i18n="proj.kikker.duty4">Set up CI/CD pipelines and managed cloud infrastructure for 99% uptime.</li>
-      </ul>
-      <div class="tag-row">
-        <span class="tag">.NET 6</span><span class="tag">.NET Core 3.1</span><span class="tag">MySQL</span>
-        <span class="tag">MongoDB</span><span class="tag">Docker</span><span class="tag">Kubernetes</span>
-        <span class="tag">Helm</span><span class="tag">FluxCD</span><span class="tag">Terraform</span><span class="tag">GCP</span>
-      </div>
-      <a href="https://kikker.nl" target="_blank" rel="noopener noreferrer" class="project-link">
-        <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.visit">Visit Website</span>
-      </a>
-    </div>
-
-    <!-- DTOLink -->
-    <div class="project-card">
-      <div class="project-card-header">
-        <div>
-          <h3 class="project-name">DTOLink</h3>
-          <span class="project-period" data-i18n="period.dto">Nov 2020 – Nov 2022</span>
-        </div>
-        <span class="project-role-badge" data-i18n="role.cloud">Cloud Engineer</span>
-      </div>
-      <div class="project-meta-row">
-        <span class="project-meta-item"><i class="fas fa-building"></i> DAO Entertainment</span>
-        <span class="project-meta-item"><i class="fas fa-users"></i> Team: 3</span>
-      </div>
-      <p class="project-desc" data-i18n="proj.dto.desc">
-        Platform for artists and creators to craft music release and bio pages with real-time analytics.
-        Integrates with Spotify, Apple Music, Deezer, and Songstats for rich audience insights.
-      </p>
-      <ul class="project-duties">
-        <li data-i18n="proj.dto.duty1">Designed system architecture supporting business requirements and user needs.</li>
-        <li data-i18n="proj.dto.duty2">Developed APIs for web portals and integrated third-party music service APIs.</li>
-        <li data-i18n="proj.dto.duty3">Set up environment for service deployment and CI/CD for automated deploys.</li>
-        <li data-i18n="proj.dto.duty4">Reviewed colleagues' code to maintain coding standards.</li>
-      </ul>
-      <div class="tag-row">
-        <span class="tag">Node.js</span><span class="tag">Strapi</span><span class="tag">MongoDB</span>
-        <span class="tag">RabbitMQ</span><span class="tag">Microservices</span><span class="tag">Docker</span>
-      </div>
-    </div>
-
   </div>
 </section>
 
-    <section id="education" class="section-card" aria-label="Education and Certifications">
-  <h2 class="section-title" data-i18n="section.education">Education &amp; Certifications</h2>
-
-  <!-- Education -->
-  <div class="edu-block">
-    <h3 class="edu-org"><a href="https://tcu.edu.vn" target="_blank" rel="noopener noreferrer" data-i18n="edu.org">Telecommunication University</a></h3>
-    <div class="edu-detail-row">
-      <span class="edu-detail" data-i18n="edu.major">Major: Software Engineering</span>
-      <span class="edu-period" data-i18n="period.edu">Oct 2017 – May 2021</span>
-    </div>
-    <span class="gpa-badge">GPA: 3.6 / 4.0</span>
-  </div>
-
-  <!-- Certifications -->
-  <h3 class="subsection-title" data-i18n="edu.certs">Certifications</h3>
-  <div class="cert-list">
-    <div class="cert-item">
-      <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-      <div class="cert-body">
-        <span class="cert-name">Certified DevOps Generalist™ (DevOps-GEN™)</span>
-        <span class="cert-year">2025</span>
+<section id="education" class="section">
+  <div class="section-inner" data-reveal>
+    <div class="kicker" data-i18n="eduKicker">EDUCATION &amp; CERTIFICATIONS</div>
+    <h2 class="section-title" data-i18n="eduTitle">Credentials</h2>
+    <div class="edu-grid">
+      <div class="edu-card stagger-card">
+        <div class="edu-card-label" data-i18n="eduLabel">EDUCATION</div>
+        <div class="edu-card-title" data-i18n="uni">Telecommunication University</div>
+        <div class="edu-card-body"><span data-i18n="major">Major: Software Engineering</span><br>Oct 2017 – May 2021 · GPA 3.6 / 4.0</div>
       </div>
-    </div>
-    <div class="cert-item">
-      <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-      <div class="cert-body">
-        <span class="cert-name">Infodation Scrum Master</span>
-        <span class="cert-year">2023</span>
+      <div class="edu-card stagger-card">
+        <div class="edu-card-label" data-i18n="certLabel">CERTIFICATIONS</div>
+        <div class="edu-card-cert"><span class="edu-cert-name">Certified DevOps Generalist™ (DevOps-GEN™)</span><span class="edu-cert-year">2025</span></div>
+        <div class="edu-card-cert"><span class="edu-cert-name">Infodation Scrum Master</span><span class="edu-cert-year">2023</span></div>
+      </div>
+      <div class="edu-card stagger-card">
+        <div class="edu-card-label" data-i18n="awardLabel">HONORS &amp; AWARDS</div>
+        <div class="edu-card-cert"><span class="edu-cert-name" data-i18n="award">Star of the Year</span><span class="edu-cert-year">Infodation · 2023</span></div>
       </div>
     </div>
   </div>
-
-  <!-- Honors -->
-  <h3 class="subsection-title" data-i18n="edu.honors">Honors &amp; Awards</h3>
-  <div class="cert-list">
-    <div class="cert-item">
-      <div class="cert-icon cert-icon--gold"><i class="fas fa-trophy"></i></div>
-      <div class="cert-body">
-        <span class="cert-name">Star of the Year</span>
-        <span class="cert-year">Infodation · 2023</span>
-      </div>
-    </div>
-  </div>
-
 </section>
 
-    <section id="contact" class="section-card" aria-label="Contact">
-  <h2 class="section-title" data-i18n="section.contact">Contact</h2>
-  <address class="contact-grid">
-
-    <a href="mailto:htthinh1999@gmail.com" class="contact-card">
-      <div class="contact-card-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-      <div class="contact-card-body">
-        <span class="contact-card-label" data-i18n="contact.email">Email</span>
-        <span class="contact-card-value">htthinh1999@gmail.com</span>
-      </div>
-    </a>
-
-    <a href="tel:+84977393641" class="contact-card">
-      <div class="contact-card-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
-      <div class="contact-card-body">
-        <span class="contact-card-label" data-i18n="contact.phone">Phone</span>
-        <span class="contact-card-value">(+84) 977 393 641</span>
-      </div>
-    </a>
-
-    <div class="contact-card contact-card--no-link">
-      <div class="contact-card-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-      <div class="contact-card-body">
-        <span class="contact-card-label" data-i18n="contact.location">Location</span>
-        <span class="contact-card-value" data-i18n="contact.location.value">Nha Trang, Vietnam</span>
-      </div>
+<section id="contact" class="section section--alt">
+  <div class="section-inner contact-inner" data-reveal>
+    <div class="kicker" data-i18n="contactKicker">CONTACT</div>
+    <h2 class="contact-title"><span data-i18n="contactT1">Let's build your next</span><br><span data-i18n="contactT2">cloud solution</span></h2>
+    <div class="contact-cta">
+      <a href="mailto:htthinh1999@gmail.com" class="btn btn-primary">htthinh1999@gmail.com</a>
+      <a href="tel:+84977393641" class="btn btn-secondary">(+84) 977 393 641</a>
     </div>
-
-  </address>
-
-  <div class="social-buttons">
-    <a href="https://linkedin.com/in/htthinh1999" target="_blank" rel="noopener noreferrer" class="social-btn social-btn--linkedin">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-    <a href="https://github.com/htthinh1999" target="_blank" rel="noopener noreferrer" class="social-btn social-btn--github">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-    <a href="https://facebook.com/htthinh1999" target="_blank" rel="noopener noreferrer" class="social-btn social-btn--facebook">
-      <i class="fab fa-facebook"></i> Facebook
-    </a>
+    <div class="social-row">
+      <a href="https://linkedin.com/in/htthinh1999" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+      <a href="https://github.com/htthinh1999" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+      <a href="https://facebook.com/htthinh1999" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+    </div>
   </div>
 </section>
-  </main>
 
-  </div><!-- /.layout -->
+<footer class="site-footer">© <span class="footer-year">2026</span> Huynh Tan Thinh · Nha Trang, Vietnam</footer>
 
-  <footer class="site-footer">
-    <p>© <span class="footer-year">2026</span> Huynh Tan Thinh. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
