@@ -646,6 +646,8 @@ button { font-family: inherit; }
 }
 
 /* ── 3D photo gallery carousel ──────────────────────────── */
+html, body { overflow-x: hidden; }
+#gallery { overflow-x: clip; }
 .carousel-3d-stage {
   position: relative;
   perspective: 1400px;
