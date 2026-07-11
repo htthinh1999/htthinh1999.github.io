@@ -647,12 +647,25 @@ button { font-family: inherit; }
 
 /* ── 3D photo gallery carousel ──────────────────────────── */
 .carousel-3d-stage {
+  position: relative;
   perspective: 1400px;
-  height: 380px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: visible;
+}
+.carousel-3d-stage::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 460px;
+  max-width: 80%;
+  height: 46px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, .16), transparent 68%);
+  pointer-events: none;
 }
 .carousel-3d {
   position: relative;
@@ -667,24 +680,34 @@ button { font-family: inherit; }
   position: absolute;
   inset: 0;
   margin: 0;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   background: var(--card-bg);
-  border: 1px solid var(--border-10);
-  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-13);
+  box-shadow: 0 14px 34px -12px rgba(0, 0, 0, .35), 0 2px 6px rgba(0, 0, 0, .12);
   backface-visibility: hidden;
+}
+.carousel-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+  opacity: .9;
 }
 .carousel-card img, .carousel-card video {
   width: 100%;
-  height: 74%;
+  height: 100%;
   object-fit: cover;
   display: block;
   pointer-events: none;
   user-select: none;
+  transition: transform .6s cubic-bezier(.2, .8, .25, 1);
 }
+.carousel-card:hover img, .carousel-card:hover video { transform: scale(1.06); }
 .carousel-ph {
   display: none;
-  height: 74%;
+  height: 100%;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--chip-bg), var(--panel-bg));
@@ -694,10 +717,16 @@ button { font-family: inherit; }
 .carousel-card.is-missing img { display: none; }
 .carousel-card.is-missing .carousel-ph { display: flex; }
 .carousel-cap {
-  padding: 8px 12px;
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 34px 14px 12px;
   font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: .2px;
   line-height: 1.45;
-  color: var(--text-muted);
+  color: #f4f5f6;
+  background: linear-gradient(transparent, rgba(8, 9, 13, .55) 38%, rgba(8, 9, 13, .84));
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .4);
 }
 .carousel-hint {
   text-align: center;
@@ -723,14 +752,51 @@ button { font-family: inherit; }
   align-items: flex-start;
   flex-wrap: wrap;
 }
+.embed-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-08);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: var(--shadow-card);
+  transition: transform .3s, box-shadow .35s, border-color .35s;
+  max-width: 100%;
+}
+.embed-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-13);
+}
+.embed-card-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 4px 4px 14px;
+}
+.embed-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.embed-badge--fb { background: #1877f2; }
+.embed-badge--li { background: #0a66c2; }
+.embed-head-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.embed-head-title { font-size: 14.5px; font-weight: 700; line-height: 1.3; }
+.embed-head-sub { font-size: 12px; color: var(--text-faint); }
 .gallery-embed {
   width: 500px;
   height: 735px;
   max-width: 100%;
   border: none;
-  border-radius: 12px;
-  background: var(--card-bg);
-  box-shadow: var(--shadow-card);
+  border-radius: 10px;
+  background: var(--bg-alt);
+  display: block;
 }
 
 /* ── Carousel view button ───────────────────────────────── */

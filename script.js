@@ -73,6 +73,7 @@
       gal8: 'ACM/ICPC School-Level 2020 — 2nd Place & Team 3rd Place',
       gal9: 'Certificate of Honor — 2019 Informatics Olympics',
       showMore: 'Show all 11 certifications', showLess: 'Show less',
+      fbPostTitle: 'Onsite trip to the Netherlands', liPostTitle: 'Scrum Master course completion',
       contactKicker: 'CONTACT', contactT1: "Let's build your next", contactT2: 'cloud solution',
       layers: [
         { name: 'Apps & APIs', short: 'Apps & APIs', desc: 'Backend services and APIs powering web and mobile products — secure, efficient frontend-backend communication.' },
@@ -148,6 +149,7 @@
       gal8: 'ACM/ICPC cấp trường 2020 — Giải Nhì & Giải Ba đồng đội',
       gal9: 'Giấy khen — Thành tích cao Olympic Tin học 2019',
       showMore: 'Xem tất cả 11 chứng chỉ', showLess: 'Thu gọn',
+      fbPostTitle: 'Chuyến công tác onsite Hà Lan', liPostTitle: 'Hoàn thành khóa Scrum Master',
       contactKicker: 'LIÊN HỆ', contactT1: 'Cùng xây dựng giải pháp', contactT2: 'cloud tiếp theo của bạn',
       layers: [
         { name: 'Ứng dụng & API', short: 'Ứng dụng', desc: 'Dịch vụ backend và API cho các sản phẩm web và mobile — giao tiếp frontend-backend an toàn, hiệu quả.' },
