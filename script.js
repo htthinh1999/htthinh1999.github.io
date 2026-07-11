@@ -19,6 +19,7 @@
       summaryBody: 'More than 5 years of working experience in Software Engineering — designing, developing, and managing robust and scalable infrastructure. Proficient in a wide range of DevOps tools and cloud platforms, experienced in both GCP and AWS environments. Proficient in English.',
       c1: 'Infrastructure as Code', c2: 'Containerization & Orchestration', c3: 'CI/CD Pipelines', c4: 'Cloud Platforms', c5: 'Backend Development', c6: 'Database Management', c7: 'Agile Methodologies', c7d: 'Cross-functional team collaboration, Scrum', c8: 'Problem-Solving', c8d: 'Root cause analysis, analytical troubleshooting',
       skillsKicker: 'TECHNICAL SKILLS', skillsTitle: 'The toolbox', dataMsg: 'Data & Messaging',
+      sphereHint: 'drag to spin the stack',
       expKicker: 'EXPERIENCE', expTitle: "Where I've worked", now: 'Now',
       fpt1: 'Developed APIs for frontend-backend communication, ensuring security and efficiency.',
       fpt2: 'Set up CI/CD pipelines for automatic code integrations and efficient deployments.',
@@ -32,6 +33,13 @@
       inf5: 'Set up CI/CD pipelines and managed cloud infrastructure to ensure 99% uptime.',
       nlRole: 'Technical Support Engineer — onsite Netherlands', nlDur: '3 months',
       nlDesc: 'Facilitated collaboration between Vietnam and Netherlands teams; investigated and resolved technical issues to root cause; guided clients through resolution.',
+      smDesc: 'Facilitated sprint ceremonies, kept the backlog well-defined with the product owner, shielded the team from distractions, and coached Agile & Scrum best practices.',
+      orc1: 'Managed and monitored cloud infrastructure to ensure 99% uptime.',
+      orc2: 'Managed the verification and deployment of systems, ensuring timely updates and roll-outs.',
+      orc3: 'Configured and maintained a Kubernetes cluster to optimize application scaling and resilience.',
+      orc4: 'Implemented Terraform setups to automate and standardize infrastructure provisioning.',
+      amy1: 'Introduced students to foundational programming concepts through lectures and hands-on robotics projects.',
+      amy2: 'Designed practical exercises, kept course material current with industry trends, and evaluated students with constructive feedback.',
       dao1: 'Collaborated with developers to design system architectures supporting business requirements.',
       dao2: 'Developed APIs for web portals and integrated third-party APIs to extend service offerings.',
       dao3: 'Configured and maintained Kubernetes clusters for optimized deployment, scaling, and management.',
@@ -45,7 +53,26 @@
       pKik: 'Netherlands-based platform streamlining selling and management of Electrics & Gas services — meter reading, automated billing, commission calculation, and payment processing.',
       pDto: 'Platform for artists and creators to craft music release and bio pages with real-time analytics — integrates Spotify, Apple Music, Deezer, and Songstats.',
       eduKicker: 'EDUCATION & CERTIFICATIONS', eduTitle: 'Credentials', eduLabel: 'EDUCATION', certLabel: 'CERTIFICATIONS', awardLabel: 'HONORS & AWARDS',
-      uni: 'Telecommunication University', major: 'Major: Software Engineering', award: 'Star of the Year',
+      uni: 'Telecommunications University',
+      degreeLine: "Bachelor's degree — Computer Software Engineering",
+      actTitle: 'Activities & achievements',
+      act1: 'Honours scholarship — 4 years (7 semesters)',
+      act2: "OLP'18 & OLP'19 — Vietnam Student Informatics Olympiad",
+      act3: 'FPT Digital Race 2018 & 2019',
+      act4: 'ACM-ICPC — International Collegiate Programming Contest',
+      award5: 'University Honors Scholarship — 7 semesters',
+      navGallery: 'Gallery', galKicker: 'GALLERY', galTitle: 'Moments along the way', galHint: 'drag to rotate',
+      postsTitle: 'Featured posts',
+      gal1: 'Technical Support Team — onsite Netherlands, 2024',
+      gal2: 'Google Cloud event in Switzerland, 2024',
+      gal3: 'Robotech class in action — AMY Hub, 2019',
+      gal4: 'FPT Digital Race 2018',
+      gal5: "OLP'18 & ACM/ICPC Asia Hanoi 2018",
+      gal6: "OLP'19 & ICPC Asia Da Nang 2019",
+      gal7: 'Star of the Year 2023 — Infodation',
+      gal8: 'ACM/ICPC School-Level 2020 — 2nd Place & Team 3rd Place',
+      gal9: 'Certificate of Honor — 2019 Informatics Olympics',
+      showMore: 'Show all 11 certifications', showLess: 'Show less',
       contactKicker: 'CONTACT', contactT1: "Let's build your next", contactT2: 'cloud solution',
       layers: [
         { name: 'Apps & APIs', short: 'Apps & APIs', desc: 'Backend services and APIs powering web and mobile products — secure, efficient frontend-backend communication.' },
@@ -67,6 +94,7 @@
       summaryBody: 'Hơn 5 năm kinh nghiệm làm việc trong lĩnh vực Kỹ thuật phần mềm — thiết kế, phát triển và quản lý hạ tầng mạnh mẽ, có khả năng mở rộng. Thành thạo nhiều công cụ DevOps và nền tảng cloud, có kinh nghiệm với cả GCP và AWS. Thành thạo tiếng Anh.',
       c1: 'Hạ tầng dạng mã (IaC)', c2: 'Container hóa & Điều phối', c3: 'CI/CD Pipelines', c4: 'Nền tảng Cloud', c5: 'Phát triển Backend', c6: 'Quản lý cơ sở dữ liệu', c7: 'Phương pháp Agile', c7d: 'Cộng tác nhóm đa chức năng, Scrum', c8: 'Giải quyết vấn đề', c8d: 'Phân tích nguyên nhân gốc, xử lý sự cố phân tích',
       skillsKicker: 'KỸ NĂNG CHUYÊN MÔN', skillsTitle: 'Bộ công cụ', dataMsg: 'Dữ liệu & Messaging',
+      sphereHint: 'kéo để xoay quả cầu kỹ năng',
       expKicker: 'KINH NGHIỆM', expTitle: 'Nơi tôi đã làm việc', now: 'Nay',
       fpt1: 'Phát triển API cho giao tiếp frontend-backend, đảm bảo bảo mật và hiệu quả.',
       fpt2: 'Thiết lập CI/CD pipeline cho tích hợp mã tự động và triển khai hiệu quả.',
@@ -80,6 +108,13 @@
       inf5: 'Thiết lập CI/CD pipeline và quản lý hạ tầng cloud đảm bảo 99% uptime.',
       nlRole: 'Technical Support Engineer — onsite Hà Lan', nlDur: '3 tháng',
       nlDesc: 'Kết nối và điều phối giữa đội ngũ Việt Nam và Hà Lan; điều tra và xử lý sự cố kỹ thuật đến nguyên nhân gốc; hỗ trợ khách hàng trong suốt quá trình xử lý.',
+      smDesc: 'Điều phối các buổi họp Scrum, phối hợp với product owner chuẩn hóa backlog, bảo vệ nhóm khỏi phân tâm và huấn luyện thực hành Agile & Scrum.',
+      orc1: 'Quản lý và giám sát hạ tầng cloud, đảm bảo 99% uptime.',
+      orc2: 'Quản lý quy trình kiểm duyệt và triển khai hệ thống, đảm bảo cập nhật kịp thời.',
+      orc3: 'Cấu hình và duy trì Kubernetes cluster để tối ưu mở rộng và độ bền vững của ứng dụng.',
+      orc4: 'Triển khai Terraform để tự động hóa và chuẩn hóa cung cấp hạ tầng.',
+      amy1: 'Giới thiệu cho học viên các khái niệm lập trình nền tảng qua bài giảng và dự án robotics thực hành.',
+      amy2: 'Thiết kế bài tập thực hành, cập nhật giáo trình theo xu hướng công nghệ và đánh giá học viên với phản hồi mang tính xây dựng.',
       dao1: 'Phối hợp với developer thiết kế kiến trúc hệ thống đáp ứng yêu cầu nghiệp vụ.',
       dao2: 'Phát triển API cho web portal và tích hợp API bên thứ ba để mở rộng dịch vụ.',
       dao3: 'Cấu hình và duy trì Kubernetes cluster cho triển khai, mở rộng và quản lý tối ưu.',
@@ -93,7 +128,26 @@
       pKik: 'Nền tảng Hà Lan tinh gọn việc bán và quản lý dịch vụ Điện & Gas — đọc công tơ, hóa đơn tự động, tính hoa hồng và xử lý thanh toán.',
       pDto: 'Nền tảng cho nghệ sĩ và creator tạo trang phát hành nhạc và bio với analytics thời gian thực — tích hợp Spotify, Apple Music, Deezer và Songstats.',
       eduKicker: 'HỌC VẤN & CHỨNG CHỈ', eduTitle: 'Bằng cấp', eduLabel: 'HỌC VẤN', certLabel: 'CHỨNG CHỈ', awardLabel: 'GIẢI THƯỞNG',
-      uni: 'Đại học Thông tin liên lạc', major: 'Chuyên ngành: Kỹ thuật phần mềm', award: 'Star of the Year',
+      uni: 'Đại học Thông tin liên lạc',
+      degreeLine: 'Cử nhân — Kỹ thuật Phần mềm Máy tính',
+      actTitle: 'Hoạt động & thành tích',
+      act1: 'Học bổng danh dự — 4 năm (7 học kỳ)',
+      act2: "OLP'18 & OLP'19 — Olympic Tin học Sinh viên Việt Nam",
+      act3: 'FPT Digital Race 2018 & 2019',
+      act4: 'ACM-ICPC — Kỳ thi Lập trình Sinh viên Quốc tế',
+      award5: 'Học bổng danh dự của trường — 7 học kỳ',
+      navGallery: 'Hình ảnh', galKicker: 'HÌNH ẢNH', galTitle: 'Những khoảnh khắc trên hành trình', galHint: 'kéo để xoay',
+      postsTitle: 'Bài viết nổi bật',
+      gal1: 'Đội Technical Support — onsite Hà Lan, 2024',
+      gal2: 'Sự kiện Google Cloud tại Thụy Sĩ, 2024',
+      gal3: 'Lớp học Robotech — AMY Hub, 2019',
+      gal4: 'FPT Digital Race 2018',
+      gal5: "OLP'18 & ACM/ICPC Asia Hà Nội 2018",
+      gal6: "OLP'19 & ICPC Asia Đà Nẵng 2019",
+      gal7: 'Star of the Year 2023 — Infodation',
+      gal8: 'ACM/ICPC cấp trường 2020 — Giải Nhì & Giải Ba đồng đội',
+      gal9: 'Giấy khen — Thành tích cao Olympic Tin học 2019',
+      showMore: 'Xem tất cả 11 chứng chỉ', showLess: 'Thu gọn',
       contactKicker: 'LIÊN HỆ', contactT1: 'Cùng xây dựng giải pháp', contactT2: 'cloud tiếp theo của bạn',
       layers: [
         { name: 'Ứng dụng & API', short: 'Ứng dụng', desc: 'Dịch vụ backend và API cho các sản phẩm web và mobile — giao tiếp frontend-backend an toàn, hiệu quả.' },
@@ -258,6 +312,172 @@
     }
   }
 
+  /* ── Certifications show more/less ────────────────────── */
+  (function initCertToggle() {
+    const btn = document.getElementById('certToggle');
+    const extra = document.getElementById('certExtra');
+    if (!btn || !extra) return;
+    btn.addEventListener('click', () => {
+      const opening = extra.hasAttribute('hidden');
+      if (opening) extra.removeAttribute('hidden');
+      else extra.setAttribute('hidden', '');
+      const key = opening ? 'showLess' : 'showMore';
+      btn.setAttribute('data-i18n', key);
+      btn.textContent = translations[currentLang][key];
+    });
+  })();
+
+  /* ── 3D photo gallery carousel ────────────────────────── */
+  (function initGallery() {
+    const ring = document.getElementById('carousel3d');
+    if (!ring) return;
+    let lbPaused = false;
+    const photos = [
+      ['photos/tech-support-team.jpg', 'gal1'],
+      ['photos/google-cloud-event.jpg', 'gal2'],
+      ['photos/robotech-class.mp4', 'gal3', 'video'],
+      ['photos/fpt-digital-race-2018.jpg', 'gal4'],
+      ['photos/olp18-icpc2018.jpg', 'gal5'],
+      ['photos/olp19-icpc2019.jpg', 'gal6'],
+      ['photos/stars-of-the-year-2023.jpg', 'gal7'],
+      ['photos/acm-icpc-school-2020.jpg', 'gal8'],
+      ['photos/honor-olympics-2019.jpg', 'gal9']
+    ];
+    photos.forEach(([src, key, kind]) => {
+      const card = document.createElement('figure');
+      card.className = 'carousel-card';
+      const media = kind === 'video'
+        ? '<video muted loop playsinline autoplay preload="metadata" poster="photos/robotech-class-poster.jpg"></video>'
+        : '<img loading="lazy" alt="">';
+      card.innerHTML = '<div class="carousel-ph">📷</div>' + media +
+        '<figcaption class="carousel-cap" data-i18n="' + key + '"></figcaption>';
+      const el = card.querySelector(kind === 'video' ? 'video' : 'img');
+      el.addEventListener('error', () => card.classList.add('is-missing'));
+      el.src = src;
+      const view = document.createElement('button');
+      view.type = 'button';
+      view.className = 'carousel-view';
+      view.setAttribute('aria-label', 'View fullscreen');
+      view.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>';
+      view.addEventListener('pointerdown', e => e.stopPropagation());
+      view.addEventListener('click', () => openLightbox(card));
+      card.appendChild(view);
+      ring.appendChild(card);
+    });
+    const N = photos.length;
+    let angle = 0, vel = 0.05, dragging = false, lx = 0;
+    function layout() {
+      const w = ring.clientWidth || 300;
+      const r = Math.round((w / 2) / Math.tan(Math.PI / N)) + 46;
+      Array.prototype.forEach.call(ring.children, (c, i) => {
+        c.style.transform = 'rotateY(' + (360 / N * i) + 'deg) translateZ(' + r + 'px)';
+      });
+    }
+    layout();
+    window.addEventListener('resize', layout);
+    ring.addEventListener('pointerdown', e => {
+      dragging = true; lx = e.clientX;
+      ring.setPointerCapture(e.pointerId);
+      ring.style.cursor = 'grabbing';
+    });
+    ring.addEventListener('pointermove', e => {
+      if (!dragging) return;
+      const dx = e.clientX - lx; lx = e.clientX;
+      angle += dx * 0.3; vel = dx * 0.06;
+    });
+    const endDrag = () => { dragging = false; ring.style.cursor = 'grab'; };
+    ring.addEventListener('pointerup', endDrag);
+    ring.addEventListener('pointercancel', endDrag);
+    /* Gentle slow-down while hovering (easier to hit the view button) */
+    let baseVel = 0.05;
+    ring.addEventListener('pointerenter', () => { baseVel = 0.012; });
+    ring.addEventListener('pointerleave', () => { baseVel = 0.05; });
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      ring.style.transform = 'rotateY(0deg)';
+    } else {
+      (function spin() {
+        if (!dragging && !lbPaused) { vel += (baseVel - vel) * 0.02; angle += vel; }
+        ring.style.transform = 'rotateY(' + angle + 'deg)';
+        requestAnimationFrame(spin);
+      })();
+    }
+
+    /* ── Fullscreen 3D lightbox ─────────────────────────── */
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.hidden = true;
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.innerHTML =
+      '<div class="lightbox-backdrop"></div>' +
+      '<figure class="lightbox-stage"><div class="lightbox-media-wrap"></div><figcaption class="lightbox-cap"></figcaption></figure>' +
+      '<button type="button" class="lightbox-btn lightbox-close" aria-label="Close">&#10005;</button>' +
+      '<button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous">&#8249;</button>' +
+      '<button type="button" class="lightbox-btn lightbox-next" aria-label="Next">&#8250;</button>';
+    document.body.appendChild(lb);
+    const stage = lb.querySelector('.lightbox-stage');
+    const mediaWrap = lb.querySelector('.lightbox-media-wrap');
+    const capEl = lb.querySelector('.lightbox-cap');
+    let items = [], cur = 0;
+
+    function collectItems() {
+      items = Array.prototype.filter.call(ring.children, c => !c.classList.contains('is-missing'));
+    }
+    function renderLbMedia(card, dir) {
+      const srcEl = card.querySelector('img,video');
+      const isVid = srcEl.tagName === 'VIDEO';
+      const el = document.createElement(isVid ? 'video' : 'img');
+      el.className = 'lightbox-media';
+      if (isVid) {
+        el.controls = true; el.autoplay = true; el.loop = true; el.playsInline = true;
+        el.poster = srcEl.getAttribute('poster') || '';
+      } else {
+        el.alt = card.querySelector('.carousel-cap').textContent;
+      }
+      el.src = srcEl.getAttribute('src');
+      mediaWrap.innerHTML = '';
+      mediaWrap.appendChild(el);
+      capEl.textContent = card.querySelector('.carousel-cap').textContent;
+      stage.classList.remove('lb-in-left', 'lb-in-right');
+      if (dir) {
+        void stage.offsetWidth; /* restart animation */
+        stage.classList.add(dir > 0 ? 'lb-in-right' : 'lb-in-left');
+      }
+    }
+    function openLightbox(card) {
+      collectItems();
+      cur = Math.max(0, items.indexOf(card));
+      lbPaused = true;
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+      renderLbMedia(items[cur], 0);
+      requestAnimationFrame(() => requestAnimationFrame(() => lb.classList.add('is-open')));
+      lb.querySelector('.lightbox-close').focus();
+    }
+    function closeLightbox() {
+      lb.classList.remove('is-open');
+      lbPaused = false;
+      document.body.style.overflow = '';
+      setTimeout(() => { lb.hidden = true; mediaWrap.innerHTML = ''; }, 450);
+    }
+    function navLightbox(dir) {
+      collectItems();
+      if (!items.length) return;
+      cur = (cur + dir + items.length) % items.length;
+      renderLbMedia(items[cur], dir);
+    }
+    lb.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    lb.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
+    lb.querySelector('.lightbox-prev').addEventListener('click', () => navLightbox(-1));
+    lb.querySelector('.lightbox-next').addEventListener('click', () => navLightbox(1));
+    window.addEventListener('keydown', e => {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') navLightbox(-1);
+      else if (e.key === 'ArrowRight') navLightbox(1);
+    });
+  })();
+
   const _urlLang = new URLSearchParams(location.search).get('lang');
   applyLang((_urlLang === 'vi' || _urlLang === 'en') ? _urlLang : (localStorage.getItem('lang') || 'en'), false);
 
@@ -295,7 +515,35 @@
   }, { threshold: 0.1 });
   revealTargets.forEach(el => revealObserver.observe(el));
 
-  /* ── Animated wireframe sphere background ────────────── */
+  /* ── 3D tilt on cards ─────────────────────────────────── */
+  const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (canTilt) {
+    const MAX_TILT = 7;
+    document.querySelectorAll('.summary-card, .skill-group, .project-card, .edu-card').forEach(card => {
+      card.addEventListener('pointerenter', () => {
+        card.style.transition = 'transform .16s ease-out, box-shadow .35s, border-color .35s, opacity .6s ease';
+        card.style.willChange = 'transform';
+      });
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = 'perspective(700px) rotateX(' + (-py * MAX_TILT).toFixed(2) +
+          'deg) rotateY(' + (px * MAX_TILT).toFixed(2) + 'deg) translateY(-6px) scale(1.02)';
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+        card.style.transition = '';
+        card.style.willChange = '';
+      });
+    });
+  }
+
+  /* ── Legacy 2D wireframe sphere (fallback when WebGL/Three.js is unavailable) ── */
+  window.__initHero2D = function () {
+  if (window.__hero2DStarted) return;
+  window.__hero2DStarted = true;
   const canvas = document.getElementById('heroCanvas');
   if (canvas) {
     const n = 90, ga = Math.PI * (3 - Math.sqrt(5));
@@ -387,4 +635,12 @@
     }
     requestAnimationFrame(tick);
   }
+  };
+
+  /* Safety net: if the 3D scene didn't start (CDN blocked, WebGL off), fall back to 2D */
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      if (!window.__three3DActive) window.__initHero2D();
+    }, 900);
+  });
 })();

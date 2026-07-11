@@ -53,9 +53,16 @@
   },
   "alumniOf": {
     "@type": "EducationalOrganization",
-    "name": "Telecommunication University",
+    "name": "Telecommunications University",
     "address": { "@type": "PostalAddress", "addressLocality": "Nha Trang", "addressCountry": "VN" }
   },
+  "award": [
+    "Star of the Year 2023 — Infodation",
+    "Second Place, ACM/ICPC (School-Level) & Third Place (Team Award) — 2020",
+    "Certificate of Honor for High Achievement in the 2019 Informatics Olympics",
+    "First Prize, School-Level Informatics Olympiad — 2019",
+    "University Honors Scholarship — 7 semesters"
+  ],
   "hasCredential": [
     {
       "@type": "EducationalOccupationalCredential",
@@ -90,6 +97,7 @@
       <a href="#experience" class="nav-link" data-i18n="navExperience">Experience</a>
       <a href="#projects" class="nav-link" data-i18n="navProjects">Projects</a>
       <a href="#education" class="nav-link" data-i18n="navEducation">Education</a>
+      <a href="#gallery" class="nav-link" data-i18n="navGallery">Gallery</a>
       <a href="#contact" class="nav-link" data-i18n="navContact">Contact</a>
     </div>
     <div class="nav-actions">
@@ -112,6 +120,7 @@
     <a href="#experience" class="nav-mobile-link" data-i18n="navExperience">Experience</a>
     <a href="#projects" class="nav-mobile-link" data-i18n="navProjects">Projects</a>
     <a href="#education" class="nav-mobile-link" data-i18n="navEducation">Education</a>
+    <a href="#gallery" class="nav-mobile-link" data-i18n="navGallery">Gallery</a>
     <a href="#contact" class="nav-mobile-link" data-i18n="navContact">Contact</a>
     <a href="SoftwareEngineer_HuynhTanThinh.pdf" class="nav-mobile-cv" data-i18n="downloadCv" download>Download CV</a>
   </div>
@@ -175,6 +184,10 @@
   <div class="section-inner" data-reveal>
     <div class="kicker" data-i18n="skillsKicker">TECHNICAL SKILLS</div>
     <h2 class="section-title" data-i18n="skillsTitle">The toolbox</h2>
+    <div class="skill-sphere-wrap">
+      <canvas id="skillSphere" class="skill-sphere-canvas" aria-hidden="true"></canvas>
+      <div class="skill-sphere-hint" data-i18n="sphereHint">drag to spin the stack</div>
+    </div>
     <div class="skills-grid">
       <div class="skill-group stagger-card">
         <div class="skill-group-title">DevOps</div>
@@ -238,7 +251,7 @@
       <div class="exp-row">
         <div class="exp-period">Aug 2025 – <span data-i18n="now">Now</span></div>
         <div class="exp-body">
-          <div class="exp-header"><span class="exp-company">FPT Software</span><span class="exp-role">Cloud Engineer</span></div>
+          <div class="exp-header"><span class="exp-company">FPT Software</span><span class="exp-role">Cloud Engineer · DevOps Engineer</span></div>
           <ul class="exp-duties">
             <li data-i18n="fpt1">Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
             <li data-i18n="fpt2">Set up CI/CD pipelines for automatic code integrations and efficient deployments.</li>
@@ -255,9 +268,26 @@
       </div>
 
       <div class="exp-row">
+        <div class="exp-period">Aug 2025 – <span data-i18n="now">Now</span></div>
+        <div class="exp-body">
+          <div class="exp-header"><span class="exp-company">ORC Software</span><span class="exp-role">Senior DevOps Engineer · Freelance, Remote</span></div>
+          <ul class="exp-duties">
+            <li data-i18n="orc1">Managed and monitored cloud infrastructure to ensure 99% uptime.</li>
+            <li data-i18n="orc2">Managed the verification and deployment of systems, ensuring timely updates and roll-outs.</li>
+            <li data-i18n="orc3">Configured and maintained a Kubernetes cluster to optimize application scaling and resilience.</li>
+            <li data-i18n="orc4">Implemented Terraform setups to automate and standardize infrastructure provisioning.</li>
+          </ul>
+          <div class="tag-row tag-row--muted">
+            <span class="tag tag--muted">Kubernetes</span><span class="tag tag--muted">Terraform</span><span class="tag tag--muted">CI/CD</span>
+            <span class="tag tag--muted">Cloud Infrastructure</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
         <div class="exp-period">May 2021 – Jun 2025</div>
         <div class="exp-body">
-          <div class="exp-header"><span class="exp-company">Infodation Viet Nam</span><span class="exp-role">Software Engineer</span></div>
+          <div class="exp-header"><span class="exp-company">Infodation Viet Nam</span><span class="exp-role">Software Engineer · DevOps Engineer</span></div>
           <ul class="exp-duties">
             <li data-i18n="inf1">Designed scalable, maintainable technical solutions and led technical decision-making for feature implementation.</li>
             <li data-i18n="inf2">Developed APIs for frontend-backend communication, ensuring security and efficiency.</li>
@@ -266,7 +296,11 @@
             <li data-i18n="inf5">Set up CI/CD pipelines and managed cloud infrastructure to ensure 99% uptime.</li>
           </ul>
           <div class="exp-sub">
-            <div class="exp-sub-header"><span class="exp-sub-role" data-i18n="nlRole">Technical Support Engineer — onsite Netherlands</span><span class="exp-sub-period">May 2024 – Aug 2024 · <span data-i18n="nlDur">3 months</span></span></div>
+            <div class="exp-sub-header"><span class="exp-sub-role">Scrum Master</span><span class="exp-sub-period">Aug 2023 – Aug 2024</span></div>
+            <div class="exp-sub-desc" data-i18n="smDesc">Facilitated sprint ceremonies, kept the backlog well-defined with the product owner, shielded the team from distractions, and coached Agile &amp; Scrum best practices.</div>
+          </div>
+          <div class="exp-sub">
+            <div class="exp-sub-header"><span class="exp-sub-role" data-i18n="nlRole">Technical Support Engineer — onsite Netherlands</span><span class="exp-sub-period">Aug 2024 – Oct 2024 · <span data-i18n="nlDur">3 months</span></span></div>
             <div class="exp-sub-desc" data-i18n="nlDesc">Facilitated collaboration between Vietnam and Netherlands teams; investigated and resolved technical issues to root cause; guided clients through resolution.</div>
           </div>
           <div class="tag-row tag-row--muted">
@@ -278,9 +312,9 @@
       </div>
 
       <div class="exp-row">
-        <div class="exp-period">Nov 2021 – <span data-i18n="now">Now</span></div>
+        <div class="exp-period">Nov 2020 – May 2025</div>
         <div class="exp-body">
-          <div class="exp-header"><span class="exp-company">DAO Entertainment</span><span class="exp-role">Cloud Engineer</span></div>
+          <div class="exp-header"><span class="exp-company">DAO Music Entertainment</span><span class="exp-role">Software Engineer · Freelance, Remote</span></div>
           <ul class="exp-duties">
             <li data-i18n="dao1">Collaborated with developers to design system architectures supporting business requirements.</li>
             <li data-i18n="dao2">Developed APIs for web portals and integrated third-party APIs to extend service offerings.</li>
@@ -292,6 +326,20 @@
             <span class="tag tag--muted">.NET 6</span><span class="tag tag--muted">Node.js</span><span class="tag tag--muted">Strapi</span>
             <span class="tag tag--muted">NestJS</span><span class="tag tag--muted">MongoDB</span><span class="tag tag--muted">AWS EKS</span>
             <span class="tag tag--muted">AWS ECS</span><span class="tag tag--muted">GCP Cloud Run</span><span class="tag tag--muted">Pub/Sub</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-period">Jul 2019 – Mar 2023</div>
+        <div class="exp-body">
+          <div class="exp-header"><span class="exp-company">AMY Hub</span><span class="exp-role">Robotech Teacher · Part-time</span></div>
+          <ul class="exp-duties">
+            <li data-i18n="amy1">Introduced students to foundational programming concepts through lectures and hands-on robotics projects.</li>
+            <li data-i18n="amy2">Designed practical exercises, kept course material current with industry trends, and evaluated students with constructive feedback.</li>
+          </ul>
+          <div class="tag-row tag-row--muted">
+            <span class="tag tag--muted">Robotics</span><span class="tag tag--muted">Programming</span><span class="tag tag--muted">Teaching</span>
           </div>
         </div>
       </div>
@@ -331,8 +379,8 @@
       </div>
 
       <div class="project-card stagger-card">
-        <div class="project-top"><span class="project-name">Fanvibe</span><span class="project-period">Nov 2022 – <span data-i18n="now">Now</span></span></div>
-        <div class="project-meta">Cloud Engineer · DAO Entertainment · <span data-i18n="team">Team</span> 3</div>
+        <div class="project-top"><span class="project-name">Fanvibe</span><span class="project-period">Nov 2022 – May 2025</span></div>
+        <div class="project-meta">Cloud Engineer · DAO Music Entertainment · <span data-i18n="team">Team</span> 3</div>
         <p class="project-desc" data-i18n="pFan">Enhanced evolution of DTOLink with richer third-party integrations, analytics, and a migration from plain Docker containers to AWS EKS/ECS and GCP Cloud Run.</p>
         <div class="tag-row tag-row--muted"><span class="tag tag--muted">MongoDB</span><span class="tag tag--muted">Terraform</span><span class="tag tag--muted">EKS</span><span class="tag tag--muted">Cloud Run</span><span class="tag tag--muted">Cloud Task</span></div>
         <a href="https://fanvibe.com/" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="visit">Visit website →</a>
@@ -348,7 +396,7 @@
 
       <div class="project-card stagger-card">
         <div class="project-top"><span class="project-name">DTOLink</span><span class="project-period">Nov 2020 – Nov 2022</span></div>
-        <div class="project-meta">Cloud Engineer · DAO Entertainment · <span data-i18n="team">Team</span> 3</div>
+        <div class="project-meta">Cloud Engineer · DAO Music Entertainment · <span data-i18n="team">Team</span> 3</div>
         <p class="project-desc" data-i18n="pDto">Platform for artists and creators to craft music release and bio pages with real-time analytics — integrates Spotify, Apple Music, Deezer, and Songstats.</p>
         <div class="tag-row tag-row--muted"><span class="tag tag--muted">Node.js</span><span class="tag tag--muted">Strapi</span><span class="tag tag--muted">MongoDB</span><span class="tag tag--muted">RabbitMQ</span><span class="tag tag--muted">Docker</span></div>
       </div>
@@ -364,17 +412,60 @@
     <div class="edu-grid">
       <div class="edu-card stagger-card">
         <div class="edu-card-label" data-i18n="eduLabel">EDUCATION</div>
-        <div class="edu-card-title" data-i18n="uni">Telecommunication University</div>
-        <div class="edu-card-body"><span data-i18n="major">Major: Software Engineering</span><br>Oct 2017 – May 2021 · GPA 3.6 / 4.0</div>
+        <div class="edu-card-title" data-i18n="uni">Telecommunications University</div>
+        <div class="edu-card-body"><span data-i18n="degreeLine">Bachelor's degree — Computer Software Engineering</span><br>Oct 2017 – May 2021 · GPA 3.6 / 4.0</div>
+        <div class="edu-acts">
+          <div class="edu-acts-title" data-i18n="actTitle">Activities &amp; achievements</div>
+          <ul class="edu-acts-list">
+            <li data-i18n="act1">Honours scholarship — 4 years (7 semesters)</li>
+            <li data-i18n="act2">OLP'18 &amp; OLP'19 — Vietnam Student Informatics Olympiad</li>
+            <li data-i18n="act3">FPT Digital Race 2018 &amp; 2019</li>
+            <li data-i18n="act4">ACM-ICPC — International Collegiate Programming Contest</li>
+          </ul>
+        </div>
       </div>
       <div class="edu-card stagger-card">
         <div class="edu-card-label" data-i18n="certLabel">CERTIFICATIONS</div>
         <div class="edu-card-cert"><span class="edu-cert-name">Certified DevOps Generalist™ (DevOps-GEN™)</span><span class="edu-cert-year">2025</span></div>
         <div class="edu-card-cert"><span class="edu-cert-name">Infodation Scrum Master</span><span class="edu-cert-year">2023</span></div>
+        <div class="cert-extra" id="certExtra" hidden>
+          <div class="edu-card-cert"><span class="edu-cert-name">Claude Code in Action — Anthropic</span><span class="edu-cert-year">2026</span></div>
+          <div class="edu-card-cert"><span class="edu-cert-name">Claude 101 — Anthropic</span><span class="edu-cert-year">2026</span></div>
+          <div class="edu-card-cert"><span class="edu-cert-name">Generative AI as Your Thought Partner — Coursera</span><span class="edu-cert-year">2025</span></div>
+          <div class="edu-card-cert"><span class="edu-cert-name">The Arcade Base Camp — Google</span><span class="edu-cert-year">2024</span></div>
+          <div class="edu-card-cert"><span class="edu-cert-name">Terraform on Google Cloud — Google</span><span class="edu-cert-year">2024</span></div>
+          <div class="edu-card-cert"><span class="edu-cert-name">Kubernetes Applications on Google Cloud — Google</span><span class="edu-cert-year">2024</span></div>
+          <div class="edu-card-cert"><span class="edu-cert-name">Serverless Firebase Development — Google</span><span class="edu-cert-year">2024</span></div>
+          <div class="edu-card-cert"><span class="edu-cert-name">Serverless Cloud Run Development — Google</span><span class="edu-cert-year">2024</span></div>
+          <div class="edu-card-cert"><span class="edu-cert-name">SQL Skill Certificate — HackerRank</span><span class="edu-cert-year">2024</span></div>
+        </div>
+        <button type="button" class="cert-toggle" id="certToggle" data-i18n="showMore">Show all 11 certifications</button>
       </div>
       <div class="edu-card stagger-card">
         <div class="edu-card-label" data-i18n="awardLabel">HONORS &amp; AWARDS</div>
-        <div class="edu-card-cert"><span class="edu-cert-name" data-i18n="award">Star of the Year</span><span class="edu-cert-year">Infodation · 2023</span></div>
+        <div class="edu-card-cert"><span class="edu-cert-name">Star of the Year 2023 — Infodation</span><span class="edu-cert-year">2024</span></div>
+        <div class="edu-card-cert"><span class="edu-cert-name">2nd Place ACM/ICPC (School) &amp; 3rd Place Team Award</span><span class="edu-cert-year">2020</span></div>
+        <div class="edu-card-cert"><span class="edu-cert-name">Certificate of Honor — 2019 Informatics Olympics</span><span class="edu-cert-year">2020</span></div>
+        <div class="edu-card-cert"><span class="edu-cert-name">1st Prize, School-Level Informatics Olympiad</span><span class="edu-cert-year">2019</span></div>
+        <div class="edu-card-cert"><span class="edu-cert-name" data-i18n="award5">University Honors Scholarship — 7 semesters</span><span class="edu-cert-year">2017–2021</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <div class="section-inner" data-reveal>
+    <div class="kicker" data-i18n="galKicker">GALLERY</div>
+    <h2 class="section-title" data-i18n="galTitle">Moments along the way</h2>
+    <div class="carousel-3d-stage">
+      <div class="carousel-3d" id="carousel3d"></div>
+    </div>
+    <div class="carousel-hint" data-i18n="galHint">drag to rotate</div>
+    <div class="gallery-embeds">
+      <h3 class="gallery-embeds-title" data-i18n="postsTitle">Featured posts</h3>
+      <div class="gallery-embeds-row">
+        <iframe class="gallery-embed" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Finfodation.recruitment%2Fposts%2Fpfbid02xTP5M4dcQnNfNJRj1G333qLcygTquxhVUrJT5YJnM7qyJoLUE5Ansq8dxqUNZ3acl&show_text=true&width=500" width="500" height="735" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook post — onsite Netherlands trip" loading="lazy"></iframe>
+        <iframe class="gallery-embed" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7099342199900839936" height="735" width="500" frameborder="0" allowfullscreen title="LinkedIn post — Scrum Master course completion" loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -399,5 +490,7 @@
 <footer class="site-footer">© <span class="footer-year">2026</span> Huynh Tan Thinh · Nha Trang, Vietnam</footer>
 
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
+<script src="three-scene.js" defer></script>
 </body>
 </html>
