@@ -73,7 +73,12 @@
       gal8: 'ACM/ICPC School-Level 2020 — 2nd Place & Team 3rd Place',
       gal9: 'Certificate of Honor — 2019 Informatics Olympics',
       showMore: 'Show all 11 certifications', showLess: 'Show less',
+      fullTimeGroup: 'FULL-TIME', freelanceGroup: 'FREELANCE & PART-TIME',
+      view3d: '3D view', viewGrid: 'Grid view',
       fbPostTitle: 'Onsite trip to the Netherlands', liPostTitle: 'Scrum Master course completion',
+      fbPostExcerpt: 'The onsite trips make us better in both technical knowledge enhancement and experiences of cross-cultural exposure. A few months of working and living abroad is one of the things Infodation aims for to help IFD-ers broaden horizons in diversity of comprehension.',
+      liPostExcerpt: 'As IFDationers we are always offered great employee benefits — including a variety of training courses to update and improve our software development skills. Congratulations to the colleagues who excellently completed the Scrum Master Course, honored in the Certificate of Completion Ceremony.',
+      fbPostBtn: 'Read full post on Facebook →', liPostBtn: 'Read full post on LinkedIn →',
       contactKicker: 'CONTACT', contactT1: "Let's build your next", contactT2: 'cloud solution',
       layers: [
         { name: 'Apps & APIs', short: 'Apps & APIs', desc: 'Backend services and APIs powering web and mobile products — secure, efficient frontend-backend communication.' },
@@ -149,7 +154,12 @@
       gal8: 'ACM/ICPC cấp trường 2020 — Giải Nhì & Giải Ba đồng đội',
       gal9: 'Giấy khen — Thành tích cao Olympic Tin học 2019',
       showMore: 'Xem tất cả 11 chứng chỉ', showLess: 'Thu gọn',
+      fullTimeGroup: 'TOÀN THỜI GIAN', freelanceGroup: 'FREELANCE & BÁN THỜI GIAN',
+      view3d: 'Xem 3D', viewGrid: 'Dạng lưới',
       fbPostTitle: 'Chuyến công tác onsite Hà Lan', liPostTitle: 'Hoàn thành khóa Scrum Master',
+      fbPostExcerpt: 'Những chuyến onsite giúp chúng tôi giỏi hơn cả về chuyên môn kỹ thuật lẫn trải nghiệm giao thoa văn hóa. Vài tháng sống và làm việc ở nước ngoài là điều Infodation hướng tới để giúp IFD-ers mở rộng tầm nhìn và sự thấu hiểu đa dạng.',
+      liPostExcerpt: 'Là IFDationer, chúng tôi luôn được hưởng phúc lợi tốt — trong đó có các khóa đào tạo đa dạng để cập nhật và nâng cao kỹ năng phát triển phần mềm. Chúc mừng các đồng nghiệp đã xuất sắc hoàn thành khóa Scrum Master và được vinh danh trong Lễ trao Chứng nhận Hoàn thành.',
+      fbPostBtn: 'Xem bài viết trên Facebook →', liPostBtn: 'Xem bài viết trên LinkedIn →',
       contactKicker: 'LIÊN HỆ', contactT1: 'Cùng xây dựng giải pháp', contactT2: 'cloud tiếp theo của bạn',
       layers: [
         { name: 'Ứng dụng & API', short: 'Ứng dụng', desc: 'Dịch vụ backend và API cho các sản phẩm web và mobile — giao tiếp frontend-backend an toàn, hiệu quả.' },
@@ -394,14 +404,38 @@
     let baseVel = 0.05;
     ring.addEventListener('pointerenter', () => { baseVel = 0.012; });
     ring.addEventListener('pointerleave', () => { baseVel = 0.05; });
+    let gridMode = false;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       ring.style.transform = 'rotateY(0deg)';
     } else {
       (function spin() {
-        if (!dragging && !lbPaused) { vel += (baseVel - vel) * 0.02; angle += vel; }
-        ring.style.transform = 'rotateY(' + angle + 'deg)';
+        if (!gridMode) {
+          if (!dragging && !lbPaused) { vel += (baseVel - vel) * 0.02; angle += vel; }
+          ring.style.transform = 'rotateY(' + angle + 'deg)';
+        }
         requestAnimationFrame(spin);
       })();
+    }
+
+    /* 3D / Grid view toggle */
+    const btn3d = document.getElementById('galView3d');
+    const btnGrid = document.getElementById('galViewGrid');
+    const stageEl = ring.closest('.carousel-3d-stage');
+    const hintEl = document.querySelector('.carousel-hint');
+    function setGridMode(on) {
+      gridMode = on;
+      ring.classList.toggle('as-grid', on);
+      if (stageEl) stageEl.classList.toggle('as-grid-stage', on);
+      if (hintEl) hintEl.hidden = on;
+      btn3d.classList.toggle('is-active', !on);
+      btnGrid.classList.toggle('is-active', on);
+      btn3d.setAttribute('aria-pressed', String(!on));
+      btnGrid.setAttribute('aria-pressed', String(on));
+      if (!on) layout();
+    }
+    if (btn3d && btnGrid) {
+      btn3d.addEventListener('click', () => setGridMode(false));
+      btnGrid.addEventListener('click', () => setGridMode(true));
     }
 
     /* ── Fullscreen 3D lightbox ─────────────────────────── */
