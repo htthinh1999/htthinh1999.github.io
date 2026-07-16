@@ -33,6 +33,7 @@
 /* ── Reset & base ───────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 body {
   background: var(--bg);
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -101,7 +102,6 @@ button { font-family: inherit; }
 }
 .tag--muted:hover { transform: translateY(-2px) scale(1.06); color: #fff; background: var(--accent); box-shadow: 0 6px 14px -6px var(--accent-shadow); }
 
-html { scroll-behavior: smooth; }
 .section { border-bottom: 1px solid var(--border-07); scroll-margin-top: 70px; }
 .section--alt { background: var(--bg-alt); }
 .section-inner { max-width: 1140px; margin: 0 auto; padding: 72px 28px; }
@@ -922,7 +922,8 @@ html, body { overflow-x: hidden; }
   box-shadow: var(--shadow-card-hover);
   border-color: var(--border-13);
 }
-.post-card-media { height: 240px; background: linear-gradient(135deg, var(--chip-bg), var(--panel-bg)); }
+.post-card-media { height: 280px; background: linear-gradient(135deg, var(--chip-bg), var(--panel-bg)); }
+@media (max-width: 640px) { .post-card-media { height: 210px; } }
 .post-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .post-card-media--pair { display: flex; gap: 2px; }
 .post-card-media--pair img { width: 50%; }
@@ -1053,6 +1054,9 @@ html, body { overflow-x: hidden; }
   max-height: 76vh;
   border-radius: 14px;
   box-shadow: 0 40px 90px -24px rgba(0, 0, 0, .8);
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: pan-y;
 }
 .lightbox-cap {
   margin-top: 16px;

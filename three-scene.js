@@ -70,7 +70,7 @@
 
     /* Core — wireframe icosahedron (the "cluster brain") */
     const coreGeo = new THREE.IcosahedronGeometry(1.15, 1);
-    const coreMat = new THREE.LineBasicMaterial({ transparent: true, opacity: 0.28 });
+    const coreMat = new THREE.LineBasicMaterial({ transparent: true, opacity: 0.33 });
     registerMat(coreMat, 'accent');
     const core = new THREE.LineSegments(new THREE.WireframeGeometry(coreGeo), coreMat);
     root.add(core);
@@ -92,7 +92,7 @@
       const s = 0.14 + Math.random() * 0.17;
       const geo = new THREE.BoxGeometry(s, s, s);
       const isAccent = i % 3 === 0;
-      const mat = new THREE.LineBasicMaterial({ transparent: true, opacity: isAccent ? 0.75 : 0.45 });
+      const mat = new THREE.LineBasicMaterial({ transparent: true, opacity: isAccent ? 0.8 : 0.55 });
       registerMat(mat, isAccent ? 'accent' : 'ink');
       const box = new THREE.LineSegments(new THREE.EdgesGeometry(geo), mat);
       box.userData = {
@@ -154,7 +154,7 @@
       const p2 = new THREE.Vector3(Math.cos(a2) * 2.8, (Math.random() - 0.5) * 2, Math.sin(a2) * 2.8);
       const mid = p1.clone().add(p2).multiplyScalar(0.35);
       const curve = new THREE.CatmullRomCurve3([p1, mid, p2]);
-      const lineMat = new THREE.LineBasicMaterial({ transparent: true, opacity: 0.14 });
+      const lineMat = new THREE.LineBasicMaterial({ transparent: true, opacity: 0.18 });
       registerMat(lineMat, 'ink');
       root.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(curve.getPoints(50)), lineMat));
       const pktMat = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.9 });
@@ -229,11 +229,11 @@
     ['Kubernetes', 1], ['Docker', 1], ['Terraform', 1], ['AWS', 1], ['GCP', 1],
     ['Helm', 0], ['ArgoCD', 1], ['FluxCD', 0], ['CloudFormation', 0], ['AWS CDK', 0],
     ['Terragrunt', 0], ['Buildkite', 0], ['CI/CD', 1], ['EKS', 0], ['ECS', 0],
-    ['Lambda', 0], ['DynamoDB', 0], ['S3', 0], ['SQS', 0], ['Step Functions', 0],
-    ['Glue', 0], ['GKE', 0], ['Cloud Run', 0], ['Pub/Sub', 0], ['Karpenter', 0],
+    ['Lambda', 0], ['DynamoDB', 0], ['Step Functions', 0],
+    ['GKE', 0], ['Cloud Run', 0], ['Pub/Sub', 0], ['Karpenter', 0],
     ['Golang', 1], ['Python', 1], ['C#', 0], ['.NET 6/8', 1], ['Node.js', 1],
-    ['NestJS', 0], ['Strapi', 0], ['MySQL', 0], ['MongoDB', 0], ['RabbitMQ', 0],
-    ['Microservices', 1], ['Flutter', 0], ['Git', 0]
+    ['NestJS', 0], ['MySQL', 0], ['MongoDB', 0], ['RabbitMQ', 0],
+    ['Microservices', 1]
   ];
 
   let sphere = null;
@@ -252,12 +252,12 @@
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 50);
-    camera.position.z = 6.4;
+    camera.position.z = 6.9;
 
     const group = new THREE.Group();
     scene.add(group);
 
-    const R = MOBILE ? 1.9 : 2.35;
+    const R = MOBILE ? 2.0 : 2.6;
     const items = [];
     const N = SKILLS.length;
 
@@ -273,7 +273,7 @@
       tex.anisotropy = 4;
       const mat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false });
       const spr = new THREE.Sprite(mat);
-      const k = isAccent ? 0.0095 : 0.008;
+      const k = isAccent ? 0.0095 : 0.0074;
       spr.scale.set(w * k, 64 * k, 1);
       /* Fibonacci sphere distribution */
       const y = 1 - (i / (N - 1)) * 2;

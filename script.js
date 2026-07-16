@@ -430,6 +430,7 @@
         '<figcaption class="carousel-cap" data-i18n="' + key + '"></figcaption>';
       const el = card.querySelector(kind === 'video' ? 'video' : 'img');
       el.addEventListener('error', () => card.classList.add('is-missing'));
+      if (kind !== 'video') el.alt = translations.en[key] || '';
       el.src = src;
       const view = document.createElement('button');
       view.type = 'button';
@@ -529,6 +530,7 @@
       const isVid = srcEl.tagName === 'VIDEO';
       const el = document.createElement(isVid ? 'video' : 'img');
       el.className = 'lightbox-media';
+      el.draggable = false;
       if (isVid) {
         el.controls = true; el.autoplay = true; el.loop = true; el.playsInline = true;
         el.poster = srcEl.getAttribute('poster') || '';
@@ -569,6 +571,15 @@
       cur = (cur + dir + items.length) % items.length;
       renderLbMedia(items[cur], dir);
     }
+    /* Touch swipe navigation */
+    let swipeX = null;
+    stage.addEventListener('pointerdown', e => { swipeX = e.clientX; });
+    stage.addEventListener('pointerup', e => {
+      if (swipeX === null) return;
+      const dx = e.clientX - swipeX;
+      swipeX = null;
+      if (Math.abs(dx) > 55) navLightbox(dx < 0 ? 1 : -1);
+    });
     lb.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
     lb.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
     lb.querySelector('.lightbox-prev').addEventListener('click', () => navLightbox(-1));
