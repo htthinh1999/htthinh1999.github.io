@@ -213,18 +213,25 @@
     set('meta[name="description"]', t.description);
   }
 
-  /* ── Theme toggle ──────────────────────────────────────── */
-  function applyTheme(theme) {
+  /* ── Theme: follow device setting, manual toggle overrides ── */
+  const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  const systemTheme = () => (themeMedia.matches ? 'dark' : 'light');
+  function applyTheme(theme, persist) {
     const t = theme === 'dark' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', t);
-    localStorage.setItem('theme', t);
+    if (persist) localStorage.setItem('theme', t);
   }
-  applyTheme(localStorage.getItem('theme') || 'light');
+  applyTheme(localStorage.getItem('theme') || systemTheme(), false);
+  /* Live-follow OS changes unless the visitor chose a theme manually */
+  const onSchemeChange = () => {
+    if (!localStorage.getItem('theme')) applyTheme(systemTheme(), false);
+  };
+  if (themeMedia.addEventListener) themeMedia.addEventListener('change', onSchemeChange);
   const themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme') || 'light';
-      applyTheme(current === 'dark' ? 'light' : 'dark');
+      applyTheme(current === 'dark' ? 'light' : 'dark', true);
     });
   }
 
@@ -344,25 +351,7 @@
     });
   })();
 
-  /* ── Scrollspy — highlight active nav link ────────────── */
-  (function initScrollspy() {
-    const links = document.querySelectorAll('.nav-link');
-    if (!links.length || !('IntersectionObserver' in window)) return;
-    const map = {};
-    links.forEach(l => { map[l.getAttribute('href')] = l; });
-    const spy = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        if (!en.isIntersecting) return;
-        links.forEach(l => l.classList.remove('is-active'));
-        const link = map['#' + en.target.id];
-        if (link) link.classList.add('is-active');
-      });
-    }, { rootMargin: '-35% 0px -55% 0px' });
-    ['summary', 'skills', 'experience', 'projects', 'education', 'gallery', 'contact']
-      .forEach(id => { const s = document.getElementById(id); if (s) spy.observe(s); });
-  })();
-
-  /* ── Scroll progress bar + back-to-top ────────────────── */
+  /* ── Scroll UX: deterministic scrollspy + progress bar + back-to-top ── */
   (function initScrollUx() {
     const bar = document.createElement('div');
     bar.className = 'scroll-progress';
@@ -374,6 +363,14 @@
     topBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
     topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     document.body.appendChild(topBtn);
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    const linkMap = {};
+    navLinks.forEach(l => { linkMap[l.getAttribute('href')] = l; });
+    const sections = ['summary', 'skills', 'experience', 'projects', 'education', 'gallery', 'contact']
+      .map(id => document.getElementById(id)).filter(Boolean);
+    let activeLink = null;
+
     let ticking = false;
     function onScroll() {
       if (ticking) return;
@@ -382,10 +379,23 @@
         const max = document.documentElement.scrollHeight - window.innerHeight;
         bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
         topBtn.classList.toggle('is-visible', window.scrollY > 600);
+        /* Scrollspy: single deterministic probe line — no flicker at boundaries */
+        const probe = window.scrollY + window.innerHeight * 0.38;
+        let current = null;
+        for (const sec of sections) {
+          if (sec.offsetTop <= probe) current = sec;
+        }
+        const link = current ? linkMap['#' + current.id] : null;
+        if (link !== activeLink) {
+          if (activeLink) activeLink.classList.remove('is-active');
+          if (link) link.classList.add('is-active');
+          activeLink = link;
+        }
         ticking = false;
       });
     }
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     onScroll();
   })();
 
