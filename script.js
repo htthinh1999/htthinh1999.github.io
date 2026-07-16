@@ -214,17 +214,20 @@
   }
 
   /* ── Theme: follow device setting, manual toggle overrides ── */
+  /* Note: uses the 'themeChoice' key — only ever written by the manual toggle.
+     The legacy 'theme' key (auto-written on every visit by old code) is removed. */
+  localStorage.removeItem('theme');
   const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
   const systemTheme = () => (themeMedia.matches ? 'dark' : 'light');
   function applyTheme(theme, persist) {
     const t = theme === 'dark' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', t);
-    if (persist) localStorage.setItem('theme', t);
+    if (persist) localStorage.setItem('themeChoice', t);
   }
-  applyTheme(localStorage.getItem('theme') || systemTheme(), false);
+  applyTheme(localStorage.getItem('themeChoice') || systemTheme(), false);
   /* Live-follow OS changes unless the visitor chose a theme manually */
   const onSchemeChange = () => {
-    if (!localStorage.getItem('theme')) applyTheme(systemTheme(), false);
+    if (!localStorage.getItem('themeChoice')) applyTheme(systemTheme(), false);
   };
   if (themeMedia.addEventListener) themeMedia.addEventListener('change', onSchemeChange);
   const themeToggle = document.getElementById('themeToggle');
