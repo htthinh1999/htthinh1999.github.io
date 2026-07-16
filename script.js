@@ -213,28 +213,25 @@
     set('meta[name="description"]', t.description);
   }
 
-  /* ── Theme: follow device setting, manual toggle overrides ── */
-  /* Note: uses the 'themeChoice' key — only ever written by the manual toggle.
-     The legacy 'theme' key (auto-written on every visit by old code) is removed. */
+  /* ── Theme: always follows the OS setting; the toggle is a temporary,
+     session-only override (nothing is stored). Old storage keys cleaned up. ── */
   localStorage.removeItem('theme');
+  localStorage.removeItem('themeChoice');
   const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
   const systemTheme = () => (themeMedia.matches ? 'dark' : 'light');
-  function applyTheme(theme, persist) {
-    const t = theme === 'dark' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', t);
-    if (persist) localStorage.setItem('themeChoice', t);
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
   }
-  applyTheme(localStorage.getItem('themeChoice') || systemTheme(), false);
-  /* Live-follow OS changes unless the visitor chose a theme manually */
-  const onSchemeChange = () => {
-    if (!localStorage.getItem('themeChoice')) applyTheme(systemTheme(), false);
-  };
-  if (themeMedia.addEventListener) themeMedia.addEventListener('change', onSchemeChange);
+  applyTheme(systemTheme());
+  /* If the OS theme changes, follow it (clears any temporary override) */
+  if (themeMedia.addEventListener) {
+    themeMedia.addEventListener('change', () => applyTheme(systemTheme()));
+  }
   const themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme') || 'light';
-      applyTheme(current === 'dark' ? 'light' : 'dark', true);
+      applyTheme(current === 'dark' ? 'light' : 'dark');
     });
   }
 
