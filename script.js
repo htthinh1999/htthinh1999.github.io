@@ -15,6 +15,7 @@
       heroT1: 'From code to cluster,', heroT2: 'I own the whole path',
       heroSub: 'Huynh Tan Thinh — Software Engineer with more than 5 years designing, developing, and managing robust, scalable infrastructure on Google Cloud Platform and Amazon Web Services.',
       viewProjects: 'View Projects', contactMe: 'Contact Me', tapLayer: 'tap a layer to explore',
+      statYears: 'Years experience', statProjects: 'Major projects', statCerts: 'Certifications', statClouds: 'Cloud platforms',
       summaryKicker: 'SUMMARY', summaryTitle: '5+ years of engineering, end to end',
       summaryBody: 'More than 5 years of working experience in Software Engineering — designing, developing, and managing robust and scalable infrastructure. Proficient in a wide range of DevOps tools and cloud platforms, experienced in both GCP and AWS environments. Proficient in English.',
       c1: 'Infrastructure as Code', c2: 'Containerization & Orchestration', c3: 'CI/CD Pipelines', c4: 'Cloud Platforms', c5: 'Backend Development', c6: 'Database Management', c7: 'Agile Methodologies', c7d: 'Cross-functional team collaboration, Scrum', c8: 'Problem-Solving', c8d: 'Root cause analysis, analytical troubleshooting',
@@ -96,6 +97,7 @@
       heroT1: 'Từ code đến cluster,', heroT2: 'tôi làm chủ toàn bộ hành trình',
       heroSub: 'Huỳnh Tấn Thịnh — Kỹ sư phần mềm với hơn 5 năm kinh nghiệm thiết kế, phát triển và quản lý hạ tầng mạnh mẽ, có khả năng mở rộng trên Google Cloud Platform và Amazon Web Services.',
       viewProjects: 'Xem dự án', contactMe: 'Liên hệ tôi', tapLayer: 'chạm vào một tầng để khám phá',
+      statYears: 'Năm kinh nghiệm', statProjects: 'Dự án lớn', statCerts: 'Chứng chỉ', statClouds: 'Nền tảng cloud',
       summaryKicker: 'TÓM TẮT', summaryTitle: '5+ năm kỹ thuật, từ đầu đến cuối',
       summaryBody: 'Hơn 5 năm kinh nghiệm làm việc trong lĩnh vực Kỹ thuật phần mềm — thiết kế, phát triển và quản lý hạ tầng mạnh mẽ, có khả năng mở rộng. Thành thạo nhiều công cụ DevOps và nền tảng cloud, có kinh nghiệm với cả GCP và AWS. Thành thạo tiếng Anh.',
       c1: 'Hạ tầng dạng mã (IaC)', c2: 'Container hóa & Điều phối', c3: 'CI/CD Pipelines', c4: 'Nền tảng Cloud', c5: 'Phát triển Backend', c6: 'Quản lý cơ sở dữ liệu', c7: 'Phương pháp Agile', c7d: 'Cộng tác nhóm đa chức năng, Scrum', c8: 'Giải quyết vấn đề', c8d: 'Phân tích nguyên nhân gốc, xử lý sự cố phân tích',
@@ -324,6 +326,69 @@
     }
   }
 
+  /* ── Hero stats count-up ──────────────────────────────── */
+  (function initStats() {
+    const nums = document.querySelectorAll('.hero-stat-num');
+    if (!nums.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    nums.forEach(el => {
+      const target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      const suffix = el.getAttribute('data-suffix') || '';
+      const t0 = performance.now(), dur = 1100;
+      (function step(t) {
+        const p = Math.min(1, (t - t0) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + (p === 1 ? suffix : '');
+        if (p < 1) requestAnimationFrame(step);
+      })(t0);
+    });
+  })();
+
+  /* ── Scrollspy — highlight active nav link ────────────── */
+  (function initScrollspy() {
+    const links = document.querySelectorAll('.nav-link');
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    const map = {};
+    links.forEach(l => { map[l.getAttribute('href')] = l; });
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        links.forEach(l => l.classList.remove('is-active'));
+        const link = map['#' + en.target.id];
+        if (link) link.classList.add('is-active');
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    ['summary', 'skills', 'experience', 'projects', 'education', 'gallery', 'contact']
+      .forEach(id => { const s = document.getElementById(id); if (s) spy.observe(s); });
+  })();
+
+  /* ── Scroll progress bar + back-to-top ────────────────── */
+  (function initScrollUx() {
+    const bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    document.body.appendChild(bar);
+    const topBtn = document.createElement('button');
+    topBtn.type = 'button';
+    topBtn.className = 'back-to-top';
+    topBtn.setAttribute('aria-label', 'Back to top');
+    topBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    document.body.appendChild(topBtn);
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+        topBtn.classList.toggle('is-visible', window.scrollY > 600);
+        ticking = false;
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
   /* ── Certifications show more/less ────────────────────── */
   (function initCertToggle() {
     const btn = document.getElementById('certToggle');
@@ -446,7 +511,7 @@
     lb.setAttribute('aria-modal', 'true');
     lb.innerHTML =
       '<div class="lightbox-backdrop"></div>' +
-      '<figure class="lightbox-stage"><div class="lightbox-media-wrap"></div><figcaption class="lightbox-cap"></figcaption></figure>' +
+      '<figure class="lightbox-stage"><div class="lightbox-media-wrap"></div><figcaption class="lightbox-cap"></figcaption><div class="lightbox-count"></div></figure>' +
       '<button type="button" class="lightbox-btn lightbox-close" aria-label="Close">&#10005;</button>' +
       '<button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous">&#8249;</button>' +
       '<button type="button" class="lightbox-btn lightbox-next" aria-label="Next">&#8250;</button>';
@@ -474,6 +539,8 @@
       mediaWrap.innerHTML = '';
       mediaWrap.appendChild(el);
       capEl.textContent = card.querySelector('.carousel-cap').textContent;
+      const countEl = lb.querySelector('.lightbox-count');
+      if (countEl) countEl.textContent = (items.indexOf(card) + 1) + ' / ' + items.length;
       stage.classList.remove('lb-in-left', 'lb-in-right');
       if (dir) {
         void stage.offsetWidth; /* restart animation */

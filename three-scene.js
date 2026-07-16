@@ -56,6 +56,12 @@
     renderer.setPixelRatio(DPR);
 
     const scene = new THREE.Scene();
+    /* Theme-aware fog — gives real depth to the scene */
+    const bgColor = () =>
+      (getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#ffffff');
+    scene.fog = new THREE.Fog(new THREE.Color(bgColor()), 7, 13.5);
+    retintFns.push(() => scene.fog.color.set(bgColor()));
+
     const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 60);
     camera.position.set(0, 0, 6.2);
 
@@ -158,29 +164,42 @@
       flows.push({ curve, pkt, t: Math.random(), speed: 0.0018 + Math.random() * 0.0022 });
     }
 
-    /* Pointer parallax + scroll */
-    let mx = 0, my = 0;
+    /* Pointer parallax (smoothed) + scroll */
+    let mx = 0, my = 0, smx = 0, smy = 0;
     window.addEventListener('pointermove', e => {
       mx = e.clientX / window.innerWidth - 0.5;
       my = e.clientY / window.innerHeight - 0.5;
     }, { passive: true });
 
+    const heroEl = canvas.closest('.hero');
+    let heroH = 800;
     function resize() {
       const w = canvas.clientWidth, h = canvas.clientHeight;
       if (w < 2 || h < 2) return;
       renderer.setSize(w, h, false);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
+      heroH = heroEl ? Math.max(400, heroEl.offsetHeight) : 800;
     }
     resize();
     window.addEventListener('resize', resize);
 
     function update(t) {
-      root.rotation.y = t * 0.00007 + mx * 0.35;
-      root.rotation.x = -0.12 + my * 0.22 + window.scrollY * 0.00012;
+      smx += (mx - smx) * 0.045;
+      smy += (my - smy) * 0.045;
+      root.rotation.y = t * 0.00007 + smx * 0.35;
+      root.rotation.x = -0.12 + smy * 0.22 + window.scrollY * 0.00012;
       root.position.y = window.scrollY * 0.0009;
+      /* Camera breathing drift */
+      camera.position.x = Math.sin(t * 0.00013) * 0.18;
+      camera.position.y = Math.cos(t * 0.00011) * 0.12;
+      camera.lookAt(0, 0, 0);
+      /* Core rotation + gentle pulse */
       core.rotation.y = t * 0.00016;
       core.rotation.z = t * 0.00006;
+      core.scale.setScalar(1 + Math.sin(t * 0.0006) * 0.035);
+      /* Fade the scene out as the hero scrolls away */
+      canvas.style.opacity = Math.max(0, 1 - window.scrollY / (heroH * 0.85)).toFixed(3);
       for (const b of boxes) {
         const u = b.userData, a = u.phase + t * 0.001 * u.speed;
         b.position.set(Math.cos(a) * u.r, Math.sin(a * 1.4 + u.tilt) * u.yAmp, Math.sin(a) * u.r);

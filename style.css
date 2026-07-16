@@ -101,6 +101,7 @@ button { font-family: inherit; }
 }
 .tag--muted:hover { transform: translateY(-2px) scale(1.06); color: #fff; background: var(--accent); box-shadow: 0 6px 14px -6px var(--accent-shadow); }
 
+html { scroll-behavior: smooth; }
 .section { border-bottom: 1px solid var(--border-07); scroll-margin-top: 70px; }
 .section--alt { background: var(--bg-alt); }
 .section-inner { max-width: 1140px; margin: 0 auto; padding: 72px 28px; }
@@ -565,6 +566,99 @@ button { font-family: inherit; }
   .contact-cta .btn, .hero-cta .btn { width: 100%; text-align: center; }
 }
 
+/* ── Hero stats ─────────────────────────────────────────── */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+.hero-stat { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.hero-stat-num {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.hero-stat-label {
+  font-size: 11.5px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+@media (max-width: 640px) {
+  .hero-stats { gap: 20px 28px; }
+  .hero-stat-num { font-size: 24px; }
+}
+
+/* ── Hero scroll hint ───────────────────────────────────── */
+.hero-scroll-hint {
+  width: 22px;
+  height: 34px;
+  margin: 30px auto 0;
+  border: 2px solid var(--text-fainter);
+  border-radius: 12px;
+  position: relative;
+  opacity: .7;
+}
+.hero-scroll-hint::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  width: 4px;
+  height: 7px;
+  margin-left: -2px;
+  border-radius: 3px;
+  background: var(--accent);
+  animation: scrollHint 1.8s ease-in-out infinite;
+}
+@keyframes scrollHint {
+  0% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(12px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/* ── Scroll progress + back to top ──────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--accent);
+  z-index: 60;
+  pointer-events: none;
+  transition: width .1s linear;
+}
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 24px;
+  z-index: 55;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-13);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+  transition: opacity .3s, transform .3s, background .25s, color .25s, border-color .25s;
+}
+.back-to-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* ── Active nav link ────────────────────────────────────── */
+.nav-link.is-active { color: var(--accent); }
+
 /* ── 3D skill sphere ────────────────────────────────────── */
 .skill-sphere-wrap { position: relative; margin: 0 auto 36px; max-width: 720px; }
 .skill-sphere-canvas {
@@ -965,6 +1059,13 @@ html, body { overflow-x: hidden; }
   color: #eceef0;
   font-size: 14px;
   letter-spacing: .2px;
+}
+.lightbox-count {
+  margin-top: 7px;
+  color: rgba(236, 238, 240, .55);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-variant-numeric: tabular-nums;
 }
 @keyframes lbInRight {
   from { transform: perspective(1200px) rotateY(16deg) translateX(7%) scale(.94); opacity: 0; }
